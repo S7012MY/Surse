@@ -25,7 +25,7 @@ int main() {
 	}
 	for(int i=1; i<=n; ++i) {
 		for(int j=0; j<MAXB; ++j) cb[j]=make_pair(nxt[j][i],j);
-		sort(cb,cb+MAXB-1);
+		sort(cb,cb+MAXB);
 		int nr=0;
 		for(int j=0; j<MAXB && cb[j].x!=n; ++j) {
 			nr|=(1<<cb[j].y);
