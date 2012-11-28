@@ -7,7 +7,7 @@
 #define y second
 using namespace std;
 
-typedef pair<int,int> per;//le tin pe dos
+typedef pair<int,int> per;
 
 int n,m,cnt,p1,aib[DN],ind[DN],c[DN][DN],ii[DN];
 double tg[DN];
@@ -48,7 +48,7 @@ int rsp(int a,int b, int C) {
 	z[2]=make_pair(p[C],C);
 	sort(z,z+3);
 	int i=z[0].y,j=z[1].y,k=z[2].y;
-	if(id(p[i],p[k],p[j])) return c[i][k]-c[i][j]-c[j][k];
+	if(id(p[i],p[k],p[j])) return c[i][k]-c[i][j]-c[j][k]-1;
 	else return c[i][j]+c[j][k]-c[i][k];
 }
 
@@ -70,7 +70,6 @@ int main() {
 		sort(ind+i+1,ind+n+1,cmp);
 		for(int j=i+1; j<=n; ++j) {
 			c[ii[i]][ii[ind[j]]]=query(ind[j]);
-			//cout<<ii[i]<<' '<<ii[ind[j]]<<' '<<c[ii[i]][ii[ind[j]]]<<'\n';
 			c[ii[ind[j]]][ii[i]]=c[ii[i]][ii[ind[j]]];
 			up(ind[j]);
 		}
@@ -80,7 +79,6 @@ int main() {
 		int a,b,c;
 		f>>a>>b>>c;
 		g<<rsp(a,b,c)<<'\n';
-		cout<<rsp(a,b,c)<<'\n';
 	}
 	return 0;
 }
