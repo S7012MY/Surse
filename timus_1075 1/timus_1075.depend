@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1344515145 source:c:\users\petru\documents\proiecte\timus_1075\main.cpp
+	<iostream>
+	<iomanip>
+	<cmath>
+

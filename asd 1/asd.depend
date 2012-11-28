@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1346919484 source:c:\users\petru\documents\proiecte\asd\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

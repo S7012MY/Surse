@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1343407714 source:c:\users\petru\documents\proiecte\srevni\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+

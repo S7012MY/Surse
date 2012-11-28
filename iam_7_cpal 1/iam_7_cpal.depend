@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1344528168 source:c:\users\petru\documents\proiecte\iam_7_cpal\main.cpp
+	<iostream>
+	<fstream>
+

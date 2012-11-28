@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1343394232 source:c:\users\petru\documents\proiecte\expresie2\main.cpp
+	<cstdio>
+	<algorithm>
+	<cstring>
+

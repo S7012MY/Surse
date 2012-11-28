@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1344366627 source:c:\users\petru\documents\proiecte\becuri\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+

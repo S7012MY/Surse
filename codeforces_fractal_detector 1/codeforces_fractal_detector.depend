@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1348911678 source:c:\users\petru\documents\proiecte\codeforces_fractal_detector\main.cpp
+	<iostream>
+	<cstring>
+

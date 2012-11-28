@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1341663633 source:c:\users\petru\documents\proiecte\timus_1437\main.cpp
+	<iostream>
+	<bitset>
+	<set>
+	<vector>
+
