@@ -9,9 +9,16 @@ using namespace std;
 
 typedef pair<int,int> per;//le tin pe dos
 
-int n,m,cnt;
+int n,m,cnt,p1;
 per p[DN];
 map<int,int> norm;
+
+inline int lsb(int x) {
+	return (x&(x-1))^x);
+}
+
+bool cmp(per a,per b) {
+}
 
 int main() {
 	ifstream f("tri2.in");
@@ -22,8 +29,8 @@ int main() {
 		if(norm.find(p[i].y)==norm.end()) norm[p[i].y]=++cnt;
 	}
 	sort(p+1,p+n+1);
-	for(int i=1; i<=n; ++i) {
-		cout<<p[i].x<<' '<<p[i].y<<'\n';
+	for(pi=1; pi<=n; ++pi) {
+		sort(p+1,p+n+1,cmp);
 	}
 	return 0;
 }
