@@ -32,7 +32,6 @@ void up(int p) {
 int query(int p) {
 	int r=0;
 	for(int i=p; i>0; i-=lsb(i)) r+=aib[i];
-	cout<<r<<' ';
 	return r;
 }
 
@@ -59,7 +58,7 @@ int main() {
 	f>>n;
 	for(int i=1; i<=n; ++i) {
 		f>>p[i].x>>p[i].y;
-		ind[i]=i;
+		ii[i]=i;
 	}
 	sort(ind+1,ind+n+1,cm);
 	for(int i=1; i<=n; ++i) {
@@ -68,9 +67,10 @@ int main() {
 			ind[j]=j;
 			tg[j]=((double)p[ii[j]].y-p[ii[i]].y)/(p[ii[j]].x-p[ii[i]].x);
 		}
-		sort(ind+i,ind+n+1,cmp);
+		sort(ind+i+1,ind+n+1,cmp);
 		for(int j=i+1; j<=n; ++j) {
 			c[ii[i]][ii[ind[j]]]=query(ind[j]);
+			//cout<<ii[i]<<' '<<ii[ind[j]]<<' '<<c[ii[i]][ii[ind[j]]]<<'\n';
 			c[ii[ind[j]]][ii[i]]=c[ii[i]][ii[ind[j]]];
 			up(ind[j]);
 		}
