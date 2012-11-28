@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1332837193 source:/home/petru/Desktop/proiecte/fiicompetition/cutii/main.cpp
+	<queue>
+	<cstdio>
+	<vector>
+	<bitset>
+	<algorithm>
+

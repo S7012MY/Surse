@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1326490306 source:/home/petru/Desktop/proiecte/asfalt/main.cpp
+	<cstdio>
+	<cstring>
+	<set>
+	<vector>
+	<queue>
+	<bitset>
+	<algorithm>
+

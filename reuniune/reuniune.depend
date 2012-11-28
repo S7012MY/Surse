@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1346225519 source:/home/petru/Desktop/proiecte/reuniune/main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+

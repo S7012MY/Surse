@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1339943376 source:/home/petru/Desktop/proiecte/ACM_2002_Game/main.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+

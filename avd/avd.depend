@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1353948581 source:/home/petru/Desktop/proiecte/avd/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<set>
+	<string>
+	<algorithm>
+	<iomanip>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1349109467 source:/home/petru/Desktop/proiecte/codeforces/142_C/main.cpp
+	<cstdio>
+	<queue>
+	<vector>
+	<algorithm>
+	<set>
+

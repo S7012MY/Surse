@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1347554992 source:/home/petru/Desktop/proiecte/iam_8_triangles/main.cpp
+	<fstream>
+	<cstring>
+

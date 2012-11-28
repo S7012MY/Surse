@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1339677474 source:/home/petru/Desktop/proiecte/tango_tmax*tmax/main.cpp
+	<iostream>
+	<fstream>
+

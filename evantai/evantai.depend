@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1320768707 source:/home/petru/Desktop/proiecte/evantai/main.cpp
+	<fstream>
+	<vector>
+	<algorithm>
+	<iostream>
+

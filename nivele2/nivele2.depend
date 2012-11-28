@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1318943225 source:/home/petru/Desktop/proiecte/nivele2/main.cpp
+	<fstream>
+	<vector>
+	<queue>
+	<bitset>
+

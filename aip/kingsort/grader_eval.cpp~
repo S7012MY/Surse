@@ -1,0 +1,36 @@
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#define DN 9999999999
+#define DM 999999999
+using namespace std;
+
+#define FOUT "kingsort.out"
+#define FOK  "kingsort.ok"
+
+void error(char msg[], double p)
+{
+	fprintf(stderr, msg);
+	printf("%lf", p);
+	exit(0);
+}
+
+int main(void)
+{
+    int nr,v1,v2;
+    char c1,c2;
+    FILE *f;
+
+    f = fopen(FOK, "r");
+    if (!f) error("Nu am putut deschide fisierul de verificare", 0);
+
+	int snr,sv1,sv2;
+	char sc1,sc2;
+    f = fopen(FOUT, "r");
+    if (!f) error("Fisier de iesire inexistent", 0);
+    if(system("cmp -s fisier1 fisier2")==0) error("Mere binie",0.25);
+    else error("Esti prost!",0);
+
+    return 0;
+}
+

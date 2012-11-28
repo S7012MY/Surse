@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1330208680 source:/home/petru/Desktop/proiecte/carti2/main.cpp
+	<iostream>
+	<fstream>
+

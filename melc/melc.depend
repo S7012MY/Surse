@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1339589796 source:/home/petru/Desktop/proiecte/melc/main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+	<cmath>
+

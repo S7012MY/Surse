@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1346685350 source:/home/petru/Desktop/proiecte/polig/main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+	<cmath>
+	<vector>
+

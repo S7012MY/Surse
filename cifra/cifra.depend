@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1354013962 source:/home/petru/Desktop/proiecte/cifra/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

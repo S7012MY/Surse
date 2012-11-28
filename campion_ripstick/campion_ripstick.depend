@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1326390673 source:/home/petru/Desktop/proiecte/campion_ripstick/main.cpp
+	<cstdio>
+	<algorithm>
+	<set>
+	<tr1/unordered_map>
+

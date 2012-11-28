@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1329997714 source:/home/petru/Desktop/proiecte/campion_codarb/main.cpp
+	<cstdio>
+	<cstring>
+	<cctype>
+	<algorithm>
+	<cassert>
+

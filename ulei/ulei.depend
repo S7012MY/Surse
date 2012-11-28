@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1350934397 source:/home/petru/Desktop/proiecte/ulei/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<tr1/unordered_map>
+	<algorithm>
+	<cstring>
+	<stack>
+

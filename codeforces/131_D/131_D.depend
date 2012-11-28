@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1347297625 source:/home/petru/Desktop/proiecte/codeforces/131_D/main.cpp
+	<iostream>
+	<algorithm>
+

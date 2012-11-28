@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1329764375 source:/home/petru/Desktop/proiecte/iam_1_bursa/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+

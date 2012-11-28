@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#define MOD 666013
+#define LL long long
+using namespace std;
+
+
+//N impar F(N) = F((N-1)/2)^2
+//N par F(N) = 2 * (F(N/2-1) * F(N/2))
+int q;
+LL n,fi(LL);
+pair<LL, LL> F(LL,LL);
+
+int main()
+{
+    ifstream f("ciuperci.in");
+    ofstream g("ciuperci.out");
+    for(f>>q;q--;) {
+        f>>n;
+        g<<fi(n)<<'\n';
+    }
+    return 0;
+}
+
+
+pair<LL,LL> F(LL a, LL b) {
+   // cout<<a<<' '<<b<<'\n';
+   // cout.flush();
+    if(a==0) return make_pair(1,1);
+    if(a==1) return make_pair(1,2);
+    pair<LL,LL> r=F(b/2-1,b/2),t;
+    if(b&1) {
+        t.second=(r.second*r.second)%MOD;
+        t.first=(r.first*r.second*2LL)%MOD;
+    }else {
+        t.second=(2LL*r.first*r.second)%MOD;
+        t.first=(r.first*r.first)%MOD;
+    }
+    return t;
+}
+
+LL fi(LL n) {
+    if(1==n || 0==n) return 1;
+    if(n==2) return 2;
+    if(n&1) {
+        LL r=fi(n/2);
+        r=(r*r)%MOD;
+        return r;
+    }else {
+        pair<LL,LL> r=F(n/2-1,n/2);
+        return (2LL*r.first*r.second)%MOD;
+    }
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1350298054 source:/home/petru/Desktop/proiecte/sgu_bookPile/main.cpp
+	<iostream>
+	<string>
+	<deque>
+

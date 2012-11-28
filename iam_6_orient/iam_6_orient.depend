@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1341595119 source:/home/petru/Desktop/proiecte/iam_6_orient/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<queue>
+	<bitset>
+

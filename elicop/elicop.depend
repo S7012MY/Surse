@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1338014194 source:/home/petru/Desktop/proiecte/elicop/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<algorithm>
+

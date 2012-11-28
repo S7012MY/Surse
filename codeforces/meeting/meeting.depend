@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1352547464 source:/home/petru/Desktop/proiecte/codeforces/meeting/main.cpp
+	<iostream>
+	<iomanip>
+

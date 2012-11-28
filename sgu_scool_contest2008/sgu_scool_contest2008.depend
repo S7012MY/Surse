@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1350216176 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/main.cpp
+	<iostream>
+	<algorithm>
+
+1350216934 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/b.cpp
+	<iostream>
+	<string>
+	<cctype>
+
+1350218659 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/D.cpp
+	<iostream>
+
+1350219176 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/e.cpp
+	<iostream>
+	<string>
+
+1350225791 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/F.cpp
+	<iostream>
+	<cstdio>
+	<queue>
+	<memory.h>
+
+1350223516 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/H.cpp
+	<iostream>
+
+1350225798 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/I.cpp
+	<iostream>
+
+1350228010 source:/home/petru/Desktop/proiecte/sgu_scool_contest2008/j.cpp
+	<iostream>
+	<vector>
+

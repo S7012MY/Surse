@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1325367033 source:/home/petru/Desktop/proiecte/timus_1078/main.cpp
+	<cstdio>
+	<vector>
+	<queue>
+	<algorithm>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1344719071 source:/home/petru/Desktop/proiecte/horizon/gen_cicluri elem/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+	<algorithm>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1323717330 source:/home/petru/Desktop/proiecte/timus_1193/main.cpp
+	<iostream>
+	<algorithm>
+

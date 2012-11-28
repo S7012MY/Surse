@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1353150286 source:/home/petru/Desktop/proiecte/drum4/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+

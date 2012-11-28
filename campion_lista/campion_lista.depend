@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1328427127 source:/home/petru/Desktop/proiecte/campion_lista/main.cpp
+	<cstdio>
+	<set>
+	<vector>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1351267439 source:/home/petru/Desktop/proiecte/iam_9_serviciu/main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+

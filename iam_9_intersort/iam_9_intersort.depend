@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1351269690 source:/home/petru/Desktop/proiecte/iam_9_intersort/main.cpp
+	<iostream>
+	<fstream>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1337183335 source:/home/petru/Desktop/proiecte/fiicompetition/crypt/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<algorithm>
+

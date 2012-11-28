@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1329840049 source:/home/petru/Desktop/proiecte/iam_1_textrim/main.cpp
+	<fstream>
+	<string>
+	<cctype>
+

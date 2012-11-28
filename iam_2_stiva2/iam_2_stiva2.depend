@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1330970440 source:/home/petru/Desktop/proiecte/iam_2_stiva2/main.cpp
+	<iostream>
+	<fstream>
+

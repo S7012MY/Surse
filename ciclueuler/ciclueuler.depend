@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1350045664 source:/home/petru/Desktop/proiecte/ciclueuler/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+

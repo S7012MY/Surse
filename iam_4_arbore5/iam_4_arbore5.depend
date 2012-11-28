@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1335289781 source:/home/petru/Desktop/proiecte/iam_4_arbore5/main.cpp
+	<cstdio>
+
+1335289981 source:/home/petru/Desktop/proiecte/iam_4_arbore5/arb.cpp
+	<fstream>
+	<vector>
+	<iostream>
+

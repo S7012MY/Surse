@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1339329783 source:/home/petru/Desktop/proiecte/timus_1108/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+

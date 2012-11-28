@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1349171915 source:/home/petru/Desktop/proiecte/plantatie/main.cpp
+	<iostream>
+	<fstream>
+

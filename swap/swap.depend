@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1354016129 source:/home/petru/Desktop/proiecte/swap/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<algorithm>
+

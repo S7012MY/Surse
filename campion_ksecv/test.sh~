@@ -1,0 +1,9 @@
+for NUM in $(seq 1 200);
+do
+	g++ gentest.cpp
+	./a.out
+	g++ main.cpp
+	./a.out
+	g++ brute.cpp
+	./a.out
+done

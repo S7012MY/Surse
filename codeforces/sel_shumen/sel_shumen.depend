@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1352202464 source:/home/petru/Desktop/proiecte/codeforces/sel_shumen/main.cpp
+	<iostream>
+	<vector>
+	<bitset>
+

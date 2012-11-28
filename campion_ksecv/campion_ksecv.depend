@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1325247636 source:/home/petru/Desktop/proiecte/campion_ksecv/main.cpp
+	<cstdio>
+	<algorithm>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1326372013 source:/home/petru/Desktop/proiecte/campion_ripstick_brute/main.cpp
+	<cstdio>
+	<vector>
+	<queue>
+	<bitset>
+	<set>
+

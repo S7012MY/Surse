@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1335284191 source:/home/petru/Desktop/proiecte/iam_4_scalecrop/main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<cmath>
+

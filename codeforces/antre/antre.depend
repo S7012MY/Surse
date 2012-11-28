@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1352135335 source:/home/petru/Desktop/proiecte/codeforces/antre/main.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<map>
+

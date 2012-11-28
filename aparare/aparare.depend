@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1346652207 source:/home/petru/Desktop/proiecte/aparare/main.cpp
+	<fstream>
+	<algorithm>
+	<vector>
+	<set>
+	<bitset>
+

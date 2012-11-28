@@ -1,0 +1,110 @@
+#include <vector>
+#include <list>
+#include <map>
+#include <set>
+#include <queue>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#define x first
+#define y second
+using namespace std;
+
+typedef pair<int, int> per;
+typedef vector<int>::iterator it;
+typedef set<int>::iterator is;
+
+vector<string> aux;
+  int ind[55],gnr[55];
+
+  bool cmp(const int &i, const int &j) {
+    int r= strcmp(aux[i].c_str(),aux[j].c_str());
+    if(0==r) return gnr[i]<gnr[j];
+    else return r!=1;
+  }
+
+struct KingSort {
+
+
+  int conv(string s, int p) {
+    int rez=0;
+    int i;
+    for(i=p; i<s.size()-1; ++i) {
+      if(s[i]=='I') {
+        if(s[i+1]=='V') rez+=4,++i;
+        else if(s[i+1]=='X') rez+=9,++i;
+        else if(s[i+1]=='L') rez+=49,++i;
+        else ++rez;
+      }else if(s[i]=='V') {
+        if(s[i+1]=='L') rez+=45,++i;
+        else rez+=5;
+      }else if(s[i]=='X') {
+        if(s[i+1]=='L') rez+=40,++i;
+        else rez+=10;
+      }else rez+=50;
+    }
+    if(i<s.size()) {
+      if(s[i]=='I') ++rez;
+      else if(s[i]=='V') rez+=5;
+      else if(s[i]=='X') rez+=10;
+      else rez+=50;
+    }
+    return rez;
+  }
+
+  vector <string> getSortedList(vector <string> kings) {
+    //cout<<conv("IX",0);
+    vector <string> rez;
+    int n=kings.size();
+    rez.resize(n);
+    for(int i=0; i<n; ++i) {
+      ind[i]=i;
+      aux.push_back("");
+      int j=0;
+      for(;isalpha(kings[i][j]);aux[i]+=kings[i][j],++j);
+      int nr=conv(kings[i],j+1);
+      gnr[i]=nr;
+      //cout<<aux[i]<<' '<<gnr[i]<<'\n';
+    }
+    sort(ind,ind+n,cmp);
+
+    for(int i=0; i<n; ++i) rez[i]=kings[ind[i]];
+    return rez;
+  }
+} z;
+string s,sc;
+vector<string> in,ou;
+int ng;
+int main() {
+    ifstream f("kingsort.in");
+    ofstream g("kingsort.out");
+    getline(f,s);
+    //cout<<s<<'\n';
+    for(int i=0; i<s.size(); ++i) {
+        if('"'==s[i]) {
+            ++ng;
+            if(!(ng&1)) {
+                in.push_back(sc);
+                sc.clear();
+            }
+        }else if(ng&1) sc+=s[i];
+    }
+   // for(int i=0; i<in.size(); ++i) cout<<in[i]<<' ';
+   ou=z.getSortedList(in);
+   g<<'{';
+   for(int i=0; i<ou.size()-1; ++i) g<<'"'<<ou[i]<<'"'<<", ";
+   g<<'"'<<ou[ou.size()-1]<<'"'<<'}';
+}

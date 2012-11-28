@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1329845224 source:/home/petru/Desktop/proiecte/custi/main.cpp
+	<iostream>
+	<fstream>
+	<bitset>
+

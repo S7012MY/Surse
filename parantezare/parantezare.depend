@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1336739571 source:/home/petru/Desktop/proiecte/parantezare/main.cpp
+	<fstream>
+	<stack>
+	<string>
+

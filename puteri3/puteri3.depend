@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1332601874 source:/home/petru/Desktop/proiecte/puteri3/main.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+	<cstring>
+	<string>
+

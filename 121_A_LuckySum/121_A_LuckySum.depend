@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1346833340 source:/home/petru/Desktop/proiecte/121_A_LuckySum/main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

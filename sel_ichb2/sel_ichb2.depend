@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1350287070 source:/home/petru/Desktop/proiecte/sel_ichb2/main.cpp
+	<iostream>
+	<string>
+	<cctype>
+

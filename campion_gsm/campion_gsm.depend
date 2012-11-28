@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1331146008 source:/home/petru/Desktop/proiecte/campion_gsm/main.cpp
+	<vector>
+	<set>
+	<cmath>
+	<cstdio>
+

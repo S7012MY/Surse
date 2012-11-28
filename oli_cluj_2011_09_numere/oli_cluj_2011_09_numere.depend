@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1329083461 source:/home/petru/Desktop/proiecte/oli_cluj_2011_09_numere/main.cpp
+	<cstdio>
+	<bitset>
+

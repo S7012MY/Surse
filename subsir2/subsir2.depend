@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1339251342 source:/home/petru/Desktop/proiecte/subsir2/main.cpp
+	<iostream>
+	<fstream>
+

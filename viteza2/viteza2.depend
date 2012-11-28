@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1334823191 source:/home/petru/Desktop/proiecte/codejam12/viteza2/main.cpp
+	<cstdio>
+
+1342272623 source:/home/petru/Desktop/proiecte/viteza2/main.cpp
+	<cstdio>
+	<algorithm>
+

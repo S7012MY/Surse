@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1347710839 source:/home/petru/Desktop/proiecte/arbore/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+

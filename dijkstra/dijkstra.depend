@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1325007587 source:/home/petru/Desktop/proiecte/dijkstra/main.cpp
+	<cstdio>
+	<queue>
+	<vector>
+	<algorithm>
+

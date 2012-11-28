@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1324997160 source:/home/petru/Desktop/proiecte/invsc/main.cpp
+	<fstream>
+	<algorithm>
+

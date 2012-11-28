@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1353003377 source:/home/petru/Desktop/proiecte/iam_10_classictask/main.cpp
+	<fstream>
+	<algorithm>
+	<cstring>
+	<iostream>
+

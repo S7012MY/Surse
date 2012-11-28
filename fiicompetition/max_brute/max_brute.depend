@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1336906377 source:/home/petru/Desktop/proiecte/fiicompetition/max_brute/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+

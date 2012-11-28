@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1336756007 source:/home/petru/Desktop/proiecte/tamplar/main.cpp
+	<stdio.h>
+	<string.h>
+	<math.h>
+

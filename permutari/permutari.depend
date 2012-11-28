@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1315586497 source:/home/petru/Desktop/proiecte/permutari/main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+

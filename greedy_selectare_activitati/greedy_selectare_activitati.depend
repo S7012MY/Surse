@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1324067700 source:/home/petru/Desktop/proiecte/greedy_selectare_activitati/main.cpp
+	<cstdio>
+	<algorithm>
+

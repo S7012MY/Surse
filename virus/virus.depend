@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1325981549 source:/home/petru/Desktop/proiecte/virus/main.cpp
+	<cstdio>
+	<cstring>
+	<cctype>
+	<vector>
+

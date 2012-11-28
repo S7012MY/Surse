@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1326387279 source:/home/petru/Desktop/proiecte/codeforces/102_D/main.cpp
+	<iostream>
+	<bitset>
+

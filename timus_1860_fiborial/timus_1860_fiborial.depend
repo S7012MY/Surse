@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1325797826 source:/home/petru/Desktop/proiecte/timus_1860_fiborial/main.cpp
+	<iostream>
+	<bitset>
+	<vector>
+

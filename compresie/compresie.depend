@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1339706261 source:/home/petru/Desktop/proiecte/compresie/main.cpp
+	<cstdio>
+	<cstring>
+	<cmath>
+	<cctype>
+

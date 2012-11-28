@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1330533962 source:/home/petru/Desktop/proiecte/stefana_gen_bete2/main.cpp
+	<cstdio>
+	<algorithm>
+	<ctime>
+	<cstdlib>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1327858881 source:/home/petru/Desktop/proiecte/stefana_exp/main.cpp
+	<cstdio>
+	<bitset>
+

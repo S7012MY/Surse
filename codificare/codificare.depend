@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1346753199 source:/home/petru/Desktop/proiecte/codificare/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

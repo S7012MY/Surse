@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1348255438 source:/home/petru/Desktop/proiecte/codejam_2_2009_C_Stock_charts/main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	<bitset>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1338370170 source:/home/petru/Desktop/proiecte/luna/main.cpp
+	<iostream>
+	<fstream>
+

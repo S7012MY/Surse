@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="intervale2.in" open="1" top="0" tabpos="5">
+		<Cursor position="22" topLine="0" />
+	</File>
+	<File name="intervale2.out" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="856" topLine="22" />
+	</File>
+</CodeBlocks_layout_file>

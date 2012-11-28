@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1346312631 source:/home/petru/Desktop/proiecte/harta4/main.cpp
+	<iostream>
+	<fstream>
+

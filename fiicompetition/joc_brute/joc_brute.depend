@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1333917422 source:/home/petru/Desktop/proiecte/fiicompetition/joc_brute/main.cpp
+	<fstream>
+	<iostream>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1351707902 source:/home/petru/Desktop/proiecte/sgu_256/main.cpp
+	<iostream>
+	<string>
+	<map>
+	<queue>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1319560005 source:/home/petru/Desktop/proiecte/spoj_faketsp/main.cpp
+	<iostream>
+	<sstream>
+	<cmath>
+	<string>
+	<cctype>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1330508007 source:/home/petru/Desktop/proiecte/subarbore/main.cpp
+	<fstream>
+	<vector>
+	<algorithm>
+	<iostream>
+	<cstring>
+	<cassert>
+

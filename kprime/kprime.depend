@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1329509802 source:/home/petru/Desktop/proiecte/kprime/main.cpp
+	<iostream>
+	<fstream>
+

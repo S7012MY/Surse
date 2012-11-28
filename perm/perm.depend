@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1354008197 source:/home/petru/Desktop/proiecte/perm/main.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<string.h>
+

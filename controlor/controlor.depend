@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1330247470 source:/home/petru/Desktop/proiecte/controlor/main.cpp
+	<iostream>
+	<fstream>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1319466556 source:/home/petru/Desktop/proiecte/coprime/main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<bitset>
+

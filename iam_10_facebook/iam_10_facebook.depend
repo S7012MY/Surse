@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1353000761 source:/home/petru/Desktop/proiecte/iam_10_facebook/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<algorithm>
+	<map>
+	<vector>
+

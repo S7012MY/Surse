@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1349252994 source:/home/petru/Desktop/proiecte/euclid/main.cpp
+	<iostream>
+	<fstream>
+

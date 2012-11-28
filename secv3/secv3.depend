@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1351094361 source:/home/petru/Desktop/proiecte/secv3/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<set>
+

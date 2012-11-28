@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1340197936 source:/home/petru/Desktop/proiecte/spoj_onp/main.cpp
+	<iostream>
+	<stack>
+	<string>
+

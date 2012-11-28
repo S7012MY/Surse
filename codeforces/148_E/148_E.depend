@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1352050545 source:/home/petru/Desktop/proiecte/codeforces/148_E/main.cpp
+	<iostream>
+	<bitset>
+	<vector>
+

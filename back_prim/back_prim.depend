@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1325704029 source:/home/petru/Desktop/proiecte/back_prim/main.cpp
+	<iostream>
+	<bitset>
+	<vector>
+

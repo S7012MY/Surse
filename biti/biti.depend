@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1349965803 source:/home/petru/Desktop/proiecte/biti/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<algorithm>
+	<stack>
+

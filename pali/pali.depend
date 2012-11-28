@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1345474750 source:/home/petru/Desktop/proiecte/pali/main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	<bitset>
+

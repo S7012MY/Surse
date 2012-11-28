@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1327128286 source:/home/petru/Desktop/proiecte/facebook_Qual_3/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cctype>
+

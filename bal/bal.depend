@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1332366835 source:/home/petru/Desktop/proiecte/bal/main.cpp
+	<fstream>
+	<queue>
+	<vector>
+	<bitset>
+	<cstdlib>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1346243404 source:/home/petru/Desktop/proiecte/popandai2/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<cmath>
+

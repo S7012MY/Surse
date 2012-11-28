@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1348076618 source:/home/petru/Desktop/proiecte/139_B/main.cpp
+	<iostream>
+	<algorithm>
+	<cstdlib>
+	<set>
+

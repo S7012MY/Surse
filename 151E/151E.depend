@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1353518830 source:/home/petru/Desktop/proiecte/151E/main.cpp
+	<iostream>
+	<vector>
+	<string>
+	<set>
+	<map>
+

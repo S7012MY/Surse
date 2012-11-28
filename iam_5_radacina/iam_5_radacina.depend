@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1338312091 source:/home/petru/Desktop/proiecte/iam_5_radacina/main.cpp
+	<iostream>
+	<fstream>
+	<cmath>
+

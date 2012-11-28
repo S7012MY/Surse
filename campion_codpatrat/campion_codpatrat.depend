@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1329136551 source:/home/petru/Desktop/proiecte/campion_codpatrat/main.cpp
+	<cstdio>
+	<cstring>
+

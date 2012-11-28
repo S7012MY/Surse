@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1354048185 source:/home/petru/Desktop/proiecte/spirala3/main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

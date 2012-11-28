@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1346578673 source:/home/petru/Desktop/proiecte/atena/main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+

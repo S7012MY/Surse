@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1338027641 source:/home/petru/Desktop/proiecte/amedie/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+	<algorithm>
+

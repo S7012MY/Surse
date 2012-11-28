@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1346581815 source:/home/petru/Desktop/proiecte/jocul2/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<queue>
+

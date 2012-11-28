@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1339774654 source:/home/petru/Desktop/proiecte/topcoder_306_1050/main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<cstring>
+

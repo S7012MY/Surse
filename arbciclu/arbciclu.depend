@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1310025060 source:/home/petru/Desktop/proiecte/arbciclu/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+	<bitset>
+	<queue>
+

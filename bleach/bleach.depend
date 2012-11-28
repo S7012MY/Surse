@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1341046154 source:/home/petru/Desktop/proiecte/bleach/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+
