@@ -1,13 +1,14 @@
 #include <iostream>
 #include <fstream>
-
 using namespace std;
+
+int n;
 
 int main() {
 	ifstream f("testKate.in");
-	int a,b;
-	f>>a>>b;
-	cout<<a+b<<'\n';
-	for (int i=0;i!=100;++i) {
-		cout<<i;
+	ofstream g("testKate.out");
+	f>>n;
+	for(i=0; i<n; ++i) {
 	}
+	return 0;
+}
