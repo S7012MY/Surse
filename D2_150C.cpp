@@ -17,15 +17,15 @@ int main() {
 	cin>>n;
 	for(int i=1; i<=n; ++i) cin>>a[i],s.insert(a[i]);
 	for(int i=0; i<MAXB; ++i) {
-		nxt[i][n+1]=n;
+		nxt[i][n+1]=n+1;
 		for(int j=n; j; --j) {
-			if(a[j]&(1<<i)) nxt[i][j]=i;
+			if(a[j]&(1<<i)) nxt[i][j]=j;
 			else nxt[i][j]=nxt[i][j+1];
 		}
 	}
 	for(int i=1; i<=n; ++i) {
 		for(int j=0; j<MAXB; ++j) cb[j]=make_pair(nxt[j][i],j);
-		sort(cb,cb+MAXB-1);
+		sort(cb,cb+MAXB);
 		int nr=0;
 		for(int j=0; j<MAXB && cb[j].x!=n; ++j) {
 			nr|=(1<<cb[j].y);
