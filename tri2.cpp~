@@ -2,6 +2,7 @@
 #include <fstream>
 #include <map>
 #include <algorithm>
+#include <cstring>
 #define DN 1005
 #define x first
 #define y second
@@ -9,7 +10,7 @@ using namespace std;
 
 typedef pair<int,int> per;//le tin pe dos
 
-int n,m,cnt,p1;
+int n,m,cnt,p1,aib[DN];
 per p[DN];
 map<int,int> norm;
 
