@@ -5,9 +5,10 @@
 #define DN 1005
 #define x first
 #define y second
+#define LL long long
 using namespace std;
 
-typedef pair<int,int> per;
+typedef pair<LL,LL> per;
 
 int n,m,cnt,p1,aib[DN],ind[DN],c[DN][DN],ii[DN];
 double tg[DN];
@@ -36,8 +37,8 @@ int query(int p) {
 }
 
 bool id(per a,per b,per c) {
-	int sum=b.x*c.y+c.x*a.y+a.x*b.y;
-	int dif=-a.x*c.y-b.x*a.y-c.x*b.y;
+	LL sum=b.x*c.y+c.x*a.y+a.x*b.y;
+	LL dif=-a.x*c.y-b.x*a.y-c.x*b.y;
 	return (sum+dif)<0LL;
 }
 
