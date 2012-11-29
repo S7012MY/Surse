@@ -12,5 +12,4 @@ int main() {
 	for(int i=4; i<=n; ++i) for(int lst=1; lst<=n; ++lst) {
 		for(int j=1; j<=lst; ++j) for(int k=1; k<=lst; ++k) nr[i][lst]=nr[i-2][j]*nr[i-3];
 	}
-	for(int i=1; i<=n; ++i)
 }
