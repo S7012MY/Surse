@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="color4.in" />
+		<Unit filename="color4.out" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
