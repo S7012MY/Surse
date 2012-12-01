@@ -14,7 +14,7 @@ void so(int l,int s,int d) {
 	for(int i=l; i<=a; ++i) ind[i]=v[i];
 	for(int i=d; i>a; --i) ind[a+(d-i+1)]=v[i];
 	if(s<a) so(l+1,s,a);
-	if(d>b) so(l+1,a+1,d);
+	if(a<d) so(l+1,a+1,d);
 }
 
 int main() {
