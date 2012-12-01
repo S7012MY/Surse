@@ -13,8 +13,8 @@ void so(int l,int s,int d) {
 		else v[--b]=ind[i];
 	for(int i=l; i<=a; ++i) ind[i]=v[i];
 	for(int i=a+1,j=d; i<=d; ++i,--j) ind[i]=v[j];
-	if(s<a) so(l+1,s,a);
-	if(a<d) so(l+1,a+1,d);
+	if(a>1) so(l+1,s,a);
+	if(b<d) so(l+1,a+1,d);
 }
 
 int main() {
