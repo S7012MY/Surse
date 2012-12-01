@@ -12,7 +12,7 @@ void so(int l,int s,int d) {
 		if(mt[l][ind[i]]=='0') v[++a]=ind[i];
 		else v[--b]=ind[i];
 	for(int i=l; i<=a; ++i) ind[i]=v[i];
-	for(int i=d; i>a; --i) ind[a+(d-i+1)]=v[i];
+	for(int i=a+1; i<=d; ++i) ind[i]=v[a+(d-i+1)];
 	if(s<a) so(l+1,s,a);
 	if(a<d) so(l+1,a+1,d);
 }
