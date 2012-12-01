@@ -6,13 +6,13 @@ int n,m,ind[2005],v[2005];
 string mt[2005];
 
 void so(int l,int s,int d) {
+	if(l==n) return;
 	int a=s-1,b=d+1;
 	for(int i=s; i<=d; ++i)
 		if(mt[l][ind[i]]=='0') v[++a]=ind[i];
 		else v[--b]=ind[i];
 	for(int i=l; i<=d; ++i) ind[i]=v[i];
-	for(int i=d; i>a; --i) ind[i]=v[i];
-	if(l==n-1) return;
+	//for(int i=d; i>a; --i) ind[i]=v[i];
 	if(s<a) so(l+1,s,a);
 	if(d>b) so(l+1,a+1,d);
 }
