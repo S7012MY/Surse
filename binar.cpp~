@@ -7,10 +7,9 @@ string mt[2005];
 
 void s(int l,int s,int d) {
 	int a=s-1,b=d+1;
-	for(int i=s; i<d; ++i)
+	for(int i=s; i<d; ++i) {
 		if(mt[l][ind[i]]==0) v[++a]=ind[i];
 		else v[--b]=ind[i];
-	
 }
 
 int main() {
