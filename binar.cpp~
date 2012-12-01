@@ -12,6 +12,7 @@ void so(int l,int s,int d) {
 		if(mt[l][ind[i]]=='0') v[++a]=ind[i];
 		else v[--b]=ind[i];
 	for(int i=l; i<=d; ++i) ind[i]=v[i];
+	return;
 	//for(int i=d; i>a; --i) ind[i]=v[i];
 	if(s<a) so(l+1,s,a);
 	if(d>b) so(l+1,a+1,d);
@@ -22,10 +23,7 @@ int main() {
 	ofstream g("binar.out");
 	f>>n>>m;
 	f.get();
-	for(int i=0; i<n; ++i) {
-		getline(f,mt[i]);
-		cout<<mt[i]<<'\n';
-	}
+	for(int i=0; i<n; ++i) getline(f,mt[i]);
 	for(int i=0; i<m; ++i) ind[i]=i;
 	so(0,0,m-1);
 	for(int i=0; i<m; ++i) g<<ind[i]+1<<' ';
