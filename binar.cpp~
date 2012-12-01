@@ -5,16 +5,21 @@ using namespace std;
 int n,m,ind[2005],v[2005];
 string mt[2005];
 
-void so(int l,int s,int d) {
-	if(l==n) return;
-	int a=s-1,b=d+1;
-	for(int i=s; i<=d; ++i)
-		if(mt[l][ind[i]]=='0') v[++a]=ind[i];
-		else v[--b]=ind[i];
-	for(int i=l; i<=a; ++i) ind[i]=v[i];
-	for(int i=a+1,j=d; i<=d; ++i,--j) ind[i]=v[j];
-	if(a>1) so(l+1,s,a);
-	if(b<d) so(l+1,a+1,d);
+void so(int pos,int left, int right)
+{
+	int A = left, B = right, i;
+	for(i = left; i <= right; i++)
+		if(mt[pos][ind[i]] == '0')
+			v[A ++] = ind[i];
+		else
+			v[B --] = ind[i];
+		for(i = left; i < A; i++) ind[i] = v[i];
+		for(i = right; i >= A; i--) ind[A + (right - i)] = v[i];
+		if(pos < n)
+		{
+			if(left < A - 1) so(pos+1,left, A - 1);
+			if(A < right) so(pos+1,A, right);
+		}
 }
 
 int main() {
