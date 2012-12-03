@@ -6,8 +6,8 @@ using namespace std;
 
 typedef vector<int>::iterator it;
 
-int n,m,l[55],r[55];
-char mt;
+int n,m,l[55],r[55],ve[55][55],oz[55][55],cv,co;
+char mt[55][55];
 vector<int> gr[DN];
 bitset<DN> viz;
 
@@ -25,16 +25,22 @@ int main() {
 	ifstream f("s013.in");
 	ofstream g("s013.out");
 	f>>n>>m;
-	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {
-		f>>mt;
-		if(mt=='*') gr[i].push_back(j);
+	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) f>>mt[i][j];
+	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {if(mt[i][j]=='*') {
+		if(mt[i][j-1]=='*') oz[i][j]=co;
+		else oz[i][j]=++co;
+		if(mt[i-1][j]=='*') ve[i][j]=cv;
+		else ve[i][j]=++cv;
 	}
+		gr[oz[i][j]].push_back(ve[i][j]);
+	}
+	
 	for(int ok=1;ok;) {
 		ok=0; viz&=0;
-		for(int i=1; i<=n; ++i) ok|=cupl(i);
+		for(int i=1; i<=co; ++i) if(!l[i]) ok|=cupl(i);
 	}
 	int r=0;
-	for(int i=1; i<=n; ++i) r+=(l[i]>0);
+	for(int i=1; i<=co; ++i) r+=(l[i]>0);
 	g<<r;
 	return 0;
 }
