@@ -6,7 +6,7 @@ using namespace std;
 
 typedef vector<int>::iterator it;
 
-int n,m,l[55],r[55],ve[55][55],oz[55][55],cv,co;
+int n,m,l[DN],r[DN],ve[55][55],oz[55][55],cv,co;
 char mt[55][55];
 vector<int> gr[DN];
 bitset<DN> viz;
