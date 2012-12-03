@@ -8,18 +8,18 @@ using namespace std;
 typedef vector<int>::iterator it;
 
 vector<int> gr[DN];
-int n,m,c,fs[DN],lst[DN],ai[4*DN],freq[80],sz,op,x,cc,rq,cnt;
-int ai[4*DN],gls,gld,istot;
+int n,m,c,fs[DN],lst[DN],lin[2*DN],freq[80],sz,op,x,cc,rq,cnt,viz[DN],u=1;
 
-void dfs(int s,int f) {
+inline void dfs(int &s) {
+    viz[s]=1;
     fs[s]=++sz;
-    for(it i=gr[s].begin(); i!=gr[s].end(); ++i) if(*i!=f) dfs(*i,s);
+    for(it i=gr[s].begin(); i!=gr[s].end(); ++i) if(!viz[*i]) dfs(*i);
     lst[s]=sz;
 }
 
 //<parsing>
 FILE* fin=fopen("color4.in","r");
-const unsigned maxb=8000192;
+const unsigned maxb=30000192;
 char buf[maxb];
 unsigned ptr=maxb;
 
@@ -47,8 +47,8 @@ int main()
         gr[a].push_back(b);
         gr[b].push_back(a);
     }
-    dfs(1,0);
-    ai[1]=1;
+    dfs(u);
+    for(int i=1; i<=sz; ++i) lin[i]=1;
 
     for(int i=0; i<m; ++i) {
         op=getInt();
