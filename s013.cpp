@@ -26,13 +26,12 @@ int main() {
 	ofstream g("s013.out");
 	f>>n>>m;
 	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) f>>mt[i][j];
-	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {if(mt[i][j]=='*') {
+	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) if(mt[i][j]=='*')
 		if(mt[i][j-1]=='*') oz[i][j]=co;
 		else oz[i][j]=++co;
-		if(mt[i-1][j]=='*') ve[i][j]=cv;
-		else ve[i][j]=++cv;
-	}
-		gr[oz[i][j]].push_back(ve[i][j]);
+	for(int j=1; j<=m; ++j) for(int i=1; i<=n; ++i) {
+		if(mt[i-1][j]!='*') ++cv;
+		gr[oz[i][j]].push_back(cv);
 	}
 	
 	for(int ok=1;ok;) {
