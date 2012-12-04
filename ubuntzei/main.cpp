@@ -13,7 +13,7 @@ using namespace std;
 typedef pair<int,int> per;
 typedef vector<per>::iterator it;
 
-int n,m,k,snod[DK],unde[DK],dmin[DK][DK],dist[DN];
+int n,m,k,snod[DK],unde[DK],dmin[DK][DK],dist[DN],bst[DK][1<<DK];
 vector<per> gr[DN];
 queue<int> c;
 bitset<DN> inq;
@@ -24,16 +24,14 @@ void dm(int s) {
     for(c.push(snod[s]);c.size();c.pop()) {
         int fr=c.front();
         inq[fr]=0;
-        for(it i=gr[fr].begin(); i!=gr[fr].end(); ++i) if(dist[i->x]>dist[s]+i->y) {
-            dist[i->x]=dist[s]+i->y;
+        for(it i=gr[fr].begin(); i!=gr[fr].end(); ++i) if(dist[i->x]>dist[fr]+i->y) {
+            dist[i->x]=dist[fr]+i->y;
             if(!inq[i->x]) {
                 c.push(i->x);
                 inq[i->x]=1;
             }
         }
     }
-    for(int i=1; i<=n; ++i) cout<<dist[i]<<' ';
-    cout<<'\n';
     for(int i=1; i<=n; ++i) if(unde[i]) dmin[s][unde[i]]=dist[i];
 }
 
@@ -54,10 +52,11 @@ int main()
         gr[a].push_back(mp(b,c));
         gr[b].push_back(mp(a,c));
     }
-    for(int i=1; i<=k; ++i) dm(i);
-    /*for(int i=1; i<=k; ++i) {
-        for(int j=1; j<=k; ++j) cout<<dmin[i][j]<<' ';
-        cout<<'\n';
-    }*/
+    for(int i=1; i<=k; ++i) {
+        dm(i);
+        for(int s=0; s<=(1<<k); ++s) bst[i][s]=(1<<30);
+    }
+    for(int i=1; i)
+    for(int s=2)
     return 0;
 }
