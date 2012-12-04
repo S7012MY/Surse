@@ -11,9 +11,9 @@ int gcd(int a,int b) {
 }
 
 int main() {
-	freopen("asd.in","r",stdin);
+	//freopen("asd.in","r",stdin);
 	cin>>n;
 	for(int i=1; i<=n; ++i) r+=(1<<gcd(i,n));
-	cout<<r;
+	cout<<r/n;
 	return 0;
 }
