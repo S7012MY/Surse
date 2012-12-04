@@ -35,13 +35,15 @@ int find(int x) {
 }
 
 void unite(int a,int b) {
+    cout<<"Unite: "<<a<<' '<<b<<'\n';
     pre[find(a)]=find(b);
 }
 
 void baga(int i,int val) {
+    cout<<"baga: "<<i<<' '<<val<<'\n';
     for(int d=0; d<4; ++d) {
         int ii=m[i].x+dx[d],jj=m[i].y+dy[d];
-        if(check(ii,jj) && unde[ii][jj]>=val) unite(i,unde[ii][jj]);
+        if(check(ii,jj) && m[unde[ii][jj]].vl>=val) unite(i,unde[ii][jj]);
     }
 }
 
@@ -51,12 +53,11 @@ int main()
     ofstream g("matrice2.out");
     f>>n>>q; l=n*n;
     for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) {
-        f>>m[(n-1)*i+j].vl;
-        cout<<m[(n-1)*i+j].vl<<'\n';
-        m[(n-1)*i+j].x=i;m[(n-1)*i+j].y=j;
+        f>>m[(i-1)*n+j].vl;
+        m[(i-1)*n+j].x=i;m[(i-1)*n+j].y=j;
     }
     sort(m+1,m+l+1,cmat);
-    for(int i=1; i<=l; ++i) cout<<m[i].x<<' '<<m[i].y<<' '<<m[i].vl<<'\n';
+
     for(int i=1; i<=l; ++i) unde[m[i].x][m[i].y]=i;
 
     for(int i=1; i<=q; ++i) {
@@ -71,7 +72,8 @@ int main()
         for(int i=1; i<=q; ++i) {
             int vc=s+qu[i].rez;
             for(;m[j].vl>=vc && j<=q;baga(j,vc),++j);
-            int u1=(n-1)*qu[i].sx+qu[i].sy,u2=(n-1)*qu[i].fx+qu[i].fy;
+            cout<<s<<": "<<qu[i].sx<<' '<<qu[i].sy<<' '<<qu[i].rez<<' '<<j<<'\n';
+            int u1=(qu[i].sx-1)*n+qu[i].sy,u2=(qu[i].fx-1)*n+qu[i].fy;
             if(find(u1)==find(u2)) qu[i].rez+=s;
         }
     }
