@@ -35,12 +35,10 @@ int find(int x) {
 }
 
 void unite(int a,int b) {
-    cout<<"Unite: "<<a<<' '<<b<<'\n';
     pre[find(a)]=find(b);
 }
 
 void baga(int i,int val) {
-    cout<<"baga: "<<i<<' '<<val<<'\n';
     for(int d=0; d<4; ++d) {
         int ii=m[i].x+dx[d],jj=m[i].y+dy[d];
         if(check(ii,jj) && m[unde[ii][jj]].vl>=val) unite(i,unde[ii][jj]);
@@ -72,8 +70,7 @@ int main()
         for(int i=1; i<=q; ++i) {
             int vc=s+qu[i].rez;
             for(;m[j].vl>=vc && j<=q;baga(j,vc),++j);
-            cout<<s<<": "<<qu[i].sx<<' '<<qu[i].sy<<' '<<qu[i].rez<<' '<<j<<'\n';
-            int u1=(qu[i].sx-1)*n+qu[i].sy,u2=(qu[i].fx-1)*n+qu[i].fy;
+            int u1=unde[qu[i].sx][qu[i].sy],u2=unde[qu[i].fx][qu[i].fy];
             if(find(u1)==find(u2)) qu[i].rez+=s;
         }
     }
