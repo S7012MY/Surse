@@ -24,6 +24,27 @@ bool cquery(query a, query b) {
     return a.rez>b.rez;
 }
 
+bool check(int ii,int jj) {
+    return (ii && jj && ii<=n && jj<=n);
+}
+
+int find(int x) {
+    if(pre[x]==x) return x;
+    pre[x]=find(pre[x]);
+    return pre[x];
+}
+
+void unite(int a,int b) {
+    pre[find(a)]=find(b);
+}
+
+void baga(int i,int val) {
+    for(int d=0; d<4; ++d) {
+        int ii=m[i].x+dx[d],jj=m[i].y+dy[d];
+        if(check(ii,jj) && unde[ii][jj]>=val) unite(i,unde[ii][jj]);
+    }
+}
+
 int main()
 {
     ifstream f("matrice2.in");
@@ -31,9 +52,11 @@ int main()
     f>>n>>q; l=n*n;
     for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) {
         f>>m[(n-1)*i+j].vl;
+        cout<<m[(n-1)*i+j].vl<<'\n';
         m[(n-1)*i+j].x=i;m[(n-1)*i+j].y=j;
     }
     sort(m+1,m+l+1,cmat);
+    for(int i=1; i<=l; ++i) cout<<m[i].x<<' '<<m[i].y<<' '<<m[i].vl<<'\n';
     for(int i=1; i<=l; ++i) unde[m[i].x][m[i].y]=i;
 
     for(int i=1; i<=q; ++i) {
@@ -44,7 +67,15 @@ int main()
     for(int s=(1<<20);s;s>>=1) {
         for(int i=1; i<=l; ++i) pre[i]=i;
         sort(qu+1,qu+q+1,cquery);
-        for(int i=1; i<=q; ++i);
+        int j=1;
+        for(int i=1; i<=q; ++i) {
+            int vc=s+qu[i].rez;
+            for(;m[j].vl>=vc && j<=q;baga(j,vc),++j);
+            int u1=(n-1)*qu[i].sx+qu[i].sy,u2=(n-1)*qu[i].fx+qu[i].fy;
+            if(find(u1)==find(u2)) qu[i].rez+=s;
+        }
     }
+    for(int i=1; i<=q; ++i) rsp[qu[i].ind]=qu[i].rez;
+    for(int i=1; i<=q; ++i) g<<rsp[i]<<'\n';
     return 0;
 }
