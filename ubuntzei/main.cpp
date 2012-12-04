@@ -4,7 +4,7 @@
 #include <queue>
 #include <bitset>
 #define DN 2005
-#define DK 17
+#define DK 20
 #define MLT 2000000000
 #define x first
 #define y second
@@ -46,7 +46,7 @@ int main()
         f>>snod[i];
         unde[snod[i]]=i;
     }
-    snod[1]=unde[1]=1;unde[1]=1; snod[++k]=n;unde[n]=k;
+    snod[1]=unde[1]=1; snod[++k]=n; unde[n]=k;
     for(int i=1; i<=m; ++i) {
         int a,b,c;
         f>>a>>b>>c;
@@ -61,11 +61,14 @@ int main()
     }
 
     bst[0][1]=0;
+    --k;
     for(int s=1; s<(1<<k); ++s) for(int i=0; i<k; ++i) if(s&(1<<i))
         for(int j=0; j<k; ++j) if(!(s&(1<<j))) {
             bst[j][s|(1<<j)]=min(bst[j][s|(1<<j)],bst[i][s]+dmin[i+1][j+1]);
         }
-
-    g<<bst[k-1][(1<<k)-1];
+    int rez=MLT;
+    for(int i=0; i<k; ++i) rez=min(rez,bst[i][(1<<k)-1]+dmin[i+1][k+1]);
+    cout<<rez;
+    g<<rez;
     return 0;
 }

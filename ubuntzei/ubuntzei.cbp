@@ -32,9 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="a.in" />
-		<Unit filename="a.out" />
 		<Unit filename="main.cpp" />
+		<Unit filename="ubuntzei.in" />
+		<Unit filename="ubuntzei.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />
