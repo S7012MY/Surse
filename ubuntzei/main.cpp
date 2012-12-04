@@ -52,11 +52,22 @@ int main()
         gr[a].push_back(mp(b,c));
         gr[b].push_back(mp(a,c));
     }
+    for(int i=0; i<=k; ++i) for(int j=0; j<=k; ++j) dmin[i][j]=(1<<30);
+
     for(int i=1; i<=k; ++i) {
         dm(i);
-        for(int s=0; s<=(1<<k); ++s) bst[i][s]=(1<<30);
+        for(int s=0; s<=(1<<k); ++s) bst[i-1][s]=(1<<30);
     }
-    for(int i=1; i)
-    for(int s=2)
+
+    bst[1][0]=0;
+    for(int s=1; s<(1<<k); ++s) for(int i=0; i<k; ++i) if(s&(1<<i))
+        for(int j=0; j<k; ++j) if(!(s&(1<<j)))
+            bst[j][s|(1<<j)]=min(bst[j][s|(1<<j)],bst[i][s]+dmin[i+1][j+1]);
+
+    for(int s=0; s<(1<<k); ++s) {
+        for(int i=0; i<k; ++i) cout<<s<<' '<<i<<' '<<bst[i][s]<<'\n';
+    }
+    g<<bst[k-1][(1<<k)-1];
+    cout<<bst[k-1][(1<<k)-1];
     return 0;
 }
