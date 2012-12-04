@@ -511,16 +511,18 @@ int gcd(int a,int b) {
 }
 
 static inline Huge put(int n) {
-	Huge r;
+	Huge r,b;
+	b=2;r=1;
 	if(n==0) {
 	    r=1;
 	    return r;
 	}
-	r=2;
-	if(n==1) return r;
-
-	if(n&1) return r*put(n-1);
-	else return put(n/2)*put(n/2);
+	if(n==1) return b;
+    for(;n;) {
+        if(n&1)r*=b;
+        b*=b;
+        n>>=1;
+    }
 	return r;
 }
 
