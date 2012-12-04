@@ -47,8 +47,8 @@ void baga(int i,int val) {
 
 int main()
 {
-    ifstream f("matrice.in");
-    ofstream g("matrice.out");
+    ifstream f("matrice2.in");
+    ofstream g("matrice2.out");
     f>>n>>q; l=n*n;
     for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) {
         f>>m[(i-1)*n+j].vl;
