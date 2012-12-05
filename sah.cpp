@@ -1,22 +1,28 @@
 #include <fstream>
 using namespace std;
 
-int n;
+int n,m;
 
 int main() {
 	ifstream f("sah.in");
 	ofstream g("sah.out");
 	f>>n;
-	for(int i=1; i<=n-2; ++i) {
-		int lc=i;
-		if(lc%2==0) --lc;
-		for(int j=1; j<=n; ++j)
-			if(j>(i+1)/2) g<<lc+1<<' ';
-			else g<<lc<<' ';
+	m=n-1;
+	for(int i=1; i<m; i+=2) {
+		int lc=i,p=(i+1)/2;
+		for(int j=1; j<=p; ++j) g<<lc<<' ';
+		++lc;
+		for(int j=p+1; j<=n; ++j) g<<lc<<' ';
+		g<<'\n';
+		--lc;
+		for(int j=1; j<=p; ++j) g<<lc<<' ';
+		++lc;
+		for(int j=p+1; j<=n; ++j) g<<lc<<' ';
 		g<<'\n';
 	}
+	n;
 	for(int i=1; i<3; ++i) {
-		for(int j=1; j<=n; ++j) g<<n-1<<' ';
+		for(int j=1; j<=n; ++j) g<<m<<' ';
 		g<<'\n';
 	}
 	return 0;
