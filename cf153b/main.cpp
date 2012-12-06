@@ -55,10 +55,6 @@ void fa(int k) {
 int main()
 {
     cin>>n>>k;
-    if(n==1) {
-        cout<<"NO";
-        return 0;
-    }
     precalc();
     for(int i=1; i<=n; ++i) {
         cin>>q[i];
