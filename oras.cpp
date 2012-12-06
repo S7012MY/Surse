@@ -2,19 +2,7 @@
 using namespace std;
 
 int n;
-char m[205][205];
-const char impar[][]= {
-	"010",
-	"001",
-	"100"
-},par[][]={
-	"011100",
-	"001110",
-	"000101",
-	"000011",
-	"110000"
-};
-
+string m[205];
 
 int main() {
 	ifstream f("oras.in");
@@ -24,6 +12,30 @@ int main() {
 		g<<-1;
 		return 0;
 	}
-	for(int i=0; i<n; ++i) for(int j=0; j<n; ++j) m[i][j]='0';
+	int i=3;
 	if(n&1) {
-		
+		m[0]="010";
+		m[1]="001";
+		m[2]="100";
+	}else {
+		m[0]="011100";
+		m[1]="001110";
+		m[2]="000101";
+		m[3]="000011";
+		m[4]="101001";
+		m[5]="000011";
+		i=6;
+	}
+	for(int i=0; i<n; ++i) m[i].resize(n);
+	for(;i<n; i+=2) {
+		for(int j=0; j<i; ++j) m[j][i]='1',m[i+1][j]='1';
+		m[i][i+1]='1';
+	}
+	for(int i=0; i<n; ++i) {
+		for(int j=0; j<n; ++j)
+			if(m[i][j]!='0' && m[i][j]!='1') g<<'0';
+			else g<<m[i][j];
+		g<<'\n';
+	}
+	return 0;
+}
