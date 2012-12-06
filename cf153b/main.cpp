@@ -10,9 +10,9 @@ void fa(int k) {
         for(int i=1; i<=n; ++i) np[i]=q[p[i]];
         for(int i=1; i<=n; ++i) {
             p[i]=np[i];
-            cout<<p[i]<<' ';
+            //cout<<p[i]<<' ';
         }
-        cout<<'\n';
+        //cout<<'\n';
         --k;
         int ok=1;
         for(int i=1; i<=n; ++i) if(p[i]!=f[i]) ok=0;
@@ -26,7 +26,10 @@ void fa(int k) {
 int main()
 {
     cin>>n>>k;
-
+    if(n==1) {
+        cout<<"NO";
+        return 0;
+    }
     for(int i=1; i<=n; ++i) {
         cin>>q[i];
         p[i]=i;
@@ -41,6 +44,12 @@ int main()
         cout<<"NO";
         return 0;
     }
+    for(int i=1; i<=n; ++i) np[q[i]]=i;
+    for(int i=1; i<=n; ++i) {
+        q[i]=np[i];
+        p[i]=i;
+    }
+
     fa(k);
     cout<<"NO";
     return 0;
