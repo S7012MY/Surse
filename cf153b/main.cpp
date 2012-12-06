@@ -30,6 +30,7 @@ void precalc() {
 }
 
 void fa(int k) {
+    int exec=0;
     for(;k;) {
         for(int i=1; i<=n; ++i) np[i]=q[p[i]];
         for(int i=1; i<=n; ++i) {
@@ -37,10 +38,11 @@ void fa(int k) {
             //cout<<p[i]<<' ';
         }
         //cout<<'\n';
-        --k;
+        --k; ++exec;
         int ok=1;
         for(int i=1; i<=n; ++i) if(p[i]!=f[i]) ok=0;
-        if(ok && (k%2)==0 && okn[cnt][k]) {
+        int u=k-exec;
+        if(ok && (k%2)==0 && (u<=0 || !okn[cnt][u])) {
             cout<<"YES";
             exit(0);
         }
