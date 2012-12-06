@@ -43,9 +43,11 @@ void fa(int k) {
         for(int i=1; i<=n; ++i) if(p[i]!=f[i]) ok=0;
         int u=k-exec;
         if(ok) {
-            if(k%2==0 && (u<=0 || !okn[cnt][u])) cout<<"YES";
-            else cout<<"NO";
-            exit(0);
+            if(k%2==0 && (u<=0 || !okn[cnt][u])) {
+                cout<<"YES";
+                exit(0);
+            }
+            else return;
         }
     }
 }
