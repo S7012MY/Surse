@@ -25,7 +25,7 @@ int main() {
 	ofstream g("sir23.out");
 	f>>n;
 	for(int i=1; i<=n; ++i) nr[1][i]=nr[2][i]=1;
-	for(int i=1; i<=n; ++i) for(int j=1; j<i; ++j) nr[3][i]+=(i-j+1)*nr[1][j];
+	for(int i=3; i<=n; ++i) for(int j=1; j<=n; ++j) for(int k=1; k<j; ++k) nr[i][j]+=nr[i-2][k]+nr[i-3][k];
 	for(int i=1; i<=n; ++i) r+=nr[n][i];
 	g<<r;
 	return 0;
