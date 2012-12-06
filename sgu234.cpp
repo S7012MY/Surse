@@ -34,18 +34,13 @@ int main() {
 	freopen("asd.in","r",stdin);
 	scanf("%d %d",&n,&m);
 	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) scanf("%d",&mt[i][j]);
-	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) if(mt[i][j])for(int d=0; d<4; ++d) {
-		int ii=i+dx[d],jj=j+dy[d];
-		if(!check(ii,jj)) continue;
-		if((i+j)&1) gr[fa(i,j)].push_back(fa(ii,jj));
-		else gr[fa(ii,jj)].push_back(fa(i,j));
-	}
+	for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) if(mt[i][j]==0) gr[i].push_back(j);
 	for(int ok=1;ok;) {
 		ok=0; viz&=0;
-		for(int i=1; i<=m*n; ++i) if(0==l[i]) ok|=cupl(i);
+		for(int i=1; i<=n; ++i) if(0==l[i]) ok|=cupl(i);
 	}
 	int cnt=0;
-	for(int i=1; i<=m*n; ++i) cnt+=(l[i]>0);
-	cout<<cnt<<'\n';
+	for(int i=1; i<=n; ++i) cnt+=(l[i]>0);
+	cout<<n+m-cnt<<'\n';
 	return 0;
 }

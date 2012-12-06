@@ -9,16 +9,16 @@ int n,nr[DN][DN],r;
  *  nr[i][i]=1
  *  nr[i][lst]=(lst-j)*nr[i-3][j]
 */
-
+/*
 1 1 2
 1 2 2
 1 1 3
 1 2 3
 2 1 3
-2 2 3
+2 2 3 + inca unas
 1 3 3
 2 3 3
-
+*/
 
 int main() {
 	ifstream f("sir23.in");
