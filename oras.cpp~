@@ -23,13 +23,19 @@ int main() {
 		m[2]="000101";
 		m[3]="000011";
 		m[4]="101001";
-		m[5]="000011";
+		m[5]="110000";
 		i=6;
 	}
-	for(int i=0; i<n; ++i) m[i].resize(n);
+	for(int i=0; i<n; ++i) m[i].resize(n+100);
 	for(;i<n; i+=2) {
 		for(int j=0; j<i; ++j) m[j][i]='1',m[i+1][j]='1';
 		m[i][i+1]='1';
+	}
+	for(int i=0; i<n; ++i) {
+		for(int j=0; j<n; ++j)
+			if(m[i][j]!='1') g<<'0';
+			else g<<'1';
+		g<<'\n';
 	}
 	return 0;
 }
