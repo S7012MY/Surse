@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 #include <set>
 #include <tr1/unordered_map>
 #include <algorithm>
@@ -24,7 +25,8 @@ bool cmp(pair<per,per> a,pair<per,per> b) {
 int fa(int a,int b) {return cnt*a+b;}
 
 inline int memo(int &a,int &b) {
-    //cout<<a<<' '<<b<<'\n';
+    if(a>=b) return 0;
+   // cout<<a<<' '<<b<<'\n';cout.flush();
     if(bst.find(fa(a,b))!=bst.end()) return bst[fa(a,b)];
     int r=0;
     for(int i=fst[a]; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
