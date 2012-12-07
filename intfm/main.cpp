@@ -12,14 +12,17 @@ map<int,int> mp;
 set<int> s;
 typedef pair<int,int> per;
 pair<per,per> v[DN];
-int n,bst[8005][8005];
+map<pair<int,int>,int> bst;
+int n;
 
-int memo(int a,int b,int lind) {
+int memo(int &a,int &b,int lind) {
     //cout<<a<<' '<<b<<'\n';
-    if(bst[a][b]) return bst[a][b];
+    if(bst.find(make_pair(a,b))!=bst.end()) return bst[make_pair(a,b)];
+    int r=0;
     for(int i=lind+1; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
-        bst[a][b]=max(bst[a][b],memo(v[i].x.y,v[i].y.x,i)+memo(v[i].y.y,b,i)+1);
-    return bst[a][b];
+        r=max(r,memo(v[i].x.y,v[i].y.x,i)+memo(v[i].y.y,b,i)+1);
+    bst[make_pair(a,b)]=r;
+    return r;
 }
 
 int main() {
