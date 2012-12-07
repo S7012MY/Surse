@@ -14,10 +14,10 @@ typedef pair<int,int> per;
 pair<per,per> v[DN];
 int n,bst[8005][8005];
 
-int memo(int a,int b) {
-    cout<<a<<' '<<b<<'\n';
+int memo(int a,int b,int lind) {
+    //cout<<a<<' '<<b<<'\n';
     if(bst[a][b]) return bst[a][b];
-    for(int i=1; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b) bst[a][b]=max(bst[a][b],memo(v[i].x.y,v[i].y.x)+memo(v[i].y.y,b)+1);
+    for(int i=lind+1; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b) bst[a][b]=max(bst[a][b],memo(v[i].x.y,v[i].y.x,lind)+memo(v[i].y.y,b,i)+1);
     return bst[a][b];
 }
 
@@ -43,6 +43,6 @@ int main() {
         v[i].y.y=mp[v[i].y.y];
     }
     sort(v+1,v+n+1);
-    g<<memo(v[1].x.x,cnt);
+    g<<memo(v[1].x.x,cnt,0);
     return 0;
 }
