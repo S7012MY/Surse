@@ -1,18 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <set>
-#include <map>
+#include <tr1/unordered_map>
 #include <algorithm>
 #define DN 2005
 #define x first
 #define y second
 using namespace std;
+using namespace tr1;
 
-map<int,int> mp;
+unordered_map<int,int> mp;
 set<int> s;
 typedef pair<int,int> per;
 pair<per,per> v[DN];
-map<pair<int,int>,int> bst;
+unordered_map<pair<int,int>,int> bst;
 int n,fst[DN],lst[DN];
 
 bool cmp(pair<per,per> a,pair<per,per> b) {
@@ -20,7 +21,7 @@ bool cmp(pair<per,per> a,pair<per,per> b) {
     return a.x.x<b.x.x;
 }
 
-int memo(int &a,int &b) {
+inline int memo(int &a,int &b) {
     //cout<<a<<' '<<b<<'\n';
     if(bst.find(make_pair(a,b))!=bst.end()) return bst[make_pair(a,b)];
     int r=0;
@@ -56,6 +57,6 @@ int main() {
         for(;v[a].x.x<i && a<=n;++a);
     }
     sort(v+1,v+n+1);
-    //g<<memo(v[1].x.x,cnt);
+    g<<memo(v[1].x.x,cnt);
     return 0;
 }
