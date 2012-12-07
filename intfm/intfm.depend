@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1323600053 source:/home/petru/Desktop/proiecte/intfm/main.cpp
+1354909638 source:/home/petru/Desktop/proiecte/intfm/main.cpp
 	<iostream>
 	<fstream>
+	<set>
+	<map>
 	<algorithm>
-	<vector>
 
