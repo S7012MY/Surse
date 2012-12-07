@@ -1,9 +1,9 @@
-#include <iostream>
 #include <fstream>
 #include <set>
 #include <tr1/unordered_map>
 #include <algorithm>
 #define DN 2005
+#define V 10000
 #define x first
 #define y second
 using namespace std;
@@ -13,21 +13,23 @@ unordered_map<int,int> mp;
 set<int> s;
 typedef pair<int,int> per;
 pair<per,per> v[DN];
-unordered_map<pair<int,int>,int> bst;
-int n,fst[DN],lst[DN];
+unordered_map<int,int> bst;
+int n,fst[DN],lst[DN],cnt;
 
 bool cmp(pair<per,per> a,pair<per,per> b) {
     if(a.x.x==b.x.x) return a.y.y<b.y.y;
     return a.x.x<b.x.x;
 }
 
+int fa(int a,int b) {return cnt*a+b;}
+
 inline int memo(int &a,int &b) {
     //cout<<a<<' '<<b<<'\n';
-    if(bst.find(make_pair(a,b))!=bst.end()) return bst[make_pair(a,b)];
+    if(bst.find(fa(a,b))!=bst.end()) return bst[fa(a,b)];
     int r=0;
     for(int i=fst[a]; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
         r=max(r,memo(v[i].x.y,v[i].y.x)+memo(v[i].y.y,b)+1);
-    bst[make_pair(a,b)]=r;
+    bst[fa(a,b)]=r;
     return r;
 }
 
@@ -44,7 +46,6 @@ int main() {
         v[i].y.x=a+3*lg; s.insert(a+3*lg);
         v[i].y.y=b; s.insert(b);
     }
-    int cnt=0;
     for(set<int>::iterator is=s.begin(); is!=s.end(); ++is) mp[*is]=++cnt;
     for(int i=1; i<=n; ++i) {
         v[i].x.x=mp[v[i].x.x];
