@@ -20,12 +20,12 @@ bool cmp(pair<per,per> a,pair<per,per> b) {
     return a.x.x<b.x.x;
 }
 
-int memo(int &a,int &b,int lind) {
+int memo(int &a,int &b) {
     //cout<<a<<' '<<b<<'\n';
     if(bst.find(make_pair(a,b))!=bst.end()) return bst[make_pair(a,b)];
     int r=0;
     for(int i=fst[a]; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
-        r=max(r,memo(v[i].x.y,v[i].y.x,i)+memo(v[i].y.y,b,i)+1);
+        r=max(r,memo(v[i].x.y,v[i].y.x)+memo(v[i].y.y,b)+1);
     bst[make_pair(a,b)]=r;
     return r;
 }
@@ -56,6 +56,6 @@ int main() {
         for(;v[a].x.x<i && a<=n;++a);
     }
     sort(v+1,v+n+1);
-    g<<memo(v[1].x.x,cnt,0);
+    //g<<memo(v[1].x.x,cnt);
     return 0;
 }
