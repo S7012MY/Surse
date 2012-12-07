@@ -54,10 +54,6 @@ int main() {
     int a=1,b=1;
     for(int i=1; i<=cnt; ++i) {
         for(;v[a].x.x<i && a<=n;++a);
-        /*b=a;
-        for(;v[b].y.y<=i && b<=n; ++b);
-        if(b!=n)--b;*/
-        fst[i]=a;lst[i]=b;
     }
     sort(v+1,v+n+1);
     g<<memo(v[1].x.x,cnt,0);
