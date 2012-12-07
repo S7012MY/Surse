@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1354916489 source:/home/petru/Desktop/proiecte/intfm/main.cpp
+1354917171 source:/home/petru/Desktop/proiecte/intfm/main.cpp
 	<fstream>
+	<iostream>
 	<set>
 	<tr1/unordered_map>
 	<algorithm>

@@ -15,7 +15,7 @@ set<int> s;
 typedef pair<int,int> per;
 pair<per,per> v[DN];
 unordered_map<int,int> bst;
-int n,fst[DN],lst[DN],cnt;
+int n,fst[4*DN],lst[4*DN],cnt;
 
 bool cmp(pair<per,per> a,pair<per,per> b) {
     if(a.x.x==b.x.x) return a.y.y<b.y.y;
@@ -26,11 +26,14 @@ int fa(int a,int b) {return cnt*a+b;}
 
 inline int memo(int &a,int &b) {
     if(a>=b) return 0;
-   // cout<<a<<' '<<b<<'\n';cout.flush();
+    //cout<<a<<' '<<b<<'\n';cout.flush();
     if(bst.find(fa(a,b))!=bst.end()) return bst[fa(a,b)];
-    int r=0;
-    for(int i=fst[a]; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
+    int r=0,z=0;
+    for(int i=fst[a]; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b) {
+        ++z;
         r=max(r,memo(v[i].x.y,v[i].y.x)+memo(v[i].y.y,b)+1);
+        if(z>100)break;
+    }
     bst[fa(a,b)]=r;
     return r;
 }
