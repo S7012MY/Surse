@@ -17,7 +17,8 @@ int n,bst[8005][8005];
 int memo(int a,int b,int lind) {
     //cout<<a<<' '<<b<<'\n';
     if(bst[a][b]) return bst[a][b];
-    for(int i=lind+1; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b) bst[a][b]=max(bst[a][b],memo(v[i].x.y,v[i].y.x,lind)+memo(v[i].y.y,b,i)+1);
+    for(int i=lind+1; i<=n; ++i) if(v[i].x.x>=a && v[i].y.y<=b)
+        bst[a][b]=max(bst[a][b],memo(v[i].x.y,v[i].y.x,i)+memo(v[i].y.y,b,i)+1);
     return bst[a][b];
 }
 
