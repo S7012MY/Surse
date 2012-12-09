@@ -33,9 +33,14 @@ int memo(int ls, int ld, int ih) {
             ind=v[i];
         }
     }
+    if(cnt==1) {
+        r=min(r,1);
+        bst[ls][ld][ih]=r;
+        return r;
+    }
     if(cnt!=v.size()) {
         v.clear();
-        if(ind!=-1);// r=min(r,1+memo(ls,ld,ind));
+        if(ind!=-1) r=min(r,1+memo(ls,ld,ind));
         else r=min(r,1);
     }
     bst[ls][ld][ih]=r;
