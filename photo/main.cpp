@@ -28,7 +28,11 @@ char memo(int ls, int ld, int ih) {
         return v.size();
     }
     char r=DN;int sz=v.size();
-    for(int i=0; i<sz-1; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
+    for(int i=0; i<sz-1; ++i) {
+        char st=memo(ls,v[i],ih);
+        if(st>r) continue;
+        r=min(r,st+memo(v[i+1],ld,ih));
+    }
 
     int hmax=MLT,hmin=MLT,ind=-1,cnt=0;
     if(p[v[sz-1]].x-p[v[0]].x) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
