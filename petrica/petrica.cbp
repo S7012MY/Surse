@@ -35,6 +35,8 @@
 		<Unit filename="a.in" />
 		<Unit filename="a.out" />
 		<Unit filename="main.cpp" />
+		<Unit filename="petrica.in" />
+		<Unit filename="petrica.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />
