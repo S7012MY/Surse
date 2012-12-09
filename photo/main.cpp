@@ -22,14 +22,19 @@ int memo(int ls, int ld, int ih) {
     }
     int r=DN,sz=v.size();
     for(int i=0; i<sz; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
-    int hmax=DN,hmin=DN,ind;
+    int hmax=DN,hmin=DN,ind,nr,cnt;
     if(p[v[sz-1]].x-p[v[0]].x) hmax=a/p[v[sz-1]].x-p[v[0]].x;
-    for(int i=0; i<sz; ++i) if(p[v[i]].y<hmax){
+    for(int i=0; i<sz; ++i) if(p[v[i]].y>hmax){
+        ++cnt;
         if(p[v[i]].y<hmin) {
             hmin=p[v[i]].y;
             ind=v[i];
         }
     }
+    if(cnt!=v.size()) r=min(r,1+memo(ls,ld,ind));
+    if(hmax==DN) r=1;
+    bst[ls][ld][ih]=r;
+    return r;
 }
 
 int main()
@@ -39,7 +44,7 @@ int main()
     f>>n>>a;
     for(int i=1; i<=n; ++i) f>>p[i].x>>p[i].y;
     sort(p+1,p+n+1);
-    for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) for(int k=1; k<=n; ++k) bst[i][j][k]=-1;
+    for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) for(int k=0; k<=n; ++k) bst[i][j][k]=-1;
     g<<memo(1,n,0);
     return 0;
 }
