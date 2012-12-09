@@ -13,11 +13,9 @@ vector<int> gr[DN];
 bitset<DN> viz;
 
 void dfs(int s,int f) {
-    if(n1==s || n2==s) ++cnt;
     if(cnt) viz[s]=1;
     nr[cnt]+=p[s];
-    for(it i=gr[s].begin();i!=gr[s].end(); ++i) if(*i!=f) dfs(*i,s);
-    if(n1==s || n2==s) --cnt;
+    for(it i=gr[s].begin();i!=gr[s].end(); ++i) if(*i!=f && *i!=n1 && *i!=n2) dfs(*i,s);
 }
 
 void rez(int s,int f) {
@@ -47,9 +45,13 @@ int main()
         viz&=0;
         memset(nrf,0,sizeof(nrf));
         nr[0]=nr[1]=nr[2]=nr[3]=0;
+        cnt=1; dfs(n1,0); cnt=2; dfs(n2,0);
         cnt=0;
-        dfs(1,0);
-        cout<<n1<<' '<<n2<<' '<<nr[1]<<' '<<nr[2]<<'\n';
+        for(int i=1; i<=n; ++i) if(i!=n1 && i!=n2 && !viz[i]) {
+            dfs(1,0);
+            break;
+        }
+        cout<<n1<<' '<<n2<<' '<<nr[0]<<' '<<nr[1]<<' '<<nr[2]<<'\n';
         rez(1,0);
     }
     g<<dmin;
