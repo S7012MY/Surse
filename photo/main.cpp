@@ -23,7 +23,7 @@ int memo(int ls, int ld, int ih) {
     int r=DN,sz=v.size();
     for(int i=0; i<sz-1; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
     int hmax=DN,hmin=DN,ind=-1,cnt=0;
-    if(p[v[sz-1]].x-p[v[0]].x) hmax=a/p[v[sz-1]].x-p[v[0]].x;
+    if(p[v[sz-1]].x-p[v[0]].x) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
     for(int i=0; i<sz; ++i) if(p[v[i]].y>hmax){
         ++cnt;
         if(p[v[i]].y<hmin) {
@@ -31,8 +31,8 @@ int memo(int ls, int ld, int ih) {
             ind=v[i];
         }
     }
-   // if(cnt!=v.size() && ind!=-1) r=min(r,1+memo(ls,ld,ind));
-    if(ind==-1) r=min(r,1);
+    if(cnt!=v.size() && ind!=-1) r=min(r,1+memo(ls,ld,ind));
+    if(cnt==v.size()) r=min(r,1);
     bst[ls][ld][ih]=r;
     return r;
 }
