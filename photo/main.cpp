@@ -30,7 +30,7 @@ int memo(int ls, int ld, int ih) {
     }
 
     int hmax=MLT,hmin=MLT,ind=-1,cnt=0;
-    if(p[v[sz-1]].x-p[v[0]].x) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
+    if(p[v[sz-1]].x-p[v[0]].x && p[v[sz-1]].x-p[v[0]].x<=a) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
     for(int i=0; i<sz; ++i) if(p[v[i]].y>hmax){
         ++cnt;
         if(p[v[i]].y<hmin) {
