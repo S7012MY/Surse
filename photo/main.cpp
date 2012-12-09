@@ -22,10 +22,13 @@ int memo(int ls, int ld, int ih) {
     }
     int r=DN,sz=v.size();
     for(int i=0; i<sz; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
-    int hmax=DN,hmin=DN;
+    int hmax=DN,hmin=DN,ind;
     if(p[v[sz-1]].x-p[v[0]].x) hmax=a/p[v[sz-1]].x-p[v[0]].x;
-    for(int i=0; i<sz; ++i) {
-
+    for(int i=0; i<sz; ++i) if(p[v[i]].y<hmax){
+        if(p[v[i]].y<hmin) {
+            hmin=p[v[i]].y;
+            ind=v[i];
+        }
     }
 }
 
