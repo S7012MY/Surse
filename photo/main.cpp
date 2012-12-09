@@ -10,28 +10,23 @@ using namespace std;
 
 typedef pair<int,int> per;
 
-int n,a;
-char bst[DN][DN][DN];
+int n,a,bst[DN][DN][DN];
 per p[DN];
 
-inline int min(int a, int b) {
-    if(a<b)return a;
-    return b;
-}
-
-char memo(int ls, int ld, int ih) {
-    if(bst[ls][ld][ih]) return bst[ls][ld][ih]-1;
-    vector<char> v;
+int memo(int ls, int ld, int ih) {
+    if(bst[ls][ld][ih]!=-1) return bst[ls][ld][ih];
+    vector<int> v;
     for(int i=ls; i<=ld; ++i) if(p[i].y>=p[ih].y) v.push_back(i);
     if(v.size()<2) {
-        bst[ls][ld][ih]=v.size()+1;
+        bst[ls][ld][ih]=v.size();
         return v.size();
     }
-    char r=DN;int sz=v.size();
+    int r=DN,sz=v.size();
     for(int i=0; i<sz-1; ++i) {
-        char st=memo(ls,v[i],ih);
-        if(st>r) continue;
-        r=min(r,st+memo(v[i+1],ld,ih));
+        int dr=memo(v[i+1],ld,ih);
+        if(dr>r) continue;
+        int st=memo(ls,v[i],ih);
+        r=min(r,st+dr);
     }
 
     int hmax=MLT,hmin=MLT,ind=-1,cnt=0;
@@ -47,7 +42,7 @@ char memo(int ls, int ld, int ih) {
         if(ind!=-1) r=min(r,1+memo(ls,ld,ind));
         else r=min(r,1);
     }
-    bst[ls][ld][ih]=r+1;
+    bst[ls][ld][ih]=r;
     return r;
 }
 
@@ -58,7 +53,7 @@ int main()
     f>>n>>a;
     for(int i=1; i<=n; ++i) f>>p[i].x>>p[i].y;
     sort(p+1,p+n+1);
-    //for(int i=0; i<DN; ++i) for(int j=0; j<DN; ++j) for(int k=0; k<DN; ++k) bst[i][j][k]=-1;
+    for(int i=0; i<DN; ++i) for(int j=0; j<DN; ++j) for(int k=0; k<DN; ++k) bst[i][j][k]=-1;
     g<<memo(1,n,0);
     return 0;
 }
