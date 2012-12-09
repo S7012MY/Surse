@@ -5,7 +5,7 @@
 #define x first
 #define y second
 #define DN 101
-#define MLT 1000000000
+#define MLT (1<<30)
 using namespace std;
 
 typedef pair<int,int> per;
@@ -22,16 +22,11 @@ int memo(int ls, int ld, int ih) {
         return v.size();
     }
     int r=DN,sz=v.size();
-    for(int i=0; i<sz-1; ++i) {
-        int dr=memo(v[i+1],ld,ih);
-        if(dr>r) continue;
-        int st=memo(ls,v[i],ih);
-        r=min(r,st+dr);
-    }
+    for(int i=0; i<sz-1; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
 
     int hmax=MLT,hmin=MLT,ind=-1,cnt=0;
-    if(p[v[sz-1]].x-p[v[0]].x && p[v[sz-1]].x-p[v[0]].x<=a) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
-    for(int i=0; i<sz; ++i) if(p[v[i]].y>hmax){
+    if(p[v[sz-1]].x-p[v[0]].x) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
+    for(int i=0; i<sz; ++i) if(p[v[i]].y-p[ih].y>hmax){
         ++cnt;
         if(p[v[i]].y<hmin) {
             hmin=p[v[i]].y;
