@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1355051854 source:/home/petru/Desktop/proiecte/photo/main.cpp
+1355052427 source:/home/petru/Desktop/proiecte/photo/main.cpp
 	<iostream>
 	<fstream>
 	<algorithm>
