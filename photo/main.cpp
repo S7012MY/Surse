@@ -31,7 +31,7 @@ int memo(int ls, int ld, int ih) {
             ind=v[i];
         }
     }
-    if(cnt!=v.size() && ind!=-1) r=min(r,1+memo(ls,ld,ind));
+   // if(cnt!=v.size() && ind!=-1) r=min(r,1+memo(ls,ld,ind));
     if(ind==-1) r=min(r,1);
     bst[ls][ld][ih]=r;
     return r;
@@ -44,7 +44,7 @@ int main()
     f>>n>>a;
     for(int i=1; i<=n; ++i) f>>p[i].x>>p[i].y;
     sort(p+1,p+n+1);
-    for(int i=0; i<=n; ++i) for(int j=0; j<=n; ++j) for(int k=0; k<=n; ++k) bst[i][j][k]=-1;
+    for(int i=0; i<DN; ++i) for(int j=0; j<DN; ++j) for(int k=0; k<DN; ++k) bst[i][j][k]=-1;
     g<<memo(1,n,0);
     return 0;
 }
