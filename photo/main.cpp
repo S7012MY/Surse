@@ -5,7 +5,7 @@
 #define x first
 #define y second
 #define DN 101
-#define MLT (1<<30)
+#define MLT 1000000000
 using namespace std;
 
 typedef pair<int,int> per;
