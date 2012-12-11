@@ -33,6 +33,7 @@ int memo(int state) {
         return nrb[state];
     }
     bst[state]=0;
+    return 0;
 }
 
 
@@ -48,7 +49,7 @@ int main()
             si<<=1;
             if(x)si|=1;
         }
-        cout<<si<<'\n';
+       // cout<<memo(si)<<'\n';
         rez+=memo(si);
     }
     g<<rez;
