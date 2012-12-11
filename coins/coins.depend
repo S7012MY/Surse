@@ -1,7 +1,5 @@
 # depslib dependency file v1.0
-1355259225 source:/home/petru/Desktop/proiecte/coins/main.cpp
-	<iostream>
-	<fstream>
+1355260575 source:/home/petru/Desktop/proiecte/coins/main.cpp
 	<algorithm>
 	<cstdio>
 
