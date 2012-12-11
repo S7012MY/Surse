@@ -11,6 +11,7 @@ int memo(int state) {
     int lb=-1
     for(int i=0; i<22; ++i)
         if(state&(1<<i)) {
+            
         }else lb=i;
 }
 

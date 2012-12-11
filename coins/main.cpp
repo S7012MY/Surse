@@ -6,7 +6,13 @@ using namespace std;
 int bst[1<<DN],n,rez;
 
 int memo(int state) {
+    int r=(1<<30)
     if(bst[state]!=-1) return bst[state];
+    int lb=-1
+    for(int i=0; i<22; ++i)
+        if(state&(1<<i)) {
+
+        }else lb=i;
 }
 
 
