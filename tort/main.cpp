@@ -6,7 +6,7 @@ class Huge {
 public:
     int Semn;
     int Cont;
-    int V[100];
+    int V[10000];
 
     Huge() {
         *this = 0;
@@ -511,7 +511,7 @@ Huge fct(Huge nr) {
     return F;
 }
 
-Huge rsp;
+Huge rsp,c;
 int a,b;
 
 
@@ -521,7 +521,8 @@ int main() {
     scanf("%d %d",&a,&b);
     rsp=a+1;
     rsp*=(b+1);
-    rsp*=(a+b+2);
+    c=a; c+=b; c+=2;
+    rsp*=c;
     rsp/=2;
     rsp.afisare();
     return 0;

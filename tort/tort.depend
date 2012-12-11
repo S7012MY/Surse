@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1355236261 source:/home/petru/Desktop/proiecte/tort/main.cpp
+1355238669 source:/home/petru/Desktop/proiecte/tort/main.cpp
 	<cstdio>
 	<cstring>
 	<unistd.h>
