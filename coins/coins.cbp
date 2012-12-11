@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="coins.in" />
+		<Unit filename="coins.out" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
