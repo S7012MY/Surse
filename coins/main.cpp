@@ -48,6 +48,7 @@ int main()
             si<<=1;
             if(x)si|=1;
         }
+        cout<<si<<'\n';
         rez+=memo(si);
     }
     g<<rez;

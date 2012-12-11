@@ -7,7 +7,7 @@ int bst[1<<DN],n,rez,nrb[1<<DN];
 
 int count(int nr) {
     if(nr==0) return 0;
-    int r=0
+    int r=0;
     do {
         ++r;
     }while(nr &= nr-1);
@@ -16,9 +16,9 @@ int count(int nr) {
 
 
 int memo(int state) {
-    int r=(1<<30)
+    int r=(1<<30);
     if(bst[state]!=-1) return bst[state];
-    int lb=-1
+    int lb=-1;
     for(int i=0; i<22; ++i)
         if(state&(1<<i)) {
             int ns=state;
@@ -28,7 +28,11 @@ int memo(int state) {
                 r=min(r,memo(ns));
             }
         }else lb=i;
-    if(lb==-1 || r) return nrb[state];
+    if(r==(1<<30) || !r) {
+        bst[state]=nrb[state];
+        return nrb[state];
+    }
+    bst[state]=0;
 }
 
 
