@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <cstdio>
 #define DN 22
 using namespace std;
 
@@ -37,15 +38,33 @@ int memo(int state) {
     return 0;
 }
 
+//<parsing>
+FILE* fin=fopen("coins.in","r");
+const unsigned maxb=30000192;
+char buf[maxb];
+unsigned ptr=maxb;
+
+inline unsigned getInt(){
+    unsigned nr=0;
+    while(buf[ptr]<'0'||'9'<buf[ptr])
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    while('0'<=buf[ptr]&&buf[ptr]<='9'){
+        nr=nr*10+buf[ptr]-'0';
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    }
+    return nr;
+}
+//</parsing>
 
 int main()
 {
-    ifstream f("coins.in");
     ofstream g("coins.out");
     for(int i=0; i<(1<<DN); ++i) bst[i]=-1,nrb[i]=count(i);
-    for(f>>n;n;--n) {
+    for(n=getInt();n;--n) {
         int si=0,x;
-        for(int i=0; i<22; ++i) f>>s[i];
+        for(int i=0; i<22; ++i) s[i]=getInt();
         reverse(s,s+22);
         for(int i=0; i<22; ++i) {
             si<<=1;
