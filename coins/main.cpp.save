@@ -6,7 +6,12 @@ using namespace std;
 int bst[1<<DN],n,rez,nrb[1<<DN];
 
 int count(int nr) {
-    
+    if(nr==0) return 0;
+    int r=0
+    do {
+        ++r;
+    }while(nr &= nr-1);
+    return r;
 }
 
 
@@ -20,8 +25,10 @@ int memo(int state) {
             if(lb!=-1) {
                 ns^=(1<<i);
                 ns|=(1<<lb);
+                r=min(r,memo(ns));
             }
         }else lb=i;
+    if(lb==-1 || r) return nrb[state];
 }
 
 
