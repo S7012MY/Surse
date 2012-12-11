@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #define DN 22
 using namespace std;
 
-int bst[1<<DN],n,rez,nrb[1<<DN];
+int bst[1<<DN],n,rez,nrb[1<<DN],s[DN];
 
 int count(int nr) {
     if(nr==0) return 0;
@@ -16,8 +17,8 @@ int count(int nr) {
 
 
 int memo(int state) {
-    int r=(1<<30);
     if(bst[state]!=-1) return bst[state];
+    int r=(1<<30);
     int lb=-1;
     for(int i=0; i<22; ++i)
         if(state&(1<<i)) {
@@ -44,10 +45,11 @@ int main()
     for(int i=0; i<(1<<DN); ++i) bst[i]=-1,nrb[i]=count(i);
     for(f>>n;n;--n) {
         int si=0,x;
+        for(int i=0; i<22; ++i) f>>s[i];
+        reverse(s,s+22);
         for(int i=0; i<22; ++i) {
-            f>>x;
             si<<=1;
-            if(x)si|=1;
+            if(s[i])si|=1;
         }
        // cout<<memo(si)<<'\n';
         rez+=memo(si);
