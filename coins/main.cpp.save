@@ -5,18 +5,8 @@
 #define DN 22
 using namespace std;
 
-char bst[1<<DN];
+int bst[1<<DN];
 int n,rez,s[DN];
-
-int count(int nr) {
-    if(nr==0) return 0;
-    int r=0;
-    do {
-        ++r;
-    }while(nr &= nr-1);
-    return r;
-}
-
 
 int memo(int state) {
     if(bst[state]!=-1) return bst[state];
@@ -25,11 +15,10 @@ int memo(int state) {
         if(state&(1<<i)) {
             if(lb!=-1) {
                 int ns=state^(1<<i)|(1<<lb);
-                ns|=(1<<lb);
                 r&=memo(ns);
             }
         }else lb=i;
-    r^=1;
+    if(lb!=1)r^=1;
     bst[state]=r;
     return r;
 }
@@ -69,7 +58,7 @@ int main()
                 ++cnt;
             }
         }
-       // cout<<memo(si)<<'\n';
+        cout<<memo(si)<<'\n';
         if(memo(si)) rez+=cnt;
     }
     g<<rez;

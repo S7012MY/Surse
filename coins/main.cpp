@@ -8,16 +8,6 @@ using namespace std;
 int bst[1<<DN];
 int n,rez,s[DN];
 
-int count(int nr) {
-    if(nr==0) return 0;
-    int r=0;
-    do {
-        ++r;
-    }while(nr &= nr-1);
-    return r;
-}
-
-
 int memo(int state) {
     if(bst[state]!=-1) return bst[state];
     int lb=-1,r=1;
@@ -28,7 +18,7 @@ int memo(int state) {
                 r&=memo(ns);
             }
         }else lb=i;
-    r=1-r;
+    if(lb!=-11)r^=1;
     bst[state]=r;
     return r;
 }
@@ -68,7 +58,7 @@ int main()
                 ++cnt;
             }
         }
-        cout<<memo(si)<<'\n';
+        //cout<<memo(si)<<'\n';
         if(memo(si)) rez+=cnt;
     }
     g<<rez;

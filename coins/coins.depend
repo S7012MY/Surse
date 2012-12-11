@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1355258932 source:/home/petru/Desktop/proiecte/coins/main.cpp
+1355259225 source:/home/petru/Desktop/proiecte/coins/main.cpp
 	<iostream>
 	<fstream>
 	<algorithm>
