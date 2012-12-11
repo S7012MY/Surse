@@ -17,8 +17,8 @@ int count(int nr) {
 
 
 int memo(int state) {
-    if(bst[state]!=-1) return bst[state];
     int r=(1<<30);
+    if(bst[state]!=-1) return bst[state];
     int lb=-1;
     for(int i=0; i<22; ++i)
         if(state&(1<<i)) {
