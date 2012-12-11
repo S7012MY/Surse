@@ -519,10 +519,9 @@ int main() {
     freopen("tort.in","r",stdin);
     freopen("tort.out","w",stdout);
     scanf("%d %d",&a,&b);
-    fprintf(stderr,"%d %d",a,b);
     rsp=a+1;
     rsp*=(b+1);
-    rsp=(rsp*(rsp+1))/2;
+    rsp=(rsp*(rsp-1))/2;
     rsp.afisare();
     return 0;
 }
