@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstring>
+#include <unistd.h>
 
 class Huge {
 public:
@@ -511,15 +512,17 @@ Huge fct(Huge nr) {
 }
 
 Huge rsp;
+int a,b;
+
 
 int main() {
     freopen("tort.in","r",stdin);
     freopen("tort.out","w",stdout);
-    int a,b;
     scanf("%d %d",&a,&b);
     rsp=a+1;
     rsp*=(b+1);
-    g<<
+    rsp=(rsp*(rsp+1))/2;
+    rsp.afisare();
     return 0;
 }
 
