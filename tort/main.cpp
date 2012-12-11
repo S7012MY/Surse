@@ -521,7 +521,8 @@ int main() {
     scanf("%d %d",&a,&b);
     rsp=a+1;
     rsp*=(b+1);
-    rsp=(rsp*(rsp-1))/2;
+    rsp*=(a+b+2);
+    rsp/=2;
     rsp.afisare();
     return 0;
 }
