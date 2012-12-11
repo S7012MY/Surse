@@ -1,11 +1,5 @@
-/**
- * Serie de functii care efectueaza cele mai
- * frecvente operatii matematice pe numere
- * oricat de mari.
-**/
-
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 
 class Huge {
 public:
@@ -516,9 +510,16 @@ Huge fct(Huge nr) {
     return F;
 }
 
-// Program scris special pentru depanarea functiilor.
-int main(void) {
-    
+Huge rsp;
+
+int main() {
+    freopen("tort.in","r",stdin);
+    freopen("tort.out","w",stdout);
+    int a,b;
+    scanf("%d %d",&a,&b);
+    rsp=a+1;
+    rsp*=(b+1);
+    g<<
     return 0;
 }
 
