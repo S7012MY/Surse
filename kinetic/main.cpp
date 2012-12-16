@@ -3,16 +3,17 @@
 #include <algorithm>
 #include <vector>
 #define DN 505
-#define DT 10005
-#define CNST 10002
+#define DT 30005
+#define CNST 30002
 using namespace std;
 
 int n,m;
 vector<int> poz[DT];
 
-int getvl(int vl, int t) {
-  int a=vl%10000,b=vl/10000;
-  return a+b*t;
+long long getvl(int vl, int t) {
+  if(t<CNST) return vl;
+  int a=vl%DT,b=vl/DT;
+  return a*1LL+b*1LL*t;
 }
 
 int lb(int u,int vl) {
@@ -49,7 +50,7 @@ int main()
       int a,b;
       f>>a>>b;
       for(int t=0; t<CNST; ++t) poz[t].push_back(a+b*t);
-      poz[CNST].push_back(b*10000+a);
+      poz[CNST].push_back(b*DT+a);
     }
     for(int t=0; t<=CNST; ++t) sort(poz[t].begin(),poz[t].end());
     for(int i=0; i<m; ++i) {
@@ -57,7 +58,8 @@ int main()
       f>>x>>y>>t;
       if(x>y) swap(x,y);
       int st,dr;
-      st=lb(t,x); dr=ub(t,y);
+      st=lb(t,x);
+      dr=ub(t,y);
      // cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
       if(st==-1) {
         g<<"0\n";
