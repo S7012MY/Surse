@@ -1,0 +1,14 @@
+#include <iostream>
+#include <fstream>
+#include <queue>
+#define DN 100005
+using namespace std;
+
+int n,m;
+
+int main()
+{
+    ifstream f("mvc.in");
+    ofstream g("mvc.out");
+    return 0;
+}
