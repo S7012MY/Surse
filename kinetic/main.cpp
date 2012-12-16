@@ -22,6 +22,18 @@ int lb(int u,int vl) {
   return ls;
 }
 
+int ub(int u,int vl) {
+  int ls=0,ld=poz[u].size()-1,m;
+  for(;ls<=ld;) {
+    m=(ls+ld)>>1;
+    if(poz[u][m]<vl) ls=m+1;
+    else ld=m-1;
+  }
+  for(;poz[u][ls]>vl && ls; --ls);
+  for(;poz[u][ls]<=vl && ls<poz[u].size()-1;++ls);
+  return ls;
+}
+
 int main()
 {
     ifstream f("kinetic.in");
@@ -38,8 +50,8 @@ int main()
       f>>x>>y>>t;
       if(x>y) swap(x,y);
       int st,dr;
-      st=lb(t,x); dr=lb(t,y);
-      //cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
+      st=lb(t,x); dr=ub(t,y);
+      cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
       if(st==-1) {
         g<<"0\n";
         continue;
