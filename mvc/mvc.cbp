@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="mvc.in" />
+		<Unit filename="mvc.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />
