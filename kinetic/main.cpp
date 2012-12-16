@@ -29,8 +29,8 @@ int ub(int u,int vl) {
     if(poz[u][m]<vl) ls=m+1;
     else ld=m-1;
   }
-  for(;poz[u][ls]>vl && ls; --ls);
-  for(;poz[u][ls]<=vl && ls<poz[u].size()-1;++ls);
+  for(;poz[u][ls]>vl && ls>=0; --ls);
+  for(;poz[u][ls]<=vl && ls<poz[u].size();++ls);
   return ls;
 }
 
@@ -56,8 +56,7 @@ int main()
         g<<"0\n";
         continue;
       }
-      if(dr==-1) dr=poz[t].size()-1;
-      g<<dr-st+1<<'\n';
+      g<<dr-st<<'\n';
     }
     return 0;
 }
