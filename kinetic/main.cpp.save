@@ -11,11 +11,13 @@ vector<int> poz[DN*DT];
 
 int lb(int u,int vl) {
   int ls=0,ld=poz[u].size()-1,m;
-  for(;ls<ld;) {
+  for(;ls<=ld;) {
     m=(ls+ld)>>1;
-    if(poz[u][m]<vl) ls=m-1;
-    else ld=m
+    if(poz[u][m]<vl) ls=m+1;
+    else ld=m-1;
   }
+  for(;poz[u][ls]>=)
+  return ld;
 }
 
 int main()

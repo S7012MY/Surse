@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1355643370 source:/home/petru/Desktop/proiecte/kinetic/main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+	<vector>
+
