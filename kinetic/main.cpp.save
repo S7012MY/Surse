@@ -1,85 +1,93 @@
-#include <fstream>
-#include <algorithm>
-#include <vector>
-#define DN 505
-#define DT 20005
-#define CNST 20002
+#include<fstream>
+#include<algorithm>
 using namespace std;
-
-typedef pair<int,int> per;
-
-int n,m;
-short a[DN],b[DN];
-per poz[DT][DN];
-
-long long getvl(pair<int,int> vl, int t) {
-  if(vl.second==-1) return vl.first;
-  return vl.second+vl.first*t;
+ 
+#define BM 200005
+#define TM 30005
+#define a first
+#define b second
+#define per pair<int,int>
+ 
+per p[505];
+int mt[TM][505],n,m;
+int cmp(per x,per y){
+    if(x.b==y.b)return x.a<y.a;
+    return x.b<y.b;
 }
-
-inline int min(int a, int b) {
-  if(a>b)return b;
-  return a;
+int cbx(int x,int pz){
+    int i=1,j=n,rez=-1000,mj;
+    for(;i<=j;){
+        mj=(i+j)/2;
+        if(mt[pz][mj]>=x){
+            rez=mj;
+            j=mj-1;
+        }
+        else i=mj+1;
+    }
+    return rez;
 }
-
-int lb(int u,int vl) {
-  int psir=min(u,CNST);
-  int ls=0,ld=n-1,m;
-  for(;ls<=ld;) {
-    m=(ls+ld)>>1;
-    if(getvl(poz[psir][m],u)<vl) ls=m+1;
-    else ld=m-1;
-  }
-  ls=min(ls,n-1);
-  for(;getvl(poz[psir][ls],u)>=vl && ls; --ls);
-  for(;getvl(poz[psir][ls],u)<vl && ls<n-1;++ls);
-  if(getvl(poz[psir][ls],u)<vl) return -1;
-  return ls;
+int cby(int y,int pz){
+    int i=1,j=n,rez=-1000,mj;
+    for(;i<=j;){
+        mj=(i+j)/2;
+        if(mt[pz][mj]<=y){
+            rez=mj;
+            i=mj+1;
+        }
+        else j=mj-1;
+    }
+    return rez;
 }
-
-int ub(int u,int vl) {
-  int psir=min(u,CNST);
-  int ls=0,ld=n-1,m;
-  for(;ls<=ld;) {
-    m=(ls+ld)>>1;
-    if(getvl(poz[psir][m],u)<vl) ls=m+1;
-    else ld=m-1;
-  }
-  ls=min(ls,n-1);
-  for(;getvl(poz[psir][ls],u)>vl && ls>0; --ls);
-  for(;getvl(poz[psir][ls],u)<=vl && ls<n;++ls);
-  return ls;
+int cbx2(int x,int t){
+    int i=1,j=n,rez=-1000,mj;
+    for(;i<=j;){
+        mj=(i+j)/2;
+        if(p[mj].a+p[mj].b*t>=x){
+            rez=mj;
+            j=mj-1;
+        }
+        else i=mj+1;
+    }
+    return rez;
 }
-
-int main()
-{
+int cby2(int y,int t){
+    int i=1,j=n,rez=-1000,mj;
+    for(;i<=j;){
+        mj=(i+j)/2;
+        if(p[mj].a+p[mj].b*t<=y){
+            rez=mj;
+            i=mj+1;
+        }
+        else j=mj-1;
+    }
+    return rez;
+}
+int main () {
+    int i,x,y,t,r,j,v1,v2;
     ifstream f("kinetic.in");
     ofstream g("kinetic.out");
     f>>n>>m;
-    for(int i=0; i<n; ++i) {
-      int a,b;
-      f>>a>>b;
-      poz[CNST][i]=make_pair(a,b);
+    for(i=1;i<=n;++i)f>>p[i].a>>p[i].b;
+    sort(p+1,p+n+1,cmp);
+    for(i=0;i<=TM-3;++i){
+        for(j=1;j<=n;++j)mt[i][j]=p[j].a+p[j].b*i;
+        sort(mt[i]+1,mt[i]+n+1);
     }
-    sort(poz[CNST],poz[CNST]+n);
-    for(int t=0; t<CNST; ++t) {
-      for(int i=0; i<n; ++i) poz[t][i]=make_pair(a[i]+b[i]*t,-1);
-      sort(poz[t],poz[t]+n);
-    }
-    for(int i=0; i<n; ++i)poz[CNST][i]=make_pair(b[i],a[i]);
-
-    for(int i=0; i<m; ++i) {
-      int x,y,t;
-      f>>x>>y>>t;
-      if(x>y) swap(x,y);
-      int st,dr;
-      st=lb(t,x);
-      dr=ub(t,y);
-      if(st==-1) {
-        g<<"0\n";
-        continue;
-      }
-      g<<dr-st<<'\n';
+    for(i=1;i<=m;++i){
+        f>>x>>y>>t;
+        if(x>y)swap(x,y);
+        if(t<=TM-3){
+            v1=cby(y,t);
+            v2=cbx(x,t);
+            if(v1<=0||v2<=0)g<<"0\n";
+            else g<<v1-v2+1<<"\n";
+        }
+        else {
+            v1=cby2(y,t);
+            v2=cbx2(x,t);
+            if(v1<=0||v2<=0)g<<"0\n";
+            else g<<v1-v2+1<<"\n";
+        }
     }
     return 0;
 }
