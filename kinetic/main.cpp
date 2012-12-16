@@ -14,6 +14,11 @@ long long getvl(pair<int,int> vl, int t) {
   return vl.second+vl.first*t;
 }
 
+inline int min(int a, int b) {
+  if(a>b)return b;
+  return a;
+}
+
 int lb(int u,int vl) {
   int psir=min(u,CNST);
   int ls=0,ld=poz[psir].size()-1,m;
@@ -43,47 +48,25 @@ int ub(int u,int vl) {
   return ls;
 }
 
-//<parsing>
-FILE* fin=fopen("kinetic.in","r");
-const unsigned maxb=30000192;
-char buf[maxb];
-unsigned ptr=maxb;
-
-inline unsigned getInt(){
-    unsigned nr=0;
-    while(buf[ptr]<'0'||'9'<buf[ptr])
-        if(++ptr>=maxb)
-            fread(buf,maxb,1,fin),ptr=0;
-    while('0'<=buf[ptr]&&buf[ptr]<='9'){
-        nr=nr*10+buf[ptr]-'0';
-        if(++ptr>=maxb)
-            fread(buf,maxb,1,fin),ptr=0;
-    }
-    return nr;
-}
-//</parsing>
-
 int main()
 {
+    ifstream f("kinetic.in");
     ofstream g("kinetic.out");
-    n=getInt(); m=getInt();
+    f>>n>>m;
     for(int i=0; i<n; ++i) {
       int a,b;
-      a=getInt(); b=getInt();
+      f>>a>>b;
       for(int t=0; t<CNST; ++t) poz[t].push_back(make_pair(a+b*t,-1));
       poz[CNST].push_back(make_pair(b,a));
     }
     for(int t=0; t<=CNST; ++t) sort(poz[t].begin(),poz[t].end());
-    //for(int i=0; i<poz[CNST].size(); ++i) cout<<getvl(poz[CNST][i],1000000)<<' ';
-    //cout<<'\n';
     for(int i=0; i<m; ++i) {
       int x,y,t;
-      x=getInt(); y=getInt(); t=getInt();
+      f>>x>>y>>t;
       if(x>y) swap(x,y);
       int st,dr;
       st=lb(t,x);
       dr=ub(t,y);
-      //cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
       if(st==-1) {
         g<<"0\n";
         continue;
