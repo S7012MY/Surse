@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1355655145 source:/home/petru/Desktop/proiecte/mvc/main.cpp
+	<iostream>
+	<fstream>
+	<queue>
+	<bitset>
+
