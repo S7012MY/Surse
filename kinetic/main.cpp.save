@@ -11,9 +11,8 @@ int n,m;
 vector<pair<int,int> > poz[DT];
 
 long long getvl(pair<int,int> vl, int t) {
-  if(vl.second==-) return vl;
-  int a=vl%DT,b=vl/DT;
-  return a*1LL+b*1LL*t;
+  if(vl.second==-1) return vl.first;
+  return vl.second+vl.first*t;
 }
 
 int lb(int u,int vl) {
@@ -24,9 +23,10 @@ int lb(int u,int vl) {
     if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
+  ls=min(ls,poz[psir].size()-1);
   for(;getvl(poz[psir][ls],u)>=vl && ls; --ls);
   for(;getvl(poz[psir][ls],u)<vl && ls<poz[psir].size()-1;++ls);
-  if(getvl(poz[psir][ls],u)<vl return -1;
+  if(getvl(poz[psir][ls],u)<vl) return -1;
   return ls;
 }
 
@@ -35,10 +35,11 @@ int ub(int u,int vl) {
   int ls=0,ld=poz[psir].size()-1,m;
   for(;ls<=ld;) {
     m=(ls+ld)>>1;
-    if(getvl(poz[psir][m],u)<vl ls=m+1;
+    if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
-  for(;getvl(poz[psir][ls],u)>vl && ls>=0; --ls);
+  ls=min(ls,poz[psir].size()-1);
+  for(;getvl(poz[psir][ls],u)>vl && ls>0; --ls);
   for(;getvl(poz[psir][ls],u)<=vl && ls<poz[psir].size();++ls);
   return ls;
 }
@@ -55,8 +56,8 @@ int main()
       poz[CNST].push_back(make_pair(b,a));
     }
     for(int t=0; t<=CNST; ++t) sort(poz[t].begin(),poz[t].end());
-    for(int i=0; i<poz[CNST].size(); ++i) cout<<getvl(poz[CNST][i],1000000)<<' ';
-    cout<<'\n';
+    //for(int i=0; i<poz[CNST].size(); ++i) cout<<getvl(poz[CNST][i],1000000)<<' ';
+    //cout<<'\n';
     for(int i=0; i<m; ++i) {
       int x,y,t;
       f>>x>>y>>t;
@@ -64,7 +65,7 @@ int main()
       int st,dr;
       st=lb(t,x);
       dr=ub(t,y);
-      cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
+      //cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
       if(st==-1) {
         g<<"0\n";
         continue;

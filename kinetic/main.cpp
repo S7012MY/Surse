@@ -23,6 +23,7 @@ int lb(int u,int vl) {
     if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
+  ls=min(ls,(int)poz[psir].size()-1);
   for(;getvl(poz[psir][ls],u)>=vl && ls; --ls);
   for(;getvl(poz[psir][ls],u)<vl && ls<poz[psir].size()-1;++ls);
   if(getvl(poz[psir][ls],u)<vl) return -1;
@@ -37,7 +38,8 @@ int ub(int u,int vl) {
     if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
-  for(;getvl(poz[psir][ls],u)>vl && ls>=0; --ls);
+  ls=min(ls,(int)poz[psir].size()-1);
+  for(;getvl(poz[psir][ls],u)>vl && ls>0; --ls);
   for(;getvl(poz[psir][ls],u)<=vl && ls<poz[psir].size();++ls);
   return ls;
 }
