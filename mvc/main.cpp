@@ -7,7 +7,7 @@ using namespace std;
 
 typedef vector<int>::iterator it;
 
-int n,m,cst[DN],pre[DN],cs,cd;
+int n,m,cst[DN],pre[DN],cs,cd,bst[DN][2],rez=(1<<30);
 bitset<DN> viz;
 vector<int> gr[DN];
 queue<int> c;
@@ -22,7 +22,16 @@ void bfs(int s) {
         pre[*i]=fr;
       }else if(pre[fr]!=*i) cs=fr,cd=*i;
   }
-  cout<<cs<<' '<<cd;
+}
+
+void dfs(int s) {
+  viz[s]=1;
+  bst[s][1]=cst[s];
+  for(it i=gr[s].begin(); i!=gr[s].end(); ++i) if(!viz[*i] && (pre[*i]==s || pre[s]==*i)) {
+    dfs(*i);
+    bst[s][0]+=bst[*i][1];
+    bst[s][1]+=min(bst[*i][0],bst[*i][1]);
+  }
 }
 
 int main()
@@ -38,5 +47,13 @@ int main()
       gr[b].push_back(a);
     }
     bfs(1);
+    viz&=0;
+    dfs(cs);
+    viz&=0;
+    rez=min(rez,bst[cs][1]);
+    for(int i=0; i<=n; ++i) bst[i][0]=bst[i][1]=0;
+    dfs(cd);
+    rez=min(rez,bst[cd][1]);
+    g<<rez;
     return 0;
 }
