@@ -18,7 +18,7 @@ int lb(int u,int vl) {
   }
   for(;poz[u][ls]>=vl && ls; --ls);
   for(;poz[u][ls]<vl && ls<poz[u].size()-1;++ls);
-  //cout<<u<<' '<<vl<<' '<<ls<<'\n';
+  if(poz[u][ls]<vl) return -1;
   return ls;
 }
 
@@ -37,7 +37,15 @@ int main()
       int x,y,t;
       f>>x>>y>>t;
       if(x>y) swap(x,y);
-      g<<lb(t,y)-lb(t,x)<<'\n';
+      int st,dr;
+      st=lb(t,x); dr=lb(t,y);
+      //cout<<t<<' '<<x<<' '<<st<<' '<<y<<' '<<dr<<'\n';
+      if(st==-1) {
+        g<<"0\n";
+        continue;
+      }
+      if(dr==-1) dr=poz[t].size()-1;
+      g<<dr-st+1<<'\n';
     }
     return 0;
 }

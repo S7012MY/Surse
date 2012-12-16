@@ -16,8 +16,10 @@ int lb(int u,int vl) {
     if(poz[u][m]<vl) ls=m+1;
     else ld=m-1;
   }
-  for(;poz[u][ls]>=)
-  return ld;
+  for(;poz[u][ls]>=vl && ls; --ls);
+  for(;poz[u][ls]<vl && ls<poz[u].size()-1;++ls);
+  if(poz[u][ls]<vl) return -1;
+  return ls;
 }
 
 int main()
@@ -34,7 +36,10 @@ int main()
     for(int i=0; i<m; ++i) {
       int x,y,t;
       f>>x>>y>>t;
-      g<<lb(t,y)-lb(t,x)+1<<'\n';
+      if(x>y) swap(x,y);
+      int st,dr;
+      st=lb
+      g<<lb(t,y)-lb(t,x)<<'\n';
     }
     return 0;
 }
