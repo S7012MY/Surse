@@ -1,10 +1,9 @@
-#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <vector>
 #define DN 505
-#define DT 30005
-#define CNST 30002
+#define DT 20005
+#define CNST 20002
 using namespace std;
 
 int n,m;
@@ -23,7 +22,7 @@ int lb(int u,int vl) {
     if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
-  ls=min(ls,poz[psir].size()-1);
+  ls=min(ls,(int)poz[psir].size()-1);
   for(;getvl(poz[psir][ls],u)>=vl && ls; --ls);
   for(;getvl(poz[psir][ls],u)<vl && ls<poz[psir].size()-1;++ls);
   if(getvl(poz[psir][ls],u)<vl) return -1;
@@ -38,20 +37,39 @@ int ub(int u,int vl) {
     if(getvl(poz[psir][m],u)<vl) ls=m+1;
     else ld=m-1;
   }
-  ls=min(ls,poz[psir].size()-1);
+  ls=min(ls,(int)poz[psir].size()-1);
   for(;getvl(poz[psir][ls],u)>vl && ls>0; --ls);
   for(;getvl(poz[psir][ls],u)<=vl && ls<poz[psir].size();++ls);
   return ls;
 }
 
+//<parsing>
+FILE* fin=fopen("kinetic.in","r");
+const unsigned maxb=30000192;
+char buf[maxb];
+unsigned ptr=maxb;
+ 
+inline unsigned getInt(){
+    unsigned nr=0;
+    while(buf[ptr]<'0'||'9'<buf[ptr])
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    while('0'<=buf[ptr]&&buf[ptr]<='9'){
+        nr=nr*10+buf[ptr]-'0';
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    }
+    return nr;
+}
+//</parsing>
+
 int main()
 {
-    ifstream f("kinetic.in");
     ofstream g("kinetic.out");
-    f>>n>>m;
+    n=getInt(); m=getInt();
     for(int i=0; i<n; ++i) {
       int a,b;
-      f>>a>>b;
+      a=getInt(); b=getInt();
       for(int t=0; t<CNST; ++t) poz[t].push_back(make_pair(a+b*t,-1));
       poz[CNST].push_back(make_pair(b,a));
     }
@@ -60,6 +78,7 @@ int main()
     //cout<<'\n';
     for(int i=0; i<m; ++i) {
       int x,y,t;
+      x=getInt(); 
       f>>x>>y>>t;
       if(x>y) swap(x,y);
       int st,dr;
