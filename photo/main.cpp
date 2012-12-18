@@ -23,17 +23,17 @@ int memo(deque<int> &pc) {
 
     int r=DN;
     deque<int> st,dr=pc;
-    for(int i=0; i<sz; ++i) {
+    for(int i=0; i<sz-1; ++i) {
       st.push_back(pc[i]); dr.pop_front();
-      //r=min(r,memo(st)+memo(dr));
+      r=min(r,memo(st)+memo(dr));
     }
-    /*int ymin=a/max(1,p[ld].x-p[ls].x);
+    int ymin=a/max(1,p[ld].x-p[ls].x);
     if(ymin>0) {
       deque<int> sus;
       for(int i=0; i<sz; ++i) if(p[pc[i]].y>ymin)
         sus.push_back(pc[i]);
       r=min(r,1+memo(sus));
-    }*/
+    }
 
     bst[ls][ld][ih]=r;
     return r;
