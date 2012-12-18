@@ -1,17 +1,18 @@
 #include <iomanip>
 #include <fstream>
+#include <algorithm>
 #define DN 1005
 #define x first
 #define y second
 using namespace std;
 
-typedef pair<double,double> per;
+typedef pair<long double,long double> per;
 pair<per,per> seg[DN];
 per p[DN*2];
-int n,sz;
+int n,sz,bun[DN][DN];
 
 double id(per a, per b, per c) {
-  double p=a.x*b.y+b.x*c.y+c.x*a.y,m=-b.x*a.y-c.x*b.y-a.x*c.y;
+  long double p=a.x*b.y+b.x*c.y+c.x*a.y,m=-b.x*a.y-c.x*b.y-a.x*c.y;
   return p+m;
 }
 
@@ -22,9 +23,11 @@ int main()
     f>>n;
     for(int i=1; i<=n; ++i) {
       f>>seg[i].x.x>>seg[i].x.y>>seg[i].y.x>>seg[i].y.y;
-      p[++sz]=seg[i].x; //p[++sz]=seg[i].y;
+      p[++sz]=seg[i].x;
+      p[++sz]=seg[i].y;
     }
-
+  random_shuffle(p+1,p+sz+1);
+  random_shuffle(seg+1,seg+n+1);
     for(int i=1; i<=sz; ++i)
       for(int j=i+1; j<=sz; ++j) {
         int ok=1;
