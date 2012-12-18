@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iomanip>
 #include <fstream>
 #define DN 1005
 #define x first
@@ -12,7 +12,7 @@ int n,sz;
 
 double id(per a, per b, per c) {
   double p=a.x*b.y+b.x*c.y+c.x*a.y,m=-b.x*a.y-c.x*b.y-a.x*c.y;
-  return p-m;
+  return p+m;
 }
 
 int main()
@@ -22,9 +22,9 @@ int main()
     f>>n;
     for(int i=1; i<=n; ++i) {
       f>>seg[i].x.x>>seg[i].x.y>>seg[i].y.x>>seg[i].y.y;
-      p[++sz]=seg[i].x; p[++sz]=seg[i].y;
+      p[++sz]=seg[i].x; //p[++sz]=seg[i].y;
     }
-    cout<<id(make_pair(0,0),make_pair(1,1),make_pair(1,0));
+
     for(int i=1; i<=sz; ++i)
       for(int j=i+1; j<=sz; ++j) {
         int ok=1;
@@ -33,7 +33,7 @@ int main()
           break;
         }
         if(ok) {
-          g<<p[i].x<<' '<<p[i].y<<' '<<p[j].x<<' '<<p[j].y<<'\n';
+          g<<fixed<<setprecision(9)<<p[i].x<<' '<<p[i].y<<' '<<p[j].x<<' '<<p[j].y<<'\n';
           return 0;
         }
       }
