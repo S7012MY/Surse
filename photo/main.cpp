@@ -1,3 +1,4 @@
+#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <deque>
@@ -12,7 +13,7 @@ int n,a,bst[DN][DN][DN];
 per p[DN];
 
 int memo(deque<int> &pc) {
-    if(pc.empty()) return 0;
+    if(pc.size()<2) return pc.size();
     int ls=pc.front(),ld=pc.back(),sz=pc.size();
     int ih=ls;
     for(int i=1; i<sz; ++i) if(p[pc[i]].y<p[ih].y) ih=pc[i];
@@ -24,6 +25,7 @@ int memo(deque<int> &pc) {
       st.push_back(pc[i]); dr.pop_front();
       r=min(r,memo(st)+memo(dr));
     }
+    bst[ls][ld][ih]=r;
     int ymin=a/max(1,p[ld].x-p[ls].x);
     if(ymin>0) {
       deque<int> sus;
