@@ -26,8 +26,7 @@ int main()
       p[++sz]=seg[i].x;
       p[++sz]=seg[i].y;
     }
-  random_shuffle(p+1,p+sz+1);
-  random_shuffle(seg+1,seg+n+1);
+//optimizari secrete aici
     for(int i=1; i<=sz; ++i)
       for(int j=i+1; j<=sz; ++j) {
         int ok=1;
