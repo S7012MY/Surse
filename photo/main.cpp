@@ -5,8 +5,7 @@
 #include <deque>
 #define x first
 #define y second
-#define DN 101
-#define MLT (1<<30)
+#define DN 105
 using namespace std;
 
 typedef pair<int,int> per;
@@ -18,7 +17,7 @@ int memo(deque<int> &pc) {
     if(pc.empty()) return 0;
     int ls=pc.front(),ld=pc.back(),sz=pc.size();
     int ih=ls;
-    for(int i=1; i<sz; ++i) if(p[pc[i]].y<p[ih].y) ih=i;
+    for(int i=1; i<sz; ++i) if(p[pc[i]].y<p[ih].y) ih=pc[i];
     if(bst[ls][ld][ih]) return bst[ls][ld][ih];
 
     int r=DN;
