@@ -2,6 +2,7 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <deque>
 #define x first
 #define y second
 #define DN 101
@@ -13,36 +14,27 @@ typedef pair<int,int> per;
 int n,a,bst[DN][DN][DN];
 per p[DN];
 
-int memo(int ls, int ld, int ih) {
+int memo(deque<int> &pc) {
+    if(pc.empty()) return 0;
+    int ls=pc.front(),ld=pc.back(),sz=pc.size();
+    int ih=ls;
+    for(int i=1; i<sz; ++i) if(p[pc[i]].y<p[ih].y) ih=i;
     if(bst[ls][ld][ih]!=-1) return bst[ls][ld][ih];
-    vector<int> v;
-    for(int i=ls; i<=ld; ++i) if(p[i].y>=p[ih].y) v.push_back(i);
-    if(v.size()<2) {
-        bst[ls][ld][ih]=v.size();
-        return v.size();
-    }
-    int r=DN,sz=v.size();
-    for(int i=0; i<sz-1; ++i) r=min(r,memo(ls,v[i],ih)+memo(v[i+1],ld,ih));
 
-    int hmax=MLT,hmin=MLT,ind=-1,cnt=0;
-    if(p[v[sz-1]].x-p[v[0]].x) hmax=a/(p[v[sz-1]].x-p[v[0]].x);
-    for(int i=0; i<sz; ++i) if(p[v[i]].y>hmax){
-        ++cnt;
-        if(p[v[i]].y<hmin) {
-            hmin=p[v[i]].y;
-            ind=v[i];
-        }
+    int r=DN;
+    deque<int> st,dr=pc;
+    for(int i=0; i<sz; ++i) {
+      st.push_back(pc[i]); dr.pop_front();
+      //r=min(r,memo(st)+memo(dr));
     }
-    if(cnt==1) {
-        r=min(r,1);
-        bst[ls][ld][ih]=r;
-        return r;
-    }
-    if(cnt!=v.size()) {
-        v.clear();
-        if(ind!=-1) r=min(r,1+memo(ls,ld,ind));
-        else r=min(r,1);
-    }
+    /*int ymin=a/max(1,p[ld].x-p[ls].x);
+    if(ymin>0) {
+      deque<int> sus;
+      for(int i=0; i<sz; ++i) if(p[pc[i]].y>ymin)
+        sus.push_back(pc[i]);
+      r=min(r,1+memo(sus));
+    }*/
+
     bst[ls][ld][ih]=r;
     return r;
 }
@@ -52,9 +44,13 @@ int main()
     ifstream f("photo.in");
     ofstream g("photo.out");
     f>>n>>a;
-    for(int i=1; i<=n; ++i) f>>p[i].x>>p[i].y;
+    deque<int> in;
+    for(int i=1; i<=n; ++i) {
+      f>>p[i].x>>p[i].y;
+      in.push_back(i);
+    }
     sort(p+1,p+n+1);
     for(int i=0; i<DN; ++i) for(int j=0; j<DN; ++j) for(int k=0; k<DN; ++k) bst[i][j][k]=-1;
-    g<<memo(1,n,0);
+    g<<memo(in);
     return 0;
 }
