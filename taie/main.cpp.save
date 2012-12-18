@@ -31,5 +31,10 @@ int main()
           ok=0;
           break;
         }
+        if(ok) {
+          g<<p[i].x<<' '<<p[i].y<<<<' '<<p[j].x<<' '<<p[j].y<<'\n';
+          return 0;
+        }
+    g<<-1;
     return 0;
 }
