@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+#define DN 1005
+using namespace std;
+
+typedef pair<int,int> per;
+pair<per,per> seg[DN];
+int n;
+
+int main()
+{
+    ifstream f("taie.in");
+    ofstream g("taie.out");
+    return 0;
+}
