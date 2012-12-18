@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="taie.in" />
+		<Unit filename="taie.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />

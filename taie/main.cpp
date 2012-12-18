@@ -9,7 +9,7 @@ using namespace std;
 typedef pair<long double,long double> per;
 pair<per,per> seg[DN];
 per p[DN*2];
-int n,sz,bun[DN][DN];
+int n,sz;
 
 double id(per a, per b, per c) {
   long double p=a.x*b.y+b.x*c.y+c.x*a.y,m=-b.x*a.y-c.x*b.y-a.x*c.y;
