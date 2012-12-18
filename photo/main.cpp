@@ -19,7 +19,7 @@ int memo(deque<int> &pc) {
     int ls=pc.front(),ld=pc.back(),sz=pc.size();
     int ih=ls;
     for(int i=1; i<sz; ++i) if(p[pc[i]].y<p[ih].y) ih=i;
-    if(bst[ls][ld][ih]!=-1) return bst[ls][ld][ih];
+    if(bst[ls][ld][ih]) return bst[ls][ld][ih];
 
     int r=DN;
     deque<int> st,dr=pc;
@@ -50,7 +50,6 @@ int main()
       in.push_back(i);
     }
     sort(p+1,p+n+1);
-    for(int i=0; i<DN; ++i) for(int j=0; j<DN; ++j) for(int k=0; k<DN; ++k) bst[i][j][k]=-1;
     g<<memo(in);
     return 0;
 }
