@@ -1,15 +1,28 @@
 #include <iostream>
 #include <fstream>
 #define DN 1005
+#define x first
+#define y second
 using namespace std;
 
-typedef pair<int,int> per;
+typedef pair<double,double> per;
 pair<per,per> seg[DN];
 int n;
+
+bool id(per a, per b, per c) {
+  double p=a.x*b.y+b.x*c.y+c.x*a.y,m=b.x*a.y-c.x*b.y-a.x*c.y;
+  return p-m<=0.0;
+}
 
 int main()
 {
     ifstream f("taie.in");
     ofstream g("taie.out");
+    f>>n;
+    for(int i=1; i<=n; ++i) f>>seg[i].x.x>>seg[i].x.y>>seg[i].y.x>>seg[i].y.y;
+    for(int i=1; i<=n; ++i)
+      for(int j=i+1; j<=n; ++j) {
+        int ok=1;
+        for(int k=1; k<=n; ++k) if(id())
     return 0;
 }
