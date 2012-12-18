@@ -3,7 +3,7 @@
 #include <deque>
 #define x first
 #define y second
-#define DN 105
+#define DN 101
 using namespace std;
 
 typedef pair<int,int> per;
