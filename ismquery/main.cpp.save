@@ -25,10 +25,16 @@ inline unsigned getInt(){
 }
 //</parsing>
 
-int n,m,v[DN],ind[DN],aib[DN],rez[5][DN];
+int n,m,v[DN],ind[DN],ai[4*DN],rez[6][DN];
 
 bool cmp(const int &a, const int &b) {
   return v[a]<v[b];
+}
+
+void pp() {
+  for(int i=n; i; --i) for(int j=1; j<=5; ++j){
+    int rq
+  }
 }
 
 int main()
