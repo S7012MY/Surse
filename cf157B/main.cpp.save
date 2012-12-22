@@ -16,7 +16,7 @@ long long a(int n, int k) {
   if(n<k) return 0;
   int r=1;
   for(int i=0; i<k; ++i) r*=(n-i);
-  re
+  return r;
 }
 
 int main()
@@ -27,7 +27,9 @@ int main()
         int nb=0,cnt=nbune(j);
         for(int k=1; k<=i; ++k) if(k!=i && nbune(k)<cnt) ++nb;
         rez+=a(nb,6);
+        cout<<cnt<<' '<<nb;
       }
+      cout<<i<<' '<<rez<<' '<<rez/1440<<'\n';
     }
     return 0;
 }

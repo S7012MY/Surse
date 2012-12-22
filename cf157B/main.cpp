@@ -25,7 +25,7 @@ int main()
       long long rez=0;
       for(int j=1; j<=i; ++j) {
         int nb=0,cnt=nbune(j);
-        for(int k=1; k<=i; ++k) if(k!=i && nbune(k)<cnt) ++nb;
+        for(int k=1; k<=i; ++k) if(k!=j && nbune(k)<cnt) ++nb;
         rez+=a(nb,6);
       }
       cout<<i<<' '<<rez<<' '<<rez/1440<<'\n';
