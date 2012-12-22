@@ -9,18 +9,20 @@ using namespace std;
 int n,m,v[DN],ind[DN],rez[6][DN],st[6][DN],psir[6][DN],sz[6],unde[6],G,h;
 
 int get(int nr) {
+  //cout<<nr<<' ';
   int pmin=(1<<30),u=-1;
-  for(int j=1; j<=5; ++j) if(st[j][unde[j]+1]>nr && pmin>psir[j][unde[j]+1] && unde[j]+1<=sz[j]) {
-    pmin=psir[j][unde[j]+1];
+  for(int j=1; j<=5; ++j) if(unde[j]>0 && st[j][unde[j]]>nr && pmin>psir[j][unde[j]]) {
+    pmin=psir[j][unde[j]];
     u=j;
   }
-  ++unde[u];
+  //cout<<u<<' '<<pmin<<'\n';
+  --unde[u];
   return pmin;
 }
 
 void push(int u,int nr,int poz) {
   if(u>5) return;
-  for(;nr>st[u][sz[u]] && sz[u];) {
+  for(;nr<st[u][sz[u]] && sz[u];) {
     push(u+1,st[u][sz[u]],psir[u][sz[u]]);
     --sz[u];
   }
@@ -46,10 +48,10 @@ int main()
     for(int i=1; i<=n; ++i) f>>v[i];
 
     for(int i=n; i; --i) {
-      memset(unde,0,sizeof(unde));
+      for(int j=1; j<=5; ++j) unde[j]=sz[j];
       for(int j=1; j<=5; ++j) {
         rez[j][i]=get(v[i]);
-        cout<<i<<' '<<j<<' '<<rez[j][i]<<'\n';
+        //cout<<i<<' '<<j<<' '<<rez[j][i]<<'\n';
         //dst();
         if(rez[j][i]==(1<<30)) {
           rez[j][i]=0;
@@ -66,6 +68,7 @@ int main()
     for(int i=1; i<=m; ++i) {
       pc=1+(i+pp*G)%n;
       kc=1+(i+kp*h)%5;
+      //cout<<pc<<' '<<kc<<'\n';
       g<<rez[kc][pc]<<'\n';
       pp=pc; kp=kc;
     }

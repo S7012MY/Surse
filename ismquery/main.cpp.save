@@ -9,12 +9,14 @@ using namespace std;
 int n,m,v[DN],ind[DN],rez[6][DN],st[6][DN],psir[6][DN],sz[6],unde[6],G,h;
 
 int get(int nr) {
+  cout<<nr<<' ';
   int pmin=(1<<30),u=-1;
-  for(int j=1; j<=5; ++j) if(st[j][unde[j]+1]>nr && pmin>psir[j][unde[j]+1] && unde[j]+1<=sz[j]) {
+  for(int j=1; j<=5; ++j) if(unde[j]>0 && st[j][unde[j]]>nr && pmin>psir[j][unde[j]]) {
     pmin=psir[j][unde[j]+1];
     u=j;
   }
-  ++unde[u];
+  //cout<<u<<' '<<pmin<<'\n';
+  --unde[u];
   return pmin;
 }
 
@@ -46,10 +48,10 @@ int main()
     for(int i=1; i<=n; ++i) f>>v[i];
 
     for(int i=n; i; --i) {
-      memset(unde,0,sizeof(unde));
+      for(int i=1; i<=5; ++i) unde[i]=sz[i];
       for(int j=1; j<=5; ++j) {
         rez[j][i]=get(v[i]);
-        cout<<i<<' '<<j<<' '<<rez[j][i]<<'\n';
+       // cout<<i<<' '<<j<<' '<<rez[j][i]<<'\n';
         //dst();
         if(rez[j][i]==(1<<30)) {
           rez[j][i]=0;
