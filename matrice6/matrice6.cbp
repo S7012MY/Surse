@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="matrice6.in" />
+		<Unit filename="matrice6.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />

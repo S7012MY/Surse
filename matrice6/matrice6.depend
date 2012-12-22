@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1356176087 source:/home/petru/Desktop/proiecte/matrice6/main.cpp
+1356176798 source:/home/petru/Desktop/proiecte/matrice6/main.cpp
 	<iostream>
 	<fstream>
 	<cstdlib>

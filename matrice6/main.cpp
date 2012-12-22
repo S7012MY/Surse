@@ -7,7 +7,7 @@
 #define DN 305
 using namespace std;
 
-int n,m,s1[6],s2[6],v1[6],v2[6],pot[300][300],nt,aux[DN][DN],rez[DN][DN],mi[DN][DN],nr[5000][5000];
+int n,m,s1[6],s2[6],v1[6],v2[6],pot[DN][DN],nt,aux[DN][DN],rez[DN][DN],mi[DN][DN],nr[5000][5000];
 
 void debug() {
   for(int i=1; i<=n; ++i) cout<<v1[i]<<' ';
@@ -68,8 +68,8 @@ void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
 void lgput(int e) {
     int c[DN][DN];
     memset(rez,0,sizeof(rez));
-    memcpy(c,pot,sizeof(c));
-    for(int i=0; i<n; ++i) rez[i][i]=1;
+    memcpy(c,pot,sizeof(pot));
+    for(int i=1; i<=nt; ++i) rez[i][i]=1;
     for(int i=0; (1<<i)<=e; ++i) {
         if((1<<i)&e) {
             inm(rez,c,aux);
@@ -96,10 +96,11 @@ int main()
       if(rez>=MOD) rez-=MOD;
     }*/
     //cout<<rez;
-    lgput(m);
+    lgput(m-1);
     int r=0;
     for(int i=1; i<=nt; ++i )for(int j=1; j<=nt; ++j) {
       r+=rez[i][j];
+      //cout<<rez[i][j] <<' ';
       if(r>=MOD) r-=MOD;
     }
     g<<r;
