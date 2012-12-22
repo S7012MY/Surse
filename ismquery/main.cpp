@@ -45,7 +45,10 @@ int main()
     ifstream f("ismquery.in");
     ofstream g("ismquery.out");
     f>>n>>m;
-    for(int i=1; i<=n; ++i) f>>v[i];
+    for(int i=1; i<=n; ++i) {
+      f>>v[i];
+     // v[i]+=2000;
+    }
 
     for(int i=n; i; --i) {
       for(int j=1; j<=5; ++j) unde[j]=sz[j];
