@@ -29,19 +29,25 @@ void update(int vn, int ls, int ld) {
   if(gls<=m) update(fs,ls,m);
   if(m<gld) update(fs+1,m+1,ld);
   nrmar[vn]=nrmar[2*vn]+nrmar[2*vn+1];
+  if(nr[vn]) nrmar[vn]=(ld-ls)+1;
 }
 
 void count(int s) {
   viz[s]=1;
+  cout<<s<<'\n';
   if(leg[s].size()) {
     gls=fs[s]; gld=lst[s]; vl=1;
     update(1,1,sz);
+    cout<<s<<' '<<nrmar[1]<<'\n';
   }
   for(it i=leg[s].begin(); i!=leg[s].end(); ++i) {
     gls=fs[*i]; gld=lst[*i]; vl=1;
     update(1,1,sz);
+    cout<<(*i)<<' '<<nrmar[1]<<' ';
   }
+  cout<<'\n';
   rez[s]=nrmar[1];
+  if(rez[s]) --rez[s];
   for(it i=gr[s].begin(); i!=gr[s].end(); ++i) if(!viz[*i]) count(*i);
 
   if(leg[s].size()) {
