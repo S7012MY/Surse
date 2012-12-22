@@ -1,51 +1,27 @@
 #include <iostream>
 #include <fstream>
-#include <algorithm>
-#include <cstdio>
+#include <cstring>
 #define DN 400005
+#define x first
+#define y second
 using namespace std;
 
-//<parsing>
-FILE* fin=fopen("ismquery.in","r");
-const unsigned maxb=30000192;
-char buf[maxb];
-unsigned ptr=maxb;
+int n,m,v[DN],ind[DN],ai[4*DN],rez[6][DN],st[6][DN],sz[6],unde[6];
 
-inline unsigned getInt(){
-    unsigned nr=0;
-    while(buf[ptr]<'0'||'9'<buf[ptr])
-        if(++ptr>=maxb)
-            fread(buf,maxb,1,fin),ptr=0;
-    while('0'<=buf[ptr]&&buf[ptr]<='9'){
-        nr=nr*10+buf[ptr]-'0';
-        if(++ptr>=maxb)
-            fread(buf,maxb,1,fin),ptr=0;
-    }
-    return nr;
-}
-//</parsing>
-
-int n,m,v[DN],ind[DN],ai[4*DN],rez[6][DN];
-
-bool cmp(const int &a, const int &b) {
-  return v[a]<v[b];
-}
-
-void pp() {
-  for(int i=n; i; --i) for(int j=1; j<=5; ++j){
-    int rq
-  }
+int get(int nr) {
+  
 }
 
 int main()
 {
+    ifstream f("ismquery.in");
     ofstream g("ismquery.out");
-    n=getInt(); m=getInt();
-    for(int i=1; i<=n; ++i) {
-      v[i]=getInt();
-      ind[i]=i;
+    f>>n>>m;
+    for(int i=1; i<=n; ++i) f>>v[i];
+    
+    for(int i=n; i; --i) {
+      memset(unde,0,sizeof(unde));
+      for(int j=1; j<=5; ++j) rez[j][i]=get(v[i]);
     }
-    sort(ind+1,ind+n+1,cmp);
-    pp();
     return 0;
 }
