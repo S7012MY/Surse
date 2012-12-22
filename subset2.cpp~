@@ -6,9 +6,7 @@ int main() {
   ifstream f("subset2.in");
   ofstream g("subset2.out");
   int n,k,rez;
-  f>>n>>k;
-  rez=n-n/k-n/k;
-  if(k%2==0 && n%k<k/2) ++rez;
-  cout<<rez;
+  cin>>n>>k;
+  cout<<1+n/k;
   g<<rez;
 }
