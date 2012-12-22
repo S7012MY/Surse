@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+long long nr[1005];
+
+int nbune(int nr) {
+  int r=0;
+  for(;nr;) {
+    if(nr%10==4 || nr%10==7) ++r;
+    nr/=10;
+  }
+  return r;
+}
+
+long long a(int n, int k) {
+  if(n<k) return 0;
+  int r=1;
+  for(int i=0; i<k; ++i) r*=(n-i);
+  re
+}
+
+int main()
+{
+    for(int i=8; i<=20; ++i) {
+      long long rez=0;
+      for(int j=1; j<=i; ++j) {
+        int nb=0,cnt=nbune(j);
+        for(int k=1; k<=i; ++k) if(k!=i && nbune(k)<cnt) ++nb;
+        rez+=a(nb,6);
+      }
+    }
+    return 0;
+}
