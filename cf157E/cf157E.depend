@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1356196133 source:/home/petru/Desktop/proiecte/cf157E/main.cpp
+	<iostream>
+	<vector>
+	<bitset>
+
