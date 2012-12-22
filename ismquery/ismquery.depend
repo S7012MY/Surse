@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1356179554 source:/home/petru/Desktop/proiecte/ismquery/main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+
