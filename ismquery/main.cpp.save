@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <cstdio>
+#define DN 400005
+using namespace std;
+
+//<parsing>
+FILE* fin=fopen("ismquery.in","r");
+const unsigned maxb=30000192;
+char buf[maxb];
+unsigned ptr=maxb;
+
+inline unsigned getInt(){
+    unsigned nr=0;
+    while(buf[ptr]<'0'||'9'<buf[ptr])
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    while('0'<=buf[ptr]&&buf[ptr]<='9'){
+        nr=nr*10+buf[ptr]-'0';
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    }
+    return nr;
+}
+//</parsing>
+
+int n,m,v[DN],ind[DN],aib[DN],rez[5][DN];
+
+bool cmp(const int &a, const int &b) {
+  return v[a]<v[b];
+}
+
+int main()
+{
+    ofstream g("ismquery.out");
+    n=getInt(); m=getInt();
+    for(int i=1; i<=n; ++i) {
+      v[i]=getInt();
+      ind[i]=i;
+    }
+    sort(ind+1,ind+n+1,cmp);
+    pp();
+    return 0;
+}
