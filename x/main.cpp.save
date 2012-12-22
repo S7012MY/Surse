@@ -5,9 +5,11 @@ using namespace std;
 
 string a,b;
 
+int n,m,q
+
 int main()
 {
     ifstream f("x.in");
-    ofstream g("x.out")
+    ofstream g("x.out");
     return 0;
 }

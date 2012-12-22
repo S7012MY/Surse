@@ -1,12 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#define DN 500005
+#define DN 400005
 #define x first
 #define y second
 using namespace std;
 
-int n,m,v[DN],ind[DN],rez[6][DN],st[6][DN],psir[6][DN],sz[6],unde[6],G,h;
+int n,m,v[DN],rez[6][DN],st[6][DN],psir[6][DN],sz[6],unde[6],G,h;
 
 int get(int nr) {
   //cout<<nr<<' ';
@@ -22,7 +22,7 @@ int get(int nr) {
 
 void push(int u,int nr,int poz) {
   if(u>5) return;
-  for(;nr<st[u][sz[u]] && sz[u];) {
+  for(;nr<st[u][sz[u]] && sz[u]>0;) {
     push(u+1,st[u][sz[u]],psir[u][sz[u]]);
     --sz[u];
   }
@@ -53,7 +53,7 @@ int main()
         rez[j][i]=get(v[i]);
         //cout<<i<<' '<<j<<' '<<rez[j][i]<<'\n';
         //dst();
-        if(rez[j][i]==(1<<30)) {
+        if(rez[j][i]>n) {
           rez[j][i]=0;
           break;
         }
@@ -68,7 +68,7 @@ int main()
     for(int i=1; i<=m; ++i) {
       pc=1+(i+pp*G)%n;
       kc=1+(i+kp*h)%5;
-      //cout<<pc<<' '<<kc<<'\n';
+      cout<<pc<<' '<<kc<<'\n';
       g<<rez[kc][pc]<<'\n';
       pp=pc; kp=kc;
     }
