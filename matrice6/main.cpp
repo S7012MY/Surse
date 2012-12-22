@@ -4,7 +4,7 @@
 #define MOD 666013
 using namespace std;
 
-int n,m,s1[6],s2[6],v1[6],v2[6],pot[1005][1005],nr[1005][1005];
+int n,m,s1[6],s2[6],v1[6],v2[6],pot[301][301],nr[10805][301];
 
 void debug() {
   for(int i=1; i<=n; ++i) cout<<v1[i]<<' ';
@@ -25,8 +25,8 @@ void l2(int p) {
     for(int i=1; i<=n; ++i) if(abs(v1[i]-v2[i])>1) return;
     for(int i=2; i<=n; ++i) if(abs(v2[i]-v2[i-1])>1) return;
     for(int i=1; i<=n; ++i) c1=c1*3+s1[i]+1;
-    for(int i=1; i<=n; ++i) c2=c2*3+s2[i]+1;
-    pot[c1][c2]=1;
+    for(int i=2; i<=n; ++i) c2=c2*3+s2[i]+1;
+    pot[c1][c2]+=1;
     nr[1][c1]=1;
     return;
   }
@@ -54,8 +54,8 @@ int main()
     f>>n>>m;
     l1(2);
     for(int i=2; i<=m; ++i) for(int j=0; j<=300; ++j) for(int k=0; k<=300; ++k) if(pot[j][k]){
-      nr[i][k]+=nr[i-1][j];
-      if(nr[i][k]>=MOD) nr[i][k]-=MOD;
+      nr[i][k]+=pot[j][k]*nr[i-1][j];
+      if(nr[i][k]>=MOD) nr[i][k]%=MOD;
     }
     int rez=0;
     for(int j=0; j<=300; ++j) {

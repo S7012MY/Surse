@@ -25,8 +25,8 @@ void l2(int p) {
     for(int i=1; i<=n; ++i) if(abs(v1[i]-v2[i])>1) return;
     for(int i=2; i<=n; ++i) if(abs(v2[i]-v2[i-1])>1) return;
     for(int i=1; i<=n; ++i) c1=c1*3+s1[i]+1;
-    for(int i=1; i<=n; ++i) c2=c2*3+s2[i]+1;
-    pot[c1][c2]=1;
+    for(int i=2; i<=n; ++i) c2=c2*3+s2[i]+1;
+    pot[c1][c2]+=1;
     nr[1][c1]=1;
     return;
   }
@@ -53,11 +53,15 @@ int main()
     ofstream g("matrice6.out");
     f>>n>>m;
     l1(2);
-    for(int i=2; i<=n; ++i) for(int j=0; j<=300; ++j) for(int k=0; k<=300; ++k) if(pot[j][k]){
-      nr[i][k]+=nr[i-1][j];
-      if(nr[i][k]>=MOD) nr[i][]
+    for(int i=2; i<=m; ++i) for(int j=0; j<=300; ++j) for(int k=0; k<=300; ++k) if(pot[j][k]){
+      nr[i][k]+=pot[j][k]*nr[i-1][j];
+      if(nr[i][k]>=MOD) nr[i][k]%=MOD;
+    }
     int rez=0;
-    for(int j=)
+    for(int j=0; j<=300; ++j) {
+      rez+=nr[n][j];
+      if(rez>=MOD) rez-=MOD;
+    }
     g<<rez;
     return 0;
 }
