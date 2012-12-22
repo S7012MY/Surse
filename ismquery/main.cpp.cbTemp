@@ -46,7 +46,7 @@ int main()
       }
       push(1,v[i],i);
     }
-    f>>G>>h;
+    f>>G>>h
     //pi = 1 + (i + pi-1*G)%N
     //ki = 1 + (i + ki-1*H)%5
     int pp=1,kp=1,pc,kc;
