@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <cmath>
+using namespace std;
+
+
+
+int n;
+
+double dist()
+
+int main()
+{
+    ifstream f("spider-man.in");
+    ofstream g("spider-man.out");
+    f>>n;
+    double ls=0.000000001,ld=acos(-1),ts,td;
+    for(;fabs(ld-ls)>=0.00001;) {
+      
+    }
+    return 0;
+}

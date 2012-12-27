@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="placute.in" />
+		<Unit filename="placute.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />
