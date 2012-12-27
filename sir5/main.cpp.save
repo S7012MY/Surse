@@ -1,0 +1,14 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int n,a[35];
+
+int main()
+{
+    ifstream f("sir5.in");
+    ofstream g("sir5.out");
+    f>>n;
+    for(int i=1; i<=n; ++i)
+    return 0;
+}
