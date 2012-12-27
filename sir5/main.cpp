@@ -56,20 +56,22 @@ int main()
       int a;
       f>>a;
       if(i&1){
-        for(int j=1; j<=a-l; ++j) {
+        int lm=a;
+        if(i==1) lm=a-l;
+        for(int j=1; j<=lm; ++j) {
           lgput(1);
           inmv();
-          for(int i=1; i<=l; ++i) v[i]=vr[i];
-          //cout<<v[l]<<' ';
+          for(int k=1; k<=l; ++k) v[i]=vr[i];
+          cout<<v[l]<<' ';
         }
       }else {
         int ultPoz=min(l-1,a);
         for(int j=1; j<=ultPoz; ++j) {
           vr[l+j]=(vr[l+j-1]+vr[j])%MOD;
         }
-        ultPoz+=l;
         int ram=a-ultPoz,li=1;
-        cout<<ram<<'\n';
+        ultPoz+=l;
+        //cout<<ram<<'\n';
         for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
 
