@@ -55,11 +55,19 @@ int main()
     for(int i=1; i<=n; ++i) {
       int a;
       f>>a;
-      for(int j=1; j<=a-l; ++j) {
-        lgput(1);
-        inmv();
-        for(int i=1; i<=l; ++i) v[i]=vr[i];
-        cout<<v[l]<<'\n';
+      if(i&1){
+        for(int j=1; j<=a-l; ++j) {
+          lgput(1);
+          inmv();
+          for(int i=1; i<=l; ++i) v[i]=vr[i];
+          cout<<v[l]<<' ';
+        }
+      }else {
+        for(int j=1; j<=min(l-1,a); ++j) {
+          vr[l+j]=(vr[l+j-1]+vr[j])%MOD;
+          cout<<vr[l+j]<<' ';
+          v[j]=vr[l+j];
+        }
       }
     }
     g<<lst;
