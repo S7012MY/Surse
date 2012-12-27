@@ -72,23 +72,13 @@ int main()
 
     for(int i=1; i<=sz; ++i) {
       a=as[i];
-      cout<<as[i]<<' ';
       if(tp[i]&1){
         int lm=a;
-        if(lm<l) {
-          for(int j=1; j<=lm; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
-          for(int j=1; j<=l; ++j) {
-            v[j]=v[j+lm];
-            vr[j]=v[j];
-           // cout<<v[j]<<' ';
-          }
-          continue;
-        }
         for(int j=1; j<=lm; ++j) {
           lgput(1);
           inmv();
           for(int k=1; k<=l; ++k) v[k]=vr[k];
-         // cout<<v[l]<<' ';
+          cout<<v[l]<<' ';
         }
       }else {
         int ultPoz=min(l-1,a);
@@ -104,6 +94,6 @@ int main()
         //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
       }
     }
-    g<<lst;
+    g<<v[l];
     return 0;
 }
