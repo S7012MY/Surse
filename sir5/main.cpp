@@ -58,11 +58,8 @@ int main()
       for(int j=1; j<=a-l; ++j) {
         lgput(1);
         inmv();
-        for(int i=1; i<=l; ++i) {
-          v[i]=vr[i];
-          cout<<vr[i]<<' ';
-        }
-        cout<<'\n';
+        for(int i=1; i<=l; ++i) v[i]=vr[i];
+        cout<<v[l]<<'\n';
       }
     }
     g<<lst;
