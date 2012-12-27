@@ -32,6 +32,5 @@ int main()
         break;
       }
     }
-    g<<rez;
     return 0;
 }
