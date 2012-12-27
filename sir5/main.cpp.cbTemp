@@ -67,6 +67,7 @@ int main()
         for(int j=1; j<=ultPoz; ++j) {
           vr[l+j]=(vr[l+j-1]+vr[j])%MOD;
         }
+        cout<<vr[l+ultPoz]<<"---------";
         for(int i=1; i<=ultPoz; ++i) cout<<vr[l+i]<<' ';
         int ram=a-l;
         for(int i=1; i+ram<=ultPoz; ++i)v[i]=vr[i+ram];

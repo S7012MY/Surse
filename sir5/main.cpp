@@ -60,14 +60,18 @@ int main()
           lgput(1);
           inmv();
           for(int i=1; i<=l; ++i) v[i]=vr[i];
-          cout<<v[l]<<' ';
+          //cout<<v[l]<<' ';
         }
       }else {
-        for(int j=1; j<=min(l-1,a); ++j) {
+        int ultPoz=min(l-1,a);
+        for(int j=1; j<=ultPoz; ++j) {
           vr[l+j]=(vr[l+j-1]+vr[j])%MOD;
-          cout<<vr[l+j]<<' ';
-          v[j]=vr[l+j];
         }
+        for(int i=1; i<=ultPoz; ++i) cout<<vr[l+i]<<' ';
+        int ram=a-l;
+        for(int i=1; i+ram<=ultPoz; ++i)v[i]=vr[i+ram];
+        for(int i=ultPoz; i>ultPoz-ram; --i) v[i]=vr[ultPoz];
+        //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
       }
     }
     g<<lst;
