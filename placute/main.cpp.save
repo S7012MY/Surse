@@ -6,10 +6,10 @@
 #define mp make_pair
 using namespace std;
 
-typedef pair<int,int> per;
+typedef pair<int,pair<int,int> > per;
 typedef set<per,greater<per> >::iterator is;
 
-int n,k,lst=-1,rez;
+int n,k,lst=-1,rez,fr[1005],g[100005],c[100005];
 set<per,greater<per> > s;
 
 int main()
@@ -18,15 +18,15 @@ int main()
     ofstream g("placute.out");
     f>>n>>k;
     for(int i=1; i<=n; ++i) {
-      int g,c;
-      f>>g>>c;
-      s.insert(mp(g,c));
+      f>>g[i]>>c[i];
+      ++fr[c[i]];
     }
+    for(int i=1; i<=n; ++i) s.insert(mp(g[i]))
     for(;!s.empty();) {
       int ok=0;
       for(is i=s.begin(); i!=s.end(); ++i) if(i->y!=lst) {
         ok=1;
-        //cout<<i->x<<' '<<i->y<<'\n';
+        //scout<<i->x<<' '<<i->y<<'\n';
         lst=i->y;
         rez+=i->x;
         s.erase(i);

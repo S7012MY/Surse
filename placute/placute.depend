@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1356600175 source:/home/petru/Desktop/proiecte/placute/main.cpp
+	<iostream>
+	<fstream>
+	<set>
+
