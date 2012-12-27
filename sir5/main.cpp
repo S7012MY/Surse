@@ -44,14 +44,15 @@ int main()
     pot[l][1]=pot[l][l-1]=1;
     for(int i=1; i<=n; ++i) if(i&1){
       f>>a;
-      lgput(a-2);
-      for(int j=1; j<=l; ++j) v[j]=lst;
+      lgput(a-1);
+      if(i==1)for(int j=1; j<=l; ++j) v[j]=lst;
       inmv();
       if(i<n) f>>anxt;
       else anxt=0;
       lst=vr[l];
       for(int j=l+1; j<=min(2*l,l+anxt); ++j) {
         vr[j]=(vr[j-1]+vr[j-l])%MOD;
+        v[i-l]=vr[j];
         lst=vr[j];
       }
     }
