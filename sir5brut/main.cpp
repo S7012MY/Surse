@@ -3,24 +3,27 @@
 #define MOD 666013
 using namespace std;
 
-int nr[555],n,l,lst=0,sir[5555];
+int nr[555]={1},n,l,lst=0,sir[5555];
 
 int main()
 {
+ifstream f("sir5.in");
+ofstream g("sir5.out");
   f>>n>>l;
   for(int i=1; i<l; ++i) nr[i]=1;
   for(int i=1; i<=n; ++i) {
     int a;
     f>>a;
     for(int j=1; j<=a; ++j) sir[lst+j]=(i&1);
-    lst+=a-1;
+    lst+=a;
   }
   for(int i=l; i<=lst; ++i) {
-    sir[i]=sir[i-1];
+    nr[i]=nr[i-1];
     int ok=0;
-    for(int j=i-l+1; j<=i; ++j) ok|=sir[j]
-    sir[i]=(sir[i]+sir[i-l])%MOD;
+    for(int j=i-l+1; j<=i; ++j) ok|=sir[j];
+    if(ok) nr[i]=(nr[i]+nr[i-l])%MOD;
   }
-  g<<sir[lst]
+  for(int i=1; i<=lst; ++i) cout<<nr[i]<<' ';
+  g<<nr[lst];
   return 0;
 }
