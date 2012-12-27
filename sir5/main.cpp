@@ -6,7 +6,7 @@
 using namespace std;
 
 int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
-int as[55],tp[55];
+int as[55],tp[55],sz;
 
 ifstream f("sir5.in");
 ofstream g("sir5.out");
@@ -15,8 +15,12 @@ void preproc() {
   for(int i=1; i<=n; ++i) {
     f>>a;
     if(tot<l) {
-    int j;
-      for(j=1; j<=a && tot<l; ++j,++tot) v[tot+1]=v[tot];
+      int j;
+      for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
+      if(a) {
+        as[++sz]=a;
+        tp[sz]=i&1;
+      }
     }
   }
 }
