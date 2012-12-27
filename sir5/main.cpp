@@ -17,6 +17,7 @@ void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
 
 void lgput(int e) {
     int c[DN][DN];
+    e=max(0,e);
     memset(rez,0,sizeof(rez));
     memcpy(c,pot,sizeof(pot));
     for(int i=1; i<=l; ++i) rez[i][i]=1;
@@ -44,7 +45,7 @@ int main()
     pot[l][1]=pot[l][l-1]=1;
     for(int i=1; i<=n; ++i) if(i&1){
       f>>a;
-      lgput(a);
+      lgput(a-l);
       if(i==1){
         for(int j=1; j<=l; ++j) v[j]=lst;
         v[l]=2;
