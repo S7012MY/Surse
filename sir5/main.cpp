@@ -46,7 +46,7 @@ int main()
     for(int i=1; i<=n; ++i) if(i&1){
       f>>a;
       //a<=l !!!
-      lgput(a-1);
+      lgput(a-l);
       if(i==1){
         for(int j=1; j<=l; ++j) v[j]=lst;
         v[l]=2;
