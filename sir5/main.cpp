@@ -49,7 +49,7 @@ int main()
     ofstream g("sir5.out");
     f>>n>>l;
     for(int i=1; i<l; ++i) pot[i][i+1]=v[i]=1;
-    pot[l][1]=pot[l][l-1]=1;
+    pot[l][1]=pot[l][l]=1;
     v[l]=2;
     deb(pot);
     for(int i=1; i<=n; ++i) {
