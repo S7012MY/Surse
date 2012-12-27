@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <cmath>
 #define x first
@@ -28,12 +29,12 @@ int main()
     fi>>a.x>>a.y>>b.x>>b.y;
     a.x-=xc; a.y-=yc;
     b.x-=xc; b.y-=yc;
-    double ls=0.000000001,ld=acos(-1),ts,td;
-    for(;fabs(ld-ls)>=0.00001;) {
+    double ls=0.00000000001,ld=2*acos(-1),ts,td;
+    for(;fabs(ld-ls)>=0.000001;) {
       ts=(2.0*ls+ld)/3.0;
       td=(ls+2.0*ld)/3.0;
-      if(f(ts)<f(td)) ls=ts;
-      else ld=td;
+      if(f(ts)<f(td)) ld=td;
+      else ls=ts;
     }
     g<<fixed<<setprecision(9)<<f(ts);
     return 0;
