@@ -51,7 +51,7 @@ int main()
     for(int i=1; i<l; ++i) pot[i][i+1]=v[i]=1;
     pot[l][1]=pot[l][l]=1;
     v[l]=2;
-    deb(pot);
+
     for(int i=1; i<=n; ++i) {
       int a;
       f>>a;
@@ -61,7 +61,7 @@ int main()
         for(int j=1; j<=lm; ++j) {
           lgput(1);
           inmv();
-          for(int k=1; k<=l; ++k) v[i]=vr[i];
+          for(int k=1; k<=l; ++k) v[k]=vr[k];
           cout<<v[l]<<' ';
         }
       }else {
