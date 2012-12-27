@@ -45,7 +45,8 @@ int main()
     pot[l][1]=pot[l][l-1]=1;
     for(int i=1; i<=n; ++i) if(i&1){
       f>>a;
-      lgput(a-l);
+      //a<=l !!!
+      lgput(a-1);
       if(i==1){
         for(int j=1; j<=l; ++j) v[j]=lst;
         v[l]=2;
