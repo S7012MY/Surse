@@ -48,16 +48,19 @@ int main()
     ifstream f("sir5.in");
     ofstream g("sir5.out");
     f>>n>>l;
-    for(int i=1; i<l; ++i) pot[i][i+1]=v[i]=1;
+    for(int i=1; i<l; ++i) pot[i][i+1]=1;
     pot[l][1]=pot[l][l]=1;
-    v[l]=2;
+    for(int i=1; i<=2*l; ++i) v[]
 
     for(int i=1; i<=n; ++i) {
       int a;
       f>>a;
       if(i&1){
         int lm=a;
-        if(i==1) lm=a-l;
+        if(i==1) {
+          lm=a-l;
+          for(int i=1; i<=min(a,l); ++i) v[i]=1;
+        }
         if(lm<l) {
           for(int j=1; j<=lm; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
           for(int j=1; j<=l; ++j) {
