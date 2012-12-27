@@ -55,6 +55,9 @@ int main()
         v[i-l]=vr[j];
         lst=vr[j];
       }
+      cout<<i<<":\n";
+      for(int j=1; j<=min(2*l,l+anxt); ++j) cout<<vr[j]<<' ';
+      cout<<'\n';
     }
     g<<lst;
     return 0;
