@@ -43,6 +43,9 @@ void inmv(){
   for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) vr[i]=(vr[i]+v[j]*rez[i][j])%MOD;
 }
 
+//preprocesat pana ajung cu a-urile ala l
+//pe urma fac normal
+
 int main()
 {
     ifstream f("sir5.in");
