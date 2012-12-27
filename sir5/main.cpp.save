@@ -6,6 +6,16 @@
 using namespace std;
 
 int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN],anxt;
+int as[55],tp[55];
+
+ifstream f("sir5.in");
+ofstream g("sir5.out");
+
+void preproc() {
+  for(int i=1; i<=n; ++i) {
+    f>>a;
+  }
+}
 
 void deb(int a[DN][DN]) {
   for(int i=1; i<=l; ++i) {
@@ -44,13 +54,13 @@ void inmv(){
 }
 
 //preprocesat pana ajung cu a-urile ala l
-//
+//pe urma fac normal
 
 int main()
 {
-    ifstream f("sir5.in");
-    ofstream g("sir5.out");
     f>>n>>l;
+    
+    preproc();
     for(int i=1; i<l; ++i) pot[i][i+1]=1;
     pot[l][1]=pot[l][l]=1;
     for(int i=1; i<=2*l; ++i) v[i]=1;
