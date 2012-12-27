@@ -5,7 +5,7 @@
 #define MOD 666013
 using namespace std;
 
-int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN];
+int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN],anxt;
 
 void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
     for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) {
@@ -42,13 +42,19 @@ int main()
     f>>n>>l;
     for(int i=1; i<l; ++i) pot[i][i+1]=1;
     pot[l][1]=pot[l][l-1]=1;
-    for(int i=1; i<=n; ++i) {
+    for(int i=1; i<=n; ++i) if(i&1){
       f>>a;
       lgput(a-1);
       for(int j=1; j<=l; ++j) v[j]=lst;
       inmv();
-      for(int i=l+1; i<=)
-      cout<<vr[l];
+      if(i<n) f>>anxt;
+      else anxt=0;
+      lst=vr[l];
+      for(int j=l+1; j<=min(2*l,l+anxt); ++j) {
+        vr[j]=(vr[j-1]+vr[j-l])%MOD;
+        lst=vr[j];
+      }
     }
+    g<<lst;
     return 0;
 }
