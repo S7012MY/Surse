@@ -5,7 +5,21 @@
 #define MOD 666013
 using namespace std;
 
-int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN],anxt;
+int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
+int as[55],tp[55];
+
+ifstream f("sir5.in");
+ofstream g("sir5.out");
+
+void preproc() {
+  for(int i=1; i<=n; ++i) {
+    f>>a;
+    if(tot<l) {
+    int j;
+      for(j=1; j<=a && tot<l; ++j,++tot) v[tot+1]=v[tot];
+    }
+  }
+}
 
 void deb(int a[DN][DN]) {
   for(int i=1; i<=l; ++i) {
@@ -48,9 +62,9 @@ void inmv(){
 
 int main()
 {
-    ifstream f("sir5.in");
-    ofstream g("sir5.out");
     f>>n>>l;
+
+    preproc();
     for(int i=1; i<l; ++i) pot[i][i+1]=1;
     pot[l][1]=pot[l][l]=1;
     for(int i=1; i<=2*l; ++i) v[i]=1;
