@@ -91,7 +91,7 @@ int main()
         for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
 
-        //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+        for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
       }
     }
     g<<v[l];
