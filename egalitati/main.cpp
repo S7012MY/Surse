@@ -11,7 +11,6 @@ int main()
     ifstream f("egalitati.in");
     ofstream g("egalitati.out");
     getline(f,s);
-    s+=';';
     int rez=1;
     for(int i=0; i<s.size(); ++i) {
       if(s[i]=='(') ++nrd;
@@ -21,9 +20,11 @@ int main()
       }else if(s[i]=='=') {
         if(nrd>0) rez=0;
         nrd=0;
-      }else if(s[i]==';') {
+      }else if(s[i]==';' || s[i]=='.') {
         g<<rez<<'\n';
         nrd=0;
+        rez=1;
+        if(s[i]=='.') break;
       }
     }
     return 0;
