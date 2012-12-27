@@ -35,6 +35,5 @@ int main()
       if(f(ts)<f(td)) ls=ts;
       else ld=td;
     }
-    g<<fixed<<setprecision(9)<<f(ts);
     return 0;
 }
