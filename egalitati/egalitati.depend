@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1356599502 source:/home/petru/Desktop/proiecte/egalitati/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

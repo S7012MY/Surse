@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="spider-man.in" />
+		<Unit filename="spider-man.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -21,6 +21,7 @@ int main()
         if(nrd>0) rez=0;
         nrd=0;
       }else if(s[i]==';' || s[i]=='.') {
+        if(nrd!=0) rez=0;
         g<<rez<<'\n';
         nrd=0;
         rez=1;
