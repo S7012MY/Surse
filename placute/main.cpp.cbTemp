@@ -11,7 +11,7 @@ typedef set<per,greater<per> >::iterator is;
 
 int n,k,lst=-1,rez,fr[1005],g[100005],c[100005];
 set<per,greater<per> > s;
-multiset<int,greater> w[1005];
+multiset<int,greater<int> > w[1005];
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
       ++fr[c[i]];
       w[c[i]].insert(g[i]);
     }
-    for(int i=1; i<=k; ++i)
+    for(int i=1; i<=k; ++i) s.insert(mp(*w[i].begin(),fr[i]));
     go<<rez;
     return 0;
 }

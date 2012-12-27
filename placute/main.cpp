@@ -6,11 +6,12 @@
 #define mp make_pair
 using namespace std;
 
-typedef pair<int,pair<int,int> > per;
+typedef pair<int,int > per;
 typedef set<per,greater<per> >::iterator is;
 
 int n,k,lst=-1,rez,fr[1005],g[100005],c[100005];
 set<per,greater<per> > s;
+multiset<int,greater<int> > w[1005];
 
 int main()
 {
@@ -20,19 +21,11 @@ int main()
     for(int i=1; i<=n; ++i) {
       f>>g[i]>>c[i];
       ++fr[c[i]];
+      w[c[i]].insert(g[i]);
     }
-    for(int i=1; i<=n; ++i) s.insert(mp(g[i],mp(fr[c[i]],c[i])));
-    for(;!s.empty();) {
-      int ok=0;
-      for(is i=s.begin(); i!=s.end(); ++i) if(i->y.y!=lst) {
-        ok=1;
-        //scout<<i->x<<' '<<i->y<<'\n';
-        lst=i->y.y;
-        rez+=i->x;
-        s.erase(i);
-        break;
-      }
-      if(!ok) break;
+    for(int i=1; i<=k; ++i) if(w[i].size()){
+      s.insert(mp(*w[i].begin(),fr[i]));
+      w[i].erase(w[i].begin());
     }
     go<<rez;
     return 0;
