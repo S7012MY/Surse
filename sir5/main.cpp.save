@@ -1,10 +1,11 @@
 #include <iostream>
 #include <fstream>
-#define DN 55
+#include <cstring>
+#define DN 105
 #define MOD 666013
 using namespace std;
 
-int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN];
+int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN];
 
 void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
     for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) {
@@ -13,7 +14,7 @@ void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
         r[i][j]=c;
     }
 }
- 
+
 void lgput(int e) {
     int c[DN][DN];
     memset(rez,0,sizeof(rez));
@@ -29,6 +30,11 @@ void lgput(int e) {
     }
 }
 
+void inmv(){
+  memset(vr,0,sizeof(vr));
+  for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) vr[i]=(vr[i]+v[j]*rez[i][j])%MOD;
+}
+
 int main()
 {
     ifstream f("sir5.in");
@@ -38,6 +44,11 @@ int main()
     pot[l][1]=pot[l][l-1]=1;
     for(int i=1; i<=n; ++i) {
       f>>a;
+      lgput(a-1);
+      for(int j=1; j<=l; ++j) v[j]=lst;
+      inmv();
+      for(int i=l+1; i<=)
+      cout<<vr[l];
     }
     return 0;
 }
