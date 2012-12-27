@@ -59,7 +59,13 @@ int main()
         int lm=a;
         if(i==1) lm=a-l;
         if(lm<l) {
-          for(int i=1; i<=lm; ++i) 
+          for(int j=1; j<=lm; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
+          for(int j=1; j<=l; ++j) {
+            v[j]=v[j+lm];
+            vr[j]=v[j];
+            cout<<v[j]<<' ';
+          }
+          continue;
         }
         for(int j=1; j<=lm; ++j) {
           lgput(1);
