@@ -7,6 +7,13 @@ using namespace std;
 
 int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN],lst=1,vr[DN],anxt;
 
+void deb(int a[DN][DN]) {
+  for(int i=1; i<=l; ++i) {
+    for(int j=1; j<=l; ++j) cout<<a[i][j]<<' ';
+    cout<<'\n';
+  }
+}
+
 void inm(int a[DN][DN],int b[DN][DN],int r[DN][DN]) {
     for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) {
         int c=0;
@@ -50,8 +57,11 @@ int main()
       for(int j=1; j<=a-l; ++j) {
         lgput(1);
         inmv();
-        for(int i=1; i<=l; ++i) v[i]=vr[i];
-        cout<<v[l]<<' ';
+        for(int i=1; i<=l; ++i) {
+          v[i]=vr[i];
+          cout<<vr[i]<<' ';
+        }
+        cout<<'\n';
       }
     }
     g<<lst;
