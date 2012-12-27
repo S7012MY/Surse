@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1356611959 source:/home/petru/Desktop/proiecte/sir5brut/main.cpp
+	<iostream>
+	<fstream>
+

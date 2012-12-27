@@ -41,19 +41,17 @@ int main()
     ifstream f("sir5.in");
     ofstream g("sir5.out");
     f>>n>>l;
-    for(int i=1; i<l; ++i) pot[i][i+1]=sir[i]=1;
+    for(int i=1; i<l; ++i) pot[i][i+1]=v[i]=1;
     pot[l][1]=pot[l][l-1]=1;
-    sir[l]=2;
+    v[l]=2;
     for(int i=1; i<=n; ++i) {
       int a;
       f>>a;
-      if(i&1) {
-        if(a>l) {
-          lgput(a-l);
-          inmv();
-        }
-      }else {
-      
+      for(int j=1; j<=a-l; ++j) {
+        lgput(1);
+        inmv();
+        for(int i=1; i<=l; ++i) v[i]=vr[i];
+        cout<<v[l];
       }
     }
     g<<lst;
