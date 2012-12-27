@@ -12,15 +12,13 @@ ifstream f("sir5.in");
 ofstream g("sir5.out");
 
 void preproc() {
+cout<<n<<' '<<l<<'\n';
   for(int i=1; i<=n; ++i) {
     f>>a;
-    if(tot<l) {
-      int j;
-      for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
-      if(a) {
-        as[++sz]=a;
-        tp[sz]=i&1;
-      }
+    for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
+    if(a) {
+      as[++sz]=a;
+      tp[sz]=i&1;
     }
   }
 }
@@ -71,23 +69,18 @@ int main()
     preproc();
     for(int i=1; i<l; ++i) pot[i][i+1]=1;
     pot[l][1]=pot[l][l]=1;
-    for(int i=1; i<=2*l; ++i) v[i]=1;
 
-    for(int i=1; i<=n; ++i) {
-      int a;
-      f>>a;
-      if(i&1){
+    for(int i=1; i<=sz; ++i) {
+      a=as[i];
+      cout<<as[i]<<' ';
+      if(tp[i]&1){
         int lm=a;
-        if(i==1) {
-          lm=a-l;
-          for(int i=1; i<=min(a,l); ++i) v[i]=1;
-        }
         if(lm<l) {
           for(int j=1; j<=lm; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
           for(int j=1; j<=l; ++j) {
             v[j]=v[j+lm];
             vr[j]=v[j];
-            cout<<v[j]<<' ';
+           // cout<<v[j]<<' ';
           }
           continue;
         }
@@ -95,7 +88,7 @@ int main()
           lgput(1);
           inmv();
           for(int k=1; k<=l; ++k) v[k]=vr[k];
-          cout<<v[l]<<' ';
+         // cout<<v[l]<<' ';
         }
       }else {
         int ultPoz=min(l-1,a);
@@ -108,7 +101,7 @@ int main()
         for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
 
-        for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+        //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
       }
     }
     g<<lst;
