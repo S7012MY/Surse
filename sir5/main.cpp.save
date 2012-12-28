@@ -14,7 +14,10 @@ ofstream g("sir5.out");
 void preproc() {
   for(int i=1; i<=n; ++i) {
     f>>a;
-    for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
+    for(;a && tot<l; ++tot,--a) {
+      v[tot+1]=vr[tot+1]=v[tot];
+      if(tot+1==l && (i&1)) ++v[tot+1],++vr[tot+1];
+    }
     if(a) {
       as[++sz]=a;
       tp[sz]=i&1;

@@ -14,13 +14,15 @@ ofstream g("sir5.out");
 void preproc() {
   for(int i=1; i<=n; ++i) {
     f>>a;
-    for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
+    for(;a && tot<l; ++tot,--a) {
+      v[tot+1]=vr[tot+1]=v[tot];
+      if(tot+1==l && (i&1)) ++v[tot+1],++vr[tot+1];
+    }
     if(a) {
       as[++sz]=a;
       tp[sz]=i&1;
     }
   }
-  v[l]=2;
 }
 
 void deb(int a[DN][DN]) {
@@ -91,7 +93,7 @@ int main()
         for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
 
-        for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+        for(int i=1; i<=ultPoz-l; ++i) cout<<v[i]<<' ';
       }
     }
     g<<v[l];
