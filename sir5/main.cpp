@@ -23,6 +23,7 @@ void preproc() {
       tp[sz]=i&1;
     }
   }
+  for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
 }
 
 void deb(int a[DN][DN]) {
@@ -90,9 +91,9 @@ int main()
         int ram=a-ultPoz,li=1;
         ultPoz+=l;
         //cout<<ram<<'\n';
-        for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
+        for(int i=1; i+l+ram<=ultPoz; ++i) v[i]=vr[i+l+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
-
+        for(int i=1; i<=l; ++i) vr[i]=v[i];
         for(int i=1; i<=ultPoz-l; ++i) cout<<v[i]<<' ';
       }
     }
