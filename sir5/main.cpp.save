@@ -12,7 +12,6 @@ ifstream f("sir5.in");
 ofstream g("sir5.out");
 
 void preproc() {
-cout<<n<<' '<<l<<'\n';
   for(int i=1; i<=n; ++i) {
     f>>a;
     for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
@@ -91,9 +90,9 @@ int main()
         for(int i=1; i+ram<=ultPoz; ++i) v[i]=vr[i+ram],li=i;
         for(;li<=l; ++li) v[li]=vr[ultPoz];
 
-        //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+        for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
       }
     }
-    g<<lst;
+    g<<v[l];
     return 0;
 }
