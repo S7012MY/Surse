@@ -23,7 +23,7 @@ void preproc() {
       tp[sz]=i&1;
     }
   }
-  for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+  //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
 }
 
 void deb(int a[DN][DN]) {
@@ -76,13 +76,16 @@ int main()
     for(int i=1; i<=sz; ++i) {
       a=as[i];
       if(tp[i]&1){
-        int lm=a;
+        lgput(a);
+        inmv();
+        for(int k=1; k<=l; ++k) v[k]=vr[k];
+        /*int lm=a;
         for(int j=1; j<=lm; ++j) {
           lgput(1);
           inmv();
           for(int k=1; k<=l; ++k) v[k]=vr[k];
           cout<<v[l]<<' ';
-        }
+        }*/
       }else {
         int ultPoz=min(l-1,a);
         for(int j=1; j<=ultPoz; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
@@ -92,7 +95,7 @@ int main()
           if(j+ram<=l) v[j]=v[j+ram];
           else v[j]=v[l];
 
-        for(int i=1; i<=ultPoz-l; ++i) cout<<v[i]<<' ';
+        //for(int i=1; i<=ultPoz; ++i) cout<<v[i]<<' ';
       }
     }
     g<<v[l];
