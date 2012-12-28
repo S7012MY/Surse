@@ -12,7 +12,6 @@ ifstream f("sir5.in");
 ofstream g("sir5.out");
 
 void preproc() {
-cout<<n<<' '<<l<<'\n';
   for(int i=1; i<=n; ++i) {
     f>>a;
     for(;a && tot<l; ++tot,--a) v[tot+1]=v[tot];
