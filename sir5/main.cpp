@@ -20,6 +20,7 @@ void preproc() {
       tp[sz]=i&1;
     }
   }
+  v[l]=2;
 }
 
 void deb(int a[DN][DN]) {
