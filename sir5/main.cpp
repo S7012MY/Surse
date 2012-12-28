@@ -85,14 +85,13 @@ int main()
         }
       }else {
         int ultPoz=min(l-1,a);
-        for(int j=1; j<=ultPoz; ++j) vr[l+j]=(vr[l+j-1]+vr[j])%MOD;
-
+        for(int j=1; j<=ultPoz; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
+        for(int j=1; j<=l; ++j) v[j]=v[j+ultPoz];
         int ram=a-ultPoz,li=1;
-        ultPoz+=l;
-        //cout<<ram<<'\n';
-        for(int i=1; i+l+ram<=ultPoz; ++i) v[i]=vr[i+l+ram],li=i+1;
-        for(;li<=l; ++li) v[li]=vr[ultPoz];
-        for(int i=1; i<=l; ++i) vr[i]=v[i];
+        for(int j=1; j<=l; ++j)
+          if(j+ram<=l) v[j]=v[j+ram];
+          else v[j]=v[l];
+
         for(int i=1; i<=ultPoz-l; ++i) cout<<v[i]<<' ';
       }
     }
