@@ -5,8 +5,8 @@
 #define MOD 666013
 using namespace std;
 
-int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
-int as[55],tp[55],sz;
+int n,l,a,mt[DN][DN],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
+int as[DN],tp[DN],sz;
 
 ifstream f("sir5.in");
 ofstream g("sir5.out");
@@ -23,7 +23,7 @@ void preproc() {
       tp[sz]=i&1;
     }
   }
-  for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
+  //for(int i=1; i<=l; ++i) cout<<v[i]<<' ';
 }
 
 void deb(int a[DN][DN]) {
@@ -76,13 +76,16 @@ int main()
     for(int i=1; i<=sz; ++i) {
       a=as[i];
       if(tp[i]&1){
-        int lm=a;
+        lgput(a);
+        inmv();
+        for(int k=1; k<=l; ++k) v[k]=vr[k];
+        /*int lm=a;
         for(int j=1; j<=lm; ++j) {
           lgput(1);
           inmv();
           for(int k=1; k<=l; ++k) v[k]=vr[k];
           cout<<v[l]<<' ';
-        }
+        }*/
       }else {
         int ultPoz=min(l-1,a);
         for(int j=1; j<=ultPoz; ++j) v[l+j]=(v[l+j-1]+v[j])%MOD;
@@ -90,8 +93,9 @@ int main()
         int ram=a-ultPoz,li=1;
         for(int j=1; j<=l; ++j)
           if(j+ram<=l) v[j]=v[j+ram];
-        
-        for(int i=1; i<=ultPoz-l; ++i) cout<<v[i]<<' ';
+          else v[j]=v[l];
+
+        //for(int i=1; i<=ultPoz; ++i) cout<<v[i]<<' ';
       }
     }
     g<<v[l];

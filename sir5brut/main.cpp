@@ -3,7 +3,7 @@
 #define MOD 666013
 using namespace std;
 
-int nr[555]={1},n,l,lst=0,sir[5555];
+int nr[5555]={1},n,l,lst=0,sir[5555];
 
 int main()
 {
@@ -23,7 +23,7 @@ ofstream g("sir5.out");
     for(int j=i-l+1; j<=i; ++j) ok|=sir[j];
     if(ok) nr[i]=(nr[i]+nr[i-l])%MOD;
   }
-  for(int i=1; i<=lst; ++i) cout<<nr[i]<<' ';
+  //for(int i=1; i<=lst; ++i) cout<<nr[i]<<' ';
   g<<nr[lst];
   return 0;
 }

@@ -5,8 +5,8 @@
 #define MOD 666013
 using namespace std;
 
-int n,l,a,mt[55][55],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
-int as[55],tp[55],sz;
+int n,l,a,mt[DN][DN],rez[DN][DN],aux[DN][DN],pot[DN][DN],v[DN]={1},lst=1,vr[DN],anxt,tot;
+int as[DN],tp[DN],sz;
 
 ifstream f("sir5.in");
 ofstream g("sir5.out");
@@ -59,7 +59,7 @@ void lgput(int e) {
 
 void inmv(){
   memset(vr,0,sizeof(vr));
-  for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) vr[i]=(vr[i]+v[j]*rez[i][j])%MOD;
+  for(int i=1; i<=l; ++i) for(int j=1; j<=l; ++j) vr[i]=(vr[i]+1LL*v[j]*rez[i][j])%MOD;
 }
 
 //preprocesat pana ajung cu a-urile ala l
