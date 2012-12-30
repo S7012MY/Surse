@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="strmatch.in" />
+		<Unit filename="strmatch.out" />
 		<Extensions>
 			<code_completion />
 			<debugger />

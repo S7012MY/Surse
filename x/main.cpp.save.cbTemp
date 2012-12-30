@@ -30,12 +30,9 @@ void faZ(string s,vector<int> z) {
 }
 
 void pp() {
-  string s,ra=a,rb=b;
-  reverse(ra.begin(),ra.end());
-  reverse(rb.begin(),rb.end());
+  string s;
   s=b+'$'+a;
   faZ(s,z);
-  s=rb+'$'
 }
 
 int main()
