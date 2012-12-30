@@ -28,9 +28,12 @@ int main()
           z[i]=r-l; --r;
         }
       }
-      if(z[i]==m && sz<1000) poz[++sz]=i-m-1;
+      if(z[i]==m) {
+        ++sz;
+        if(sz<=1000) poz[sz]=i-m-1;
+      }
     }
     g<<sz<<'\n';
-    for(int i=1; i<=sz; ++i) g<<poz[i]<<' ';
+    for(int i=1; i<=min(sz,1000); ++i) g<<poz[i]<<' ';
     return 0;
 }
