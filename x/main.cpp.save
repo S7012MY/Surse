@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 string a,b;
@@ -35,7 +36,8 @@ void pp() {
   reverse(rb.begin(),rb.end());
   s=b+'$'+a;
   faZ(s,z);
-  s=rb+'$'
+  s=rb+'$'+ra;
+  faZ(s,zr);
 }
 
 int main()
@@ -45,5 +47,10 @@ int main()
     f>>n>>m>>q;
     f>>a>>b;
     pp();
+    for(;q;--q) {
+      int l,r;
+      f>>l>>r;
+      int rez=m
+    }
     return 0;
 }
