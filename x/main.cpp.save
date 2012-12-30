@@ -31,15 +31,14 @@ void faZ(string s,vector<int> &z) {
 }
 
 void pp() {
-  string s,ra=a,rb=b;
+  string s,ra=a;
   reverse(ra.begin(),ra.end());
-  reverse(rb.begin(),rb.end());
   s=b+'$'+a;
   faZ(s,z);
-  s=rb+'$'+ra;
+  s=b+'$'+ra;
   faZ(s,zr);
   cout<<s<<'\n';
-  for(int i=0; i<zr.size(); ++i) cout<<z[i];
+  for(int i=0; i<zr.size(); ++i) cout<<zr[i];
   cout.flush();
 }
 
@@ -51,9 +50,11 @@ int main()
     f>>a>>b;
     pp();
     for(;q;--q) {
-      int l,r;
+      int l,r,mst=0,mdr=0;
       f>>l>>r;
-      g<<min(z[r+m+1],99999)<<'\n';
+      if(r+m+1<z.size()) mst=z[r+m+1];
+      if(m+n-l+2<zr.size() &)
+      g<<min(z[r+m+1],zr[m+n-l+2])<<'\n';
     }
     return 0;
 }

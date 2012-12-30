@@ -37,9 +37,6 @@ void pp() {
   faZ(s,z);
   s=b+'$'+ra;
   faZ(s,zr);
-  cout<<s<<'\n';
-  for(int i=0; i<zr.size(); ++i) cout<<zr[i];
-  cout.flush();
 }
 
 int main()
@@ -50,9 +47,11 @@ int main()
     f>>a>>b;
     pp();
     for(;q;--q) {
-      int l,r;
+      int l,r,mst=0,mdr=0;
       f>>l>>r;
-      g<<min(z[r+m+1],z[m+n-l+2])<<'\n';
+      if(r+m+1<z.size()) mst=z[r+m+1];
+      if(m+n-l+2<zr.size() && m+n-l+2>m) mdr=zr[m+n-l+2];
+      g<<min(mst,mdr)<<'\n';
     }
     return 0;
 }
