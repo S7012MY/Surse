@@ -10,7 +10,7 @@ string a,b;
 int n,m,q;
 vector<int> z,zr;
 
-void faZ(string s,vector<int> z) {
+void faZ(string s,vector<int> &z) {
   z.push_back(0);
   int n=s.size();
   int l=0,r=0,k;
@@ -21,7 +21,7 @@ void faZ(string s,vector<int> z) {
       z.push_back(r-l); --r;
     }else {
       k=i-l;
-      if(z[k]<r-i+1) z[i]=z[k];
+      if(z[k]<r-i+1) z.push_back(z[k]);
       else {
         l=i;
         for(;r<n && s[r-l]==s[r];++r);
@@ -38,6 +38,9 @@ void pp() {
   faZ(s,z);
   s=rb+'$'+ra;
   faZ(s,zr);
+  cout<<s<<'\n';
+  for(int i=0; i<zr.size(); ++i) cout<<z[i];
+  cout.flush();
 }
 
 int main()
@@ -50,7 +53,7 @@ int main()
     for(;q;--q) {
       int l,r;
       f>>l>>r;
-      int rez=m
+      g<<min(z[r+m+1],99999)<<'\n';
     }
     return 0;
 }
