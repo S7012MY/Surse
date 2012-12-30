@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+string a,b;
+int z[4000000],A,B,k,m,poz[1001],sz;
+
+int main()
+{
+    ifstream f("strmatch.in");
+    ofstream g("strmatch.out");
+    f>>a>>b;
+    m=a.size();
+    a+='$'; a.append(b);
+    for(int i=1; i<a.size(); ++i)
+      if(i>)
+    return 0;
+}
