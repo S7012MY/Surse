@@ -36,6 +36,7 @@
 		<Unit filename="C.cpp" />
 		<Unit filename="D.cpp" />
 		<Unit filename="E.cpp" />
+		<Unit filename="F.cpp" />
 		<Unit filename="b.cpp" />
 		<Unit filename="inp.in" />
 		<Unit filename="main.cpp" />
