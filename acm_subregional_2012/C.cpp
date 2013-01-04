@@ -51,8 +51,9 @@ int main() {
         }
       }
     }
-    if(r==(MULT)) cout<<-1<<'\n';
-    else cout<<r<<'\n';
+    if(r==(MULT)) cout<<"-1";
+    else cout<<r;
+    if(t>1) cout<<'\n';
   }
 }
 
