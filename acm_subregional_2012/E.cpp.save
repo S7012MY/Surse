@@ -1,0 +1,11 @@
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+
+char c;
+
+int main() 
+{
+  int d=-1,nr=0;
+  for(;scanf("%c"))
+}

@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="A.cpp" />
 		<Unit filename="D.cpp" />
+		<Unit filename="E.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
