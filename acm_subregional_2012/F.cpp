@@ -1,9 +1,17 @@
 #include <iostream>
+#define MOD 2007
 using namespace std;
 
-int pd[55];
+int pd[55],cmb[500][500];
 
 int main() {
+cmb[0][0]=1;
+  for(int i=1; i<=250; ++i) for(int j=0; j<=250; ++j) {
+    if(j==0) cmb[i][j]=1;
+    else {
+      cmb[i][j]=(cmb[i-1][j]+cmb[i-1][j-1])%MOD;
+    }
+  }
   for(int i=0; i<=20; ++i) pd[i]=(1<<i);
   int t;
   for(cin>>t;t;--t) {
@@ -15,9 +23,7 @@ int main() {
       for(int i=0;i<20; ++i) if(pd[i]+lst<a) lst+=pd[i],l2=pd[i];
       a-=lst;
       l2<<=1;
-      l2-=a;
-      ++l2;
-      cout<<l2%2007<<'\n';
+      cout<<(cmb[l2/2][(a-1)/2]*1LL*cmb[l2/2][(a-1)/2]*(l2-a+1))%MOD<<'\n';
     }
   }
 }
