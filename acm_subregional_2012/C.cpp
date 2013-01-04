@@ -3,6 +3,7 @@
 #define x first
 #define y second
 #define mp make_pair
+#define MULT 1LL<<50
 using namespace std;
 
 typedef pair<int,int> per;
@@ -24,9 +25,9 @@ int main() {
   for(cin>>t;t;--t) {
     cin>>n>>m;
     ++n;
-    r=(1LL<<60);
-    for(int i=0; i<=n; ++i) for(int j=0; j<=n; ++j) dmin[i][j]=(1LL<<60);
-    for(int i=0; i<(1<<n); ++i) for(int j=0; j<=n; ++j) bst[i][j]=(1LL<<60);
+    r=(MULT);
+    for(int i=0; i<=n; ++i) for(int j=0; j<=n; ++j) dmin[i][j]=(MULT);
+    for(int i=0; i<(1<<n); ++i) for(int j=0; j<=n; ++j) bst[i][j]=(MULT);
     for(int i=0; i<m; ++i) {
       int a,b,c;
       cin>>a>>b>>c;
@@ -50,7 +51,7 @@ int main() {
         }
       }
     }
-    if(r==(1LL<<60)) cout<<-1<<'\n';
+    if(r==(MULT)) cout<<-1<<'\n';
     else cout<<r<<'\n';
   }
 }
