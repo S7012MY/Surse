@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #define MOD 2007
 using namespace std;
 
@@ -31,3 +31,4 @@ cmb[0][0]=1;
     }
   }
 }
+*/
