@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #define MOD 2007
 using namespace std;
 
@@ -17,14 +17,18 @@ cmb[0][0]=1;
   for(cin>>t;t;--t) {
     int a;
     cin>>a;
-    if((a&1) || a==0) cout<<1<<'\n';
+    if(a==0) {
+    cout<<"0\n";
+    continue;
+    }
+    if((a&1)) cout<<1<<'\n';
     else {
     int lst=0,l2=0;
       for(int i=0;i<20; ++i) if(pd[i]+lst<a) lst+=pd[i],l2=pd[i];
       a-=lst;
       l2<<=1;
-      cout<<a<<<<'\n';
       cout<<(cmb[l2/2][(a-1)/2]*1LL*cmb[l2/2][(a-1)/2]*(l2-a+1))%MOD<<'\n';
     }
   }
-}
+}*/
+

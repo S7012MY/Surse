@@ -18,17 +18,19 @@ cmb[0][0]=1;
     int a;
     cin>>a;
     if(a==0) {
-    cout<<"0\n";
-    continue;
+      cout<<"1\n";
+      continue;
     }
-    if((a&1)) cout<<1<<'\n';
-    else {
+    if(a==1) {
+      cout<<"1\n";
+      continue;
+    }
     int lst=0,l2=0;
       for(int i=0;i<20; ++i) if(pd[i]+lst<a) lst+=pd[i],l2=pd[i];
       a-=lst;
       l2<<=1;
-      cout<<(cmb[l2/2][(a-1)/2]*1LL*cmb[l2/2][(a-1)/2]*(l2-a+1))%MOD<<'\n';
-    }
+      cout<<cmb[l2][a]<<'\n';
+      //cout<<(cmb[l2/2][(a-1)/2]*1LL*cmb[l2/2][(a-1)/2]*(l2-a+1))%MOD<<'\n';
   }
 }
 
