@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <algorithm>
 #include <cstdio>
 using namespace std;
@@ -17,3 +17,4 @@ int main() {
     cout<<min(r1,r2)<<'\n';
   }
 }
+*/
