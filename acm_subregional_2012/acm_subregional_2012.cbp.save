@@ -40,7 +40,6 @@
 		<Unit filename="G.cpp" />
 		<Unit filename="I.cpp" />
 		<Unit filename="b.cpp" />
-		<Unit filename="inp.in" />
 		<Unit filename="k.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
