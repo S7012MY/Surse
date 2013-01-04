@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <queue>
 #define x first
 #define y second
@@ -34,22 +34,21 @@ int main() {
     }
     for(int k=0; k<n; ++k) for(int i=0; i<n; ++i) for(int j=0; j<n; ++j)
       dmin[i][j]=min(dmin[i][j],dmin[i][k]+dmin[k][j]);
-    bst[0][0]=1;
+    bst[0][0]=0;
     --n;
     for(c.push(mp(mp(0,0),0));c.size();c.pop()) {
       int state=c.front().x.x,lst=c.front().x.y;
-      cout<<state<<' '<<lst<<'\n';
-      if(count(state)==n-1) {
+     // cout<<state<<' '<<count(state)<<' '<<lst<<' '<<c.front().y<<'\n';
+      if(count(state)==n) {
         r=min(r,c.front().y);
       }
       for(int i=0; i<n; ++i) if(!(state&(1<<i)) && bst[state|(1<<i)][i+1]>bst[state][lst]+dmin[lst][i+1]) {
-        cout<<i<<' ';
         bst[state|(1<<i)][i+1]=bst[state][lst]+dmin[lst][i+1];
         c.push(mp(mp((state|(1<<i)),i+1),c.front().y+bst[state|(1<<i)][i+1]));
       }
-      cout<<'\n';
     }
     if(r==(1LL<<40)) cout<<-1<<'\n';
     else cout<<r<<'\n';
   }
 }
+*/
