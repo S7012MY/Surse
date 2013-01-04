@@ -11,7 +11,8 @@ int fa() {
   long long r=1,tot=0;
   for(int i=0; i<26; ++i) if(fr[i]) {
     if(!tot) tot+=fr[i];
-    else r*=cmb[tot][fr[i]];
+    cout<<fr[i]<<'\n';
+    r*=cmb[tot][fr[i]];
   }
   return r;
 }
@@ -39,6 +40,6 @@ int main() {
       }
       --fr[s[i]-'A'];
     }
-    cout<<rez<<'\n';
+    //cout<<rez<<'\n';
   }
 }
