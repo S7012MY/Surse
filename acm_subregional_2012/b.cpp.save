@@ -6,6 +6,15 @@ using namespace std;
 int nr[20][20],cmb[25][25],fr[26];
 string s;
 
+int fa() {
+  int r=1,tot=0;
+  for(int i=0; i<26; ++i) if(fr[i]) {
+    if(!tot) tot+=fr[i];
+    else r*=cmb[tot][fr[i]];
+  }
+  return r;
+}
+
 int main() {
   for(int i=1; i<25; ++i) for(int j=0; j<25; ++j) {
     if(j==0) cmb[i][j]=1;
@@ -18,6 +27,15 @@ int main() {
     memset(fr,0,sizeof(fr));
     cin>>s;
     for(int i=0; i<s.size(); ++i) ++fr[s[i]-'A'];
-    for(int i=0; i<)
+    long long rez=0;
+    for(int i=0; i<s.size(); ++i) {
+      for(char c='A'; c<s[i]; ++c) if(fr[c-'A']){
+        --fr[c-'A'];
+        rez+=fa();
+        ++fr[c-'A'];
+      }
+      --fr[s[i]-'A'];
+    }
+    cout<<rez<<'\n';
   }
 }

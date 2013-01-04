@@ -1,15 +1,44 @@
-/*#include <iostream>
+#include <iostream>
 #include <string>
+#include <cstring>
 using namespace std;
 
-int nr[20][20];
+int fr[26];
+long long cmb[25][25];
+string s;
+
+int fa() {
+  long long r=1,tot=0;
+  for(int i=0; i<26; ++i) if(fr[i]) {
+    if(!tot) tot+=fr[i];
+    else r*=cmb[tot][fr[i]];
+  }
+  return r;
+}
 
 int main() {
+  for(int i=1; i<25; ++i) for(int j=0; j<25; ++j) {
+    if(j==0) cmb[i][j]=1;
+    else {
+      cmb[i][j]=cmb[i-1][j]+cmb[i-1][j-1];
+    }
+  }
   int t;
-  nr[1][1]=1;
-  for(int i=2; i<=20; ++i) for(int j=1; j<=20; ++j) nr[i][j]=nr[i-1][j-1]*i+nr[i-1][j]*j;
-  cout<<nr[3][2];
   for(cin>>t;t;--t) {
+    memset(fr,0,sizeof(fr));
+    cin>>s;
+    cout<<s<<'\n';
+    for(int i=0; i<s.size(); ++i) ++fr[s[i]-'A'];
+    long long rez=0;
+    for(int i=0; i<s.size(); ++i) {
+      for(char c='A'; c<s[i]; ++c) if(fr[c-'A']){
+        --fr[c-'A'];
+        cout<<i<<' '<<c<<'\n';
+        rez+=fa();
+        ++fr[c-'A'];
+      }
+      --fr[s[i]-'A'];
+    }
+    cout<<rez<<'\n';
   }
 }
-*/
