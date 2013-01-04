@@ -1,4 +1,4 @@
-#include <cstdio>
+/*#include <cstdio>
 #include <cctype>
 #include <cstring>
 #include <vector>
@@ -22,15 +22,19 @@ int solve() {
 int main()
 {
   int nr=0,ok=1;
-  freopen("inp.in","r",stdin);
+  //freopen("inp.in","r",stdin);
   for(int i=5;;++i) {
     if(i>=sz) {
       if(ok){
         fread(c,100005,100005,stdin);
-        printf("%s\n----\n",c);
+       // printf("%s\n----\n",c);
+        sz=strlen(c);
+        c[sz]='\n';
         sz=strlen(c);
         if(sz==0) break;
         i=0;
+      }else {
+        break;
       }
     }
     if(nr==0 && c[i]=='\n' && d!=-1) {
@@ -46,6 +50,7 @@ int main()
       nr=nr*10+c[i]-'0';
     }
     if(feof(stdin)) ok=0;
-    if(d==-1 && i>=sz) break;
+   // if(d==-1 && i>=sz) break;
   }
 }
+*/
