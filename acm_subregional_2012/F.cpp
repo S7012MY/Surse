@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #define MOD 2007
 using namespace std;
 
@@ -26,4 +26,4 @@ cmb[0][0]=1;
       cout<<(cmb[l2/2][(a-1)/2]*1LL*cmb[l2/2][(a-1)/2]*(l2-a+1))%MOD<<'\n';
     }
   }
-}
+}*/
