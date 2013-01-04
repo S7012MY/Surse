@@ -5,7 +5,9 @@
 
 1357294593 source:/home/petru/Desktop/proiecte/acm_subregional_2012/D.cpp
 
-1357296773 source:/home/petru/Desktop/proiecte/acm_subregional_2012/b.cpp
+1357309357 source:/home/petru/Desktop/proiecte/acm_subregional_2012/b.cpp
+	<iostream>
+	<string>
 
 1357296303 source:/home/petru/Desktop/proiecte/acm_subregional_2012/E.cpp
 	<cctype>
@@ -22,8 +24,7 @@
 	<algorithm>
 	<cstdio>
 
-1357307974 source:/home/petru/Desktop/proiecte/acm_subregional_2012/I.cpp
-	<iostream>
+1357308593 source:/home/petru/Desktop/proiecte/acm_subregional_2012/I.cpp
 	<algorithm>
 	<set>
 	<vector>
