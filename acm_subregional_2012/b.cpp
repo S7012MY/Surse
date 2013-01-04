@@ -33,8 +33,8 @@ int main() {
     for(int i=0; i<s.size(); ++i) {
       for(char c='A'; c<s[i]; ++c) if(fr[c-'A']){
         --fr[c-'A'];
-        cout<<i<<' '<<c<<'\n';
         rez+=fa();
+        cout<<i<<' '<<c<<' '<<fa<<'\n';
         ++fr[c-'A'];
       }
       --fr[s[i]-'A'];
