@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="A.cpp" />
 		<Unit filename="D.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
