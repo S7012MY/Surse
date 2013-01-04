@@ -21,14 +21,19 @@ int solve() {
 
 int main()
 {
-  int nr=0;
+  int nr=0,ok=1;
+  freopen("inp.in","r",stdin);
   for(int i=5;;++i) {
     if(i>=sz) {
-      fread(c,100005,stdin);
-      sz=strlen(c);
-      i=0;
+      if(ok){
+        fread(c,100005,100005,stdin);
+        printf("%s\n----\n",c);
+        sz=strlen(c);
+        if(sz==0) break;
+        i=0;
+      }
     }
-    if(nr==0 && c[i]=='\n') {
+    if(nr==0 && c[i]=='\n' && d!=-1) {
       printf("Ben can earn %d points!\n",solve());
       d=-1;
       nr=0;
@@ -40,5 +45,7 @@ int main()
     }else if(isdigit(c[i])) {
       nr=nr*10+c[i]-'0';
     }
+    if(feof(stdin)) ok=0;
+    if(i>)
   }
 }
