@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="A.cpp" />
+		<Unit filename="C.cpp" />
 		<Unit filename="D.cpp" />
 		<Unit filename="E.cpp" />
 		<Unit filename="b.cpp" />
