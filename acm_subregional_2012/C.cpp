@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <queue>
 #define x first
 #define y second
@@ -9,7 +9,7 @@ typedef pair<int,int> per;
 
 int t,n,m;
 long long dmin[55][55],bst[(1<<17)][20],r=(1LL<<40);
-queue<pair<per,long long> > c;
+queue<per> c;
 
 int count(int nr) {
   if(nr==0) return 0;
@@ -24,9 +24,9 @@ int main() {
   for(cin>>t;t;--t) {
     cin>>n>>m;
     ++n;
-    r=(1LL<<40);
+    r=(1LL<<60);
     for(int i=0; i<=n; ++i) for(int j=0; j<=n; ++j) dmin[i][j]=(1<<30);
-    for(int i=0; i<(1<<n); ++i) for(int j=0; j<=n; ++j) bst[i][j]=(1<<30);
+    for(int i=0; i<(1<<n); ++i) for(int j=0; j<=n; ++j) bst[i][j]=(1<<60);
     for(int i=0; i<m; ++i) {
       int a,b,c;
       cin>>a>>b>>c;
@@ -36,19 +36,20 @@ int main() {
       dmin[i][j]=min(dmin[i][j],dmin[i][k]+dmin[k][j]);
     bst[0][0]=0;
     --n;
-    for(c.push(mp(mp(0,0),0));c.size();c.pop()) {
-      int state=c.front().x.x,lst=c.front().x.y;
+    for(c.push(mp(0,0));c.size();c.pop()) {
+      int state=c.front().x,lst=c.front().y;
      // cout<<state<<' '<<count(state)<<' '<<lst<<' '<<c.front().y<<'\n';
+     int ram=n-count(state);
       if(count(state)==n) {
-        r=min(r,c.front().y);
+        r=min(r,bst[state][lst]+dmin[lst][0]);
       }
-      for(int i=0; i<n; ++i) if(!(state&(1<<i)) && bst[state|(1<<i)][i+1]>bst[state][lst]+dmin[lst][i+1]) {
-        bst[state|(1<<i)][i+1]=bst[state][lst]+dmin[lst][i+1];
-        c.push(mp(mp((state|(1<<i)),i+1),c.front().y+bst[state|(1<<i)][i+1]));
+      for(int i=0; i<n; ++i) if(!(state&(1<<i)) && bst[state|(1<<i)][i+1]>bst[state][lst]+ram*dmin[lst][i+1]) {
+        bst[state|(1<<i)][i+1]=bst[state][lst]+ram*dmin[lst][i+1];
+        c.push(mp((state|(1<<i)),i+1));
       }
     }
-    if(r==(1LL<<40)) cout<<-1<<'\n';
+    if(r==(1LL<<60)) cout<<-1<<'\n';
     else cout<<r<<'\n';
   }
 }
-*/
+

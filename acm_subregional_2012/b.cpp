@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string>
 #include <cstring>
 using namespace std;
@@ -7,7 +7,7 @@ int fr[26];
 long long cmb[25][25]={1};
 string s;
 
-int fa() {
+long long fa() {
   long long r=1,tot=0;
   for(int i=0; i<26; ++i) if(fr[i]) {
     tot+=fr[i];
@@ -44,3 +44,4 @@ int main() {
     cout<<rez<<'\n';
   }
 }
+*/
