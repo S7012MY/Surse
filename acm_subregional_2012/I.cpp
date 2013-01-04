@@ -11,31 +11,23 @@ typedef pair<int,int> per;
 
 per p;
 int t,n,m;
-vector<per> v;
+vector<per> v,vy;
 multiset<int> miy;
 multiset<int,greater<int> > may;
 
 int faar(int minx,int maxx, int miny, int maxy) {
   --minx; --miny; ++maxx; ++maxy;
-  //cout<<minx<<' '<<miny<<' '<<maxx<<' '<<maxy<<'\n';
+  cout<<minx<<' '<<miny<<' '<<maxx<<' '<<maxy<<' '<<(maxx-minx)*(maxy-miny)<<'\n';
   return (maxx-minx)*(maxy-miny);
 }
 
 int solve(int a,int b) {
   int r=(1<<30);
-  //cout<<a<<' '<<b<<":\n";
-  for(int i=a; i-a+1<=m; ++i) {
-    miy.insert(v[i].y);
-    may.insert(v[i].y);
-  }
-  for(int i=a+m-1;i<=b;++i) {
-    r=min(r,faar(v[a].x,v[b].x,*miy.begin(),*may.begin()));
-    miy.erase(miy.find(v[i-m+1].y));
-    may.erase(may.find(v[i-m+1].y));
-    miy.insert(v[i+1].y);
-    may.insert(v[i+1].y);
-  }
-  miy.clear(); may.clear();
+  cout<<a<<' '<<b<<":\n";
+  for(int i=a; i<=b; ++i) vy.push_back(make_pair(v[i].y,v[i].x));
+  sort(vy.begin(),vy.end());
+  for(int i=a; i+m-1<=b; ++i) r=min(r,faar(v[a].x,v[b].x,vy[i].x,vy[i+m-1].x));
+  vy.clear();
   return r;
 }
 
@@ -52,7 +44,7 @@ freopen("inp.in","r",stdin);
     }
     sort(v.begin(),v.end());
     for(int i=0; i<v.size(); ++i) for(int j=i+m-1; j<v.size(); ++j) r=min(r,solve(i,j));
-
     cout<<r<<'\n';
+    cerr<<"---------\n";
   }
 }
