@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <set>
 #include <vector>
-#include <cstring>
+#include <cstdio>
 #define x first
 #define y second
 using namespace std;
@@ -17,19 +17,22 @@ multiset<int,greater<int> > may;
 
 int faar(int minx,int maxx, int miny, int maxy) {
   --minx; --miny; ++maxx; ++maxy;
+ // cout<<minx<<' '<<miny<<' '<<maxx<<' '<<maxy<<'\n';
   return (maxx-minx)*(maxy-miny);
 }
 
 int solve(int a,int b) {
   int r=(1<<30);
-  for(int i=a; i+m-1<=b && i-a+1<=m; ++i) {
+  for(int i=a; i-a+1<=m; ++i) {
     miy.insert(v[i].y);
     may.insert(v[i].y);
   }
-  for(int i=a+m-1;i+m-1<=b;++i) {
-    r=min(r,faar(v[a].x,v[a].y,*miy.begin(),*may.begin()));
-    //miy.erase(miy.find(v[i].y));
-    //may.erase(may.find(v[i].y));
+  for(int i=a+m-1;i<=b;++i) {
+    r=min(r,faar(v[a].x,v[b].x,*miy.begin(),*may.begin()));
+    miy.erase(miy.find(v[i-m+1].y));
+    may.erase(may.find(v[i-m+1].y));
+    miy.insert(v[i+1].y);
+    may.insert(v[i+1].y);
   }
   return r;
 }
@@ -45,7 +48,7 @@ int main() {
       v.push_back(p);
     }
     sort(v.begin(),v.end());
-    for(int i=0; i<v.size(); ++i) for(int j=i+1; j<v.size(); ++j) r=min(r,solve(i,j));
+    for(int i=0; i<v.size(); ++i) for(int j=i+m-1; j<v.size(); ++j) r=min(r,solve(i,j));
 
     cout<<r<<'\n';
   }
