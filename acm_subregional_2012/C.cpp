@@ -29,9 +29,9 @@ int main() {
     for(int i=0; i<=n; ++i) for(int j=0; j<=n; ++j) dmin[i][j]=(MULT);
     for(int i=0; i<(1<<n); ++i) for(int j=0; j<=n; ++j) bst[i][j]=(MULT);
     for(int i=0; i<m; ++i) {
-      int a,b,c;
+      int a,b; long long c;
       cin>>a>>b>>c;
-      dmin[a][b]=dmin[b][a]=c;
+      dmin[a][b]=dmin[b][a]=min(dmin[a][b],c);
     }
     for(int k=0; k<n; ++k) for(int i=0; i<n; ++i) for(int j=0; j<n; ++j)
       dmin[i][j]=min(dmin[i][j],dmin[i][k]+dmin[k][j]);
