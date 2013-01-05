@@ -32,6 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="A.cpp" />
+		<Unit filename="C.cpp" />
+		<Unit filename="D.cpp" />
+		<Unit filename="E.cpp" />
+		<Unit filename="F.cpp" />
+		<Unit filename="G.cpp" />
+		<Unit filename="I.cpp" />
+		<Unit filename="b.cpp" />
+		<Unit filename="k.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
