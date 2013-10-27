@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1352999551 source:/home/petru/Desktop/proiecte/iam_10_ceas2/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<algorithm>
-

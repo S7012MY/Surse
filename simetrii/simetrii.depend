@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1349176527 source:/home/petru/Desktop/proiecte/simetrii/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

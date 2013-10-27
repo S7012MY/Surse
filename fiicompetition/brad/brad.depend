@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1336244042 source:/home/petru/Desktop/proiecte/fiicompetition/brad/main.cpp
-	<iostream>
-	<fstream>
-	<bitset>
-	<vector>
-

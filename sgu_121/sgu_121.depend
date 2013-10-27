@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1350381730 source:/home/petru/Desktop/proiecte/sgu_121/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1356603150 source:/home/petru/Desktop/proiecte/spider-man/main.cpp
-	<iostream>
-	<iomanip>
-	<fstream>
-	<cmath>
-

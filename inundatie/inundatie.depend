@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1329327871 source:/home/petru/Desktop/proiecte/inundatie/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

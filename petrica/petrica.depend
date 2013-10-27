@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1329595861 source:/home/petru/Desktop/proiecte/petrica/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<bitset>
-

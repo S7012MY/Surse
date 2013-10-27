@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1326127575 source:/home/petru/Desktop/proiecte/arhiva_educationala_aho-corasick/main.cpp
-	<cstdio>
-	<cstring>
-	<cctype>
-	<vector>
-

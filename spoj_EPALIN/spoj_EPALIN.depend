@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1323104635 source:/home/petru/Desktop/proiecte/spoj_EPALIN/main.cpp
-	<iostream>
-	<string>
-	<algorithm>
-

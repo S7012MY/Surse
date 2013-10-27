@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1337866486 source:/home/petru/Desktop/proiecte/motel/main.cpp
-	<fstream>
-	<algorithm>
-	<iostream>
-	<vector>
-	<set>
-

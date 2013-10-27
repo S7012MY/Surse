@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1339693720 source:/home/petru/Desktop/proiecte/stefana_insule/main.cpp
-	<cstdio>
-	<queue>
-	<algorithm>
-	<bitset>
-

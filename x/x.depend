@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1356869115 source:/home/petru/Desktop/proiecte/x/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<vector>
-	<algorithm>
-

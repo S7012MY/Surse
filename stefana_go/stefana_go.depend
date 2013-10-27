@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1339696318 source:/home/petru/Desktop/proiecte/stefana_go/main.cpp
-	<cstdio>
-	<set>
-	<algorithm>
-	<bitset>
-

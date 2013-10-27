@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1349690088 source:/home/petru/Desktop/proiecte/sel_ichb/main.cpp
-	<iostream>
-	<iomanip>
-	<fstream>
-	<set>
-	<cstring>
-	<cstdio>
-

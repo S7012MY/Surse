@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1345976618 source:/home/petru/Desktop/proiecte/bruiaj/main.cpp
-	<iostream>
-	<fstream>
-	<cmath>
-	<cstdlib>
-	<cmath>
-

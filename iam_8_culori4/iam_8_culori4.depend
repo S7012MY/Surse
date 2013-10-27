@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1347560124 source:/home/petru/Desktop/proiecte/iam_8_culori4/main.cpp
-	<iostream>
-	<fstream>
-	<cstring>
-

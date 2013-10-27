@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1330523887 source:/home/petru/Desktop/proiecte/go/main.cpp
-	<iostream>
-	<fstream>
-	<set>
-

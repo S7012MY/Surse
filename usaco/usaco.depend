@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1333961116 source:/home/petru/Desktop/proiecte/usaco/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<map>
-

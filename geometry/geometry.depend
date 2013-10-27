@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1351328190 source:/home/petru/Desktop/proiecte/geometry/main.cpp
-	<iostream>
-	<fstream>
-	<cmath>
-

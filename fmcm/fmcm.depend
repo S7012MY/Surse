@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1332842818 source:/home/petru/Desktop/proiecte/fmcm/main.cpp
-	<fstream>
-	<queue>
-	<vector>
-	<bitset>
-

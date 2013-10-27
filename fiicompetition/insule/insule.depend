@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1335129307 source:/home/petru/Desktop/proiecte/fiicompetition/insule/main.cpp
-	<cstdio>
-	<cstdlib>
-	<ctime>
-	<algorithm>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1351110248 source:/home/petru/Desktop/proiecte/trapez/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1322856352 source:/home/petru/Desktop/proiecte/timus_1406/main.cpp
-	<iostream>
-	<string>
-	<cassert>
-

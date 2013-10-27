@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1345206178 source:/home/petru/Desktop/proiecte/apel/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<cctype>
-	<stack>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1328537701 source:/home/petru/Desktop/proiecte/inv/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1353960735 source:/home/petru/Desktop/proiecte/patrulatere/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-	<cstdlib>
-

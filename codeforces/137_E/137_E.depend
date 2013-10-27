@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1347298165 source:/home/petru/Desktop/proiecte/codeforces/137_E/main.cpp
-	<cstdio>
-	<cstring>
-	<cmath>
-	<iostream>
-	<cctype>
-

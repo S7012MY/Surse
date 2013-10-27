@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1341760308 source:c:\users\petru\documents\proiecte\conserve\main.cpp
-	<iostream>
-	<fstream>
-	<set>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1330967135 source:/home/petru/Desktop/proiecte/iam_2_stringrepair/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<vector>
-

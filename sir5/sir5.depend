@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1356716301 source:/home/petru/Desktop/proiecte/sir5/main.cpp
-	<iostream>
-	<fstream>
-	<cstring>
-

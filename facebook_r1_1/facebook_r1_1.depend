@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1327791500 source:/home/petru/Desktop/proiecte/facebook_r1_1/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-

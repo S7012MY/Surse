@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1351108057 source:/home/petru/Desktop/proiecte/balans/main.cpp
-	<iostream>
-	<iomanip>
-	<fstream>
-	<cmath>
-

@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1335534049 source:/home/petru/Desktop/proiecte/catalyst_2012/main.cpp
-	<iostream>
-	<iomanip>
-	<cstdio>
-	<algorithm>
-	<cmath>
-

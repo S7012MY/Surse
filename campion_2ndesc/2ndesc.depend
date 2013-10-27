@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1332055678 source:/home/petru/Desktop/proiecte/2ndesc/main.cpp
-	<cstdio>
-
-1332059113 source:/home/petru/Desktop/proiecte/campion_2ndesc/main.cpp
-	<cstdio>
-	<cstring>
-	<cmath>
-

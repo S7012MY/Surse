@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1342522860 source:/home/petru/Desktop/proiecte/codeforces/joc4/main.cpp
-	<iostream>
-	<fstream>
-	<queue>
-	<cstring>
-

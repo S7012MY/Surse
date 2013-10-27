@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1336299487 source:/home/petru/Desktop/proiecte/codejam12/Diamond Inheritance/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<bitset>
-

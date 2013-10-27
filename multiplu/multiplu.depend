@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1331500993 source:/home/petru/Desktop/proiecte/multiplu/main.cpp
-	<iostream>
-	<fstream>
-	<queue>
-	<string>
-	<set>
-

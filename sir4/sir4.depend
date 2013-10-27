@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1330516346 source:/home/petru/Desktop/proiecte/sir4/main.cpp
-	<iostream>
-	<fstream>
-	<bitset>
-	<map>
-

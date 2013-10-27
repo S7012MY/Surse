@@ -1,2 +1,10 @@
 bin
 obj
+
+*.cbp
+*.layout
+*.exe
+*.msp
+*.o
+*~
+*.depend

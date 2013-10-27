@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1351271936 source:/home/petru/Desktop/proiecte/iam_9_petrecere2/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<bitset>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1323352386 source:/home/petru/Desktop/proiecte/distincte/main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

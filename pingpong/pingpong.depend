@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1342362709 source:/home/petru/Desktop/proiecte/pingpong/main.cpp
-	<cstdio>
-	<cstring>
-	<cstdlib>
-	<iostream>
-

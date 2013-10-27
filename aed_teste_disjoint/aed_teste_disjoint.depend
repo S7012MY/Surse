@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1351439949 source:/home/petru/Desktop/proiecte/aed_teste_disjoint/main.cpp
-	<iostream>
-	<fstream>
-	<cstdio>
-	<ctime>
-	<cstdlib>
-

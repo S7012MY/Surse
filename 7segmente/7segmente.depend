@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1348261436 source:/home/petru/Desktop/proiecte/7segmente/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<algorithm>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1340284069 source:/home/petru/Desktop/proiecte/jmenoasa/main.cpp
-	<iostream>
-	<fstream>
-	<stack>
-

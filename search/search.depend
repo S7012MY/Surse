@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1346793958 source:/home/petru/Desktop/proiecte/search/main.cpp
-	<iostream>
-	<fstream>
-	<cstring>
-

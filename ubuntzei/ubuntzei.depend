@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1354664068 source:/home/petru/Desktop/proiecte/ubuntzei/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<queue>
-	<bitset>
-

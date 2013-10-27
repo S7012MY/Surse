@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1324315286 source:/home/petru/Desktop/proiecte/timus_1871/main.cpp
-	<iostream>
-	<vector>
-	<string>
-	<map>
-	<queue>
-	<set>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1338415512 source:/home/petru/Desktop/proiecte/drumuri/main.cpp
-	<fstream>
-	<vector>
-	<bitset>
-

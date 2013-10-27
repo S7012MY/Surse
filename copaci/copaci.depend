@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1352732716 source:/home/petru/Desktop/proiecte/copaci/main.cpp
-	<iostream>
-	<fstream>
-	<cstdlib>
-	<cmath>
-

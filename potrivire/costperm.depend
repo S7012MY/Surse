@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1336749655 source:/home/petru/Desktop/proiecte/fiicompetition/costperm/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<cstdlib>
-

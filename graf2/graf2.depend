@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1330975324 source:/home/petru/Desktop/proiecte/graf2/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<bitset>
-

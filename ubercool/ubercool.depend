@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1353157905 source:/home/petru/Desktop/proiecte/ubercool/main.cpp
-	<iostream>
-	<fstream>
-	<cmath>
-	<bitset>
-	<vector>
-	<map>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1324995752 source:/home/petru/Desktop/proiecte/paranteze/main.cpp
-	<iostream>
-	<fstream>
-	<stack>
-	<string>
-

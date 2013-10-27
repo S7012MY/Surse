@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1323589227 source:/home/petru/Desktop/proiecte/algoritmiada_gen/main.cpp
-	<iostream>
-	<fstream>
-	<ctime>
-	<algorithm>
-

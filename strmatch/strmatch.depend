@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1346399917 source:/home/petru/Desktop/proiecte/strmatch/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<vector>
-

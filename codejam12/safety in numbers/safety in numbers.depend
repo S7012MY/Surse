@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1336243163 source:/home/petru/Desktop/proiecte/codejam12/safety in numbers/main.cpp
-	<iostream>
-	<iomanip>
-	<fstream>
-

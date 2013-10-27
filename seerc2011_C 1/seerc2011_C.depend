@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1350135406 source:c:\users\petru\documents\proiecte\seerc2011_c\main.cpp
-	<iostream>
-	<string>
-	<cstring>
-	<cctype>
-

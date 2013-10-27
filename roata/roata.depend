@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1338016113 source:/home/petru/Desktop/proiecte/roata/main.cpp
-	<iostream>
-	<fstream>
-	<set>
-	<vector>
-

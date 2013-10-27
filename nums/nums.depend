@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1340270513 source:/home/petru/Desktop/proiecte/nums/main.cpp
-	<iostream>
-	<fstream>
-	<string>
-	<set>
-	<algorithm>
-

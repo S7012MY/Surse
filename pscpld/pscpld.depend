@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1348248101 source:/home/petru/Desktop/proiecte/pscpld/main.cpp
-	<iostream>
-	<fstream>
-	<cstring>
-
