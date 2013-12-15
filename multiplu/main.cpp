@@ -1,60 +1,31 @@
 #include <iostream>
 #include <fstream>
-#include <queue>
-#include <string>
-#include <set>
+#define MOD 10000
 using namespace std;
 
-    ifstream f("multiplu.in");
-    ofstream g("multiplu.out");
+int n,k,r=1;
 
-int a,b,m,mm[2000005],prec[2000005],cur[2000005];
-struct trei {
-    int pr,c,md;
-};
-queue<trei> c;
-
-int cmmdc(int a, int b) {
-    int c;
-    for(;b;) {
-        c=a%b;
-        a=b;
-        b=c;
-    }
-    return a;
-}
-
-void af(int ind) {
-    if(prec[ind]!=0) af(prec[ind]);
-    g<<cur[ind];
+int pt(int b,int e) {
+  int r=1,x=b;
+  for(;e;e>>=1) {
+    if(e&1) r=(r*x)%MOD;
+    x=(x*x)%MOD;
+  }
+  return r;
 }
 
 int main()
 {
-    f>>a>>b;
-    m=(a*b)/cmmdc(a,b);
-    int ind=1;
-    trei fr,nxt;
-    fr.c=1; fr.pr=0; fr.md=1;
-    for(c.push(fr);c.size(); c.pop(),++ind) {
-        fr=c.front();
-        cur[ind]=fr.c;
-        prec[ind]=fr.pr;
-        int mc=fr.md;
-        if(mm[mc]) continue;
-        mm[mc]=1;
-        if(mc==0) {
-            af(ind);
-            return 0;
-        }
-        int md=(mc*10)%m;
-        nxt.md=md;
-        nxt.c=0;
-        nxt.pr=ind;
-        c.push(nxt);
-        nxt.md=(md+1)%m;
-        nxt.c=1;
-        c.push(nxt);
+    ifstream f("multiplu2.in");
+    ofstream g("multiplu2.out");
+    f>>n>>k;
+    int cn=n;
+    for(int i=2; i*i<=cn; ++i) if(n%i==0){
+      int exp=0;
+      for(;n%i==0;++exp,n/=i);
+      r=(r*(pt(exp+1,k)-pt(exp,k)+MOD))%MOD;
     }
+    if(n>1) r=(r*(pt(2,k)-1+MOD))%MOD;
+    g<<r;
     return 0;
 }

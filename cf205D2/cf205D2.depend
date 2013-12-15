@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1381422993 source:c:\users\l3ask_000\documents\proiecte\cf205d2\main.cpp
+
+1381427147 source:c:\users\l3ask_000\documents\proiecte\cf205d2\b.cpp
+
+1381424308 source:c:\users\l3ask_000\documents\proiecte\cf205d2\c.cpp
+
+1381425261 source:c:\users\l3ask_000\documents\proiecte\cf205d2\d.cpp
+
+1381429019 source:c:\users\l3ask_000\documents\proiecte\cf205d2\e.cpp
+	<iostream>
+	<string>
+	<vector>
+	<bitset>
+

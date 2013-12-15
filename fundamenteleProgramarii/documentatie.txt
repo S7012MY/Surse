@@ -1,0 +1,37 @@
+"""
+Michael is the administrator of a bloc and wants to manage the monthly expenses for each apartment in the bloc. 
+In order to complete this task, Michael needs an application to store, for a certain month, the expenses for each apartment. 
+Each expense will be stored in the application through the following elements: amount, 
+type of the expense (the administrator wants to group the expenses in several predefined categories: such as water, heating, illuminating, gas, others). 
+Michael needs an application in order to repeatedly execute the following functionalities (each functionality is exemplified):
+F1. Add a new transaction into the list.
+	- insert 100, type at 25 – inserts at apartment 25 an expense of 100 RON having the given type
+F2. Modify expenses from the list.
+	- remove 15 – removes all the expenses at apartment 15 
+	- remove from 5 to 10 – removes all the expenses from apartment 5 to apartment 10
+	- remove type – removes all the expenses having the indicated type, from all the apartments
+	- replace 12, type with 200 – replaces the amount for the expense having the specified type at apartment 12 with 200 RON
+F3. Write the expenses having different properties.
+	- greater than 100 - writes all the apartments with an overall expense greater than 100 RON
+	- less than 100 before 15 - writes all the apartments with an overall expense less than 100 for apartments from 1 to 15
+	- all type – writes all the expenses having the specified type.
+	- Sold 10 – computes the sold (total amount) for apartment 10
+F4. Obtain different characteristics of expenses.
+	- sum type– writes the total amount for the expenses having the specified type.
+	- max 25 – writes the maximum expense per type for apartment 25
+	- asc sort apt – sorts the total expenses/apartment in an ascending order
+	- desc sort type - sorts the total expenses per type in a descending order
+F5. Filter.
+	- filter type – retains only the expenses having the specified type.
+	- filter 300 – retains only the overall expenses greater than 300 RON
+F6. Undo the last operation.
+	- undo – the last operation that has modified the list of expenses is cancelled.
+	
+Iteration plan
+I1 implements insert and remove
+Usage scenario
+Tasks
+T1 read a line and split strings from it using regex
+T2 implement insert
+T3 implement remove
+"""

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <fstream>
+//#include <unordered_set>
+#define LL long long
+using namespace std;
+
+LL a,b,r;
+int sd;
+//unorderes_set<LL> z;
+
+
+int main() {
+  ifstream f("peluzanord.in");
+  ofstream g("peluzanord.out");
+  f>>a>>b;
+  for(;a<=b; ++a) if(a%sd(a)==0) ++r;
+  g<<r;
+}

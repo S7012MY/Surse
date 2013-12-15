@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1380721301 source:c:\users\l3ask_000\documents\proiecte\cfe4s1\main.cpp
+
+1380728818 source:c:\users\l3ask_000\documents\proiecte\cfe4s1\e.cpp
+
+1380729899 source:c:\users\l3ask_000\documents\proiecte\cfe4s1\d.cpp
+	<cstdio>
+	<algorithm>
+	<vector>
+	<iostream>
+

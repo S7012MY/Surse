@@ -1,0 +1,63 @@
+#include <fstream>
+#include <bitset>
+#define DN 105
+using namespace std;
+
+int n,m,pop=1,nxt[DN],it[DN][DN],dmax,fr;
+bitset<DN> ma[DN],fol;
+
+void dfs(int c,int s) {
+  fol[c]=1;
+  for(int i=1; i<=n; ++i) if(ma[c][i] && pop) {
+    nxt[c]=i;
+    if(!fol[i]) dfs(i,s);
+    else if(i==s) pop=0;
+  }
+}
+
+void s(int i) {
+  
+}
+
+int main()
+{
+    ifstream f("plimbare.in");
+    ofstream g("plimbare.out");
+    f>>n; m=(n*(n-1))/2;
+    for(int i=0; i<m; ++i) {
+      int a,b; f>>a>>b;
+      ma[a][b]=it[a][b]=1;
+    }
+    for(int k=1; k<=n; ++k) for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j)
+        it[i][j]|=(it[i][k]&it[k][j]);
+    
+    for(int i=1; i<=n; ++i) if(!fol[i]) {
+      int dc=1; fol[i]=1;
+      for(int j=i+1; j<=n; ++j) if(it[i][j] && it[j][i]) {
+        ++dc;
+        fol[j]=1;
+      }
+      if(dc>dmax) dmax=dc,fr=i;
+    }
+    fol&=0;
+    dfs(fr,fr);
+    fol&=0;
+    fol[fr]=1;
+    for(int i=nxt[fr];i!=fr; i=nxt[i]) fol[i]=1;
+    for(;fol.count()<dmax;) {
+      for(int i=nxt[fr];i!=fr; i=nxt[i])
+        for(int j=1; j<=n; ++j) if(!fol[j] && ma[i][j] && ma[j][nxt[i]]) {
+          fol[j]=1;
+          nxt[j]=nxt[i];
+          nxt[i]=j;
+        }
+      for(int j=1; j<=n; ++j) if(!fol[j] && ma[fr][j] && ma[j][nxt[fr]]) {
+        fol[j]=1;
+        nxt[j]=nxt[fr];
+        nxt[fr]=j;
+      }
+    }
+    g<<dmax<<'\n'<<fr<<' ';
+    for(int i=nxt[fr]; i!=fr; i=nxt[i]) g<<i<<' ';
+    return 0;
+}

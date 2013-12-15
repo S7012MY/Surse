@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1378128388 source:c:\users\l3ask_000\documents\proiecte\pre-post-erous!\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+	<vector>
+

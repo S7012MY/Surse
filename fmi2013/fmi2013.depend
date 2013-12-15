@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1384521207 source:c:\users\l3ask_000\documents\proiecte\fmi2013\main.cpp
+
+1384522083 source:c:\users\l3ask_000\documents\proiecte\fmi2013\pariuri.cpp
+
+1384527568 source:c:\users\l3ask_000\documents\proiecte\fmi2013\camionas.cpp
+
+1384525398 source:c:\users\l3ask_000\documents\proiecte\fmi2013\palin3.cpp
+
+1384536244 source:c:\users\l3ask_000\documents\proiecte\fmi2013\autobuze.cpp
+
+1384531519 source:c:\users\l3ask_000\documents\proiecte\fmi2013\beri.cpp
+
+1384529421 source:c:\users\l3ask_000\documents\proiecte\fmi2013\melodii.cpp
+
+1384533183 source:c:\users\l3ask_000\documents\proiecte\fmi2013\plicuri.cpp
+
+1384535233 source:c:\users\l3ask_000\documents\proiecte\fmi2013\frumoasa.cpp
+
+1384536681 source:c:\users\l3ask_000\documents\proiecte\fmi2013\peluzanord.cpp
+	<iostream>
+	<fstream>
+

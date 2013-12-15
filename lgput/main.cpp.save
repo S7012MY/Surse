@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+
+#define MOD 1999999973
+using namespace std;
+
+long long putere(long long x,long long p)
+{
+    long long aux=1,rez=1;
+    for(;p;p>>=1)
+    {
+        if( (p&1) )
+          
+      aux*=x;
+    }
+}
+
+int main()
+{
+    long long n,p;
+    ifstream f("lgput.in");
+    ofstream g("lgput.out");
+    f>>n>>p;
+    g<<putere(n,p);
+
+
+
+    return 0;
+}

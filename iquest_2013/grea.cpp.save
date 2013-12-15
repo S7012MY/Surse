@@ -1,0 +1,54 @@
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <cstdio>
+#define DK 50005
+#define EPS 1e-7
+#define x first
+#define y second
+using namespace std;
+
+double minC=-200000, maxC=200000;
+
+pair<double, double> coord[DK];
+int n;
+
+double compute(pair<double, double> a, double px) {
+	return sqrt((a.x-px)*(a.x-px)+a.y*a.y);
+}
+
+double solve(double x) {
+	double mx=0;
+	for(int i=1; i<=n; ++i) {
+		mx=max(mx, compute(coord[i], x));
+	}
+	return mx;
+}
+
+
+double ternarySearch() {
+	double st=minC, dr=maxC;
+	const double target=0.000001;
+	while (dr-st>target) {
+		double a=(st+dr)/2.0;
+		double b=(a+dr)/2.0;
+		if(solve(a)<solve(b))
+			dr=b;
+		else
+			st=a;
+	}
+	return st;
+}
+
+int main() {
+	for(;;) {
+	  cin>>n;
+		if(n==0) break;
+		for(int i=1; i <= n; ++i)
+			cin>>coord[i].x>>coord[i].y;
+		double rez=ternarySearch();
+		cout<<fixed<<setprecision(7)<<rez<<' '<<solve(rez)<<'\n';
+	}
+	return 0;
+}
+

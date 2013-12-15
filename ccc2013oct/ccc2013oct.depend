@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1381508143 source:c:\users\l3ask_000\documents\proiecte\ccc2013oct\main.cpp
+	<vector>
+	<list>
+	<map>
+	<set>
+	<queue>
+	<deque>
+	<stack>
+	<bitset>
+	<algorithm>
+	<functional>
+	<numeric>
+	<utility>
+	<sstream>
+	<iostream>
+	<fstream>
+	<iomanip>
+	<cstdio>
+	<cstring>
+	<cmath>
+	<cstdlib>
+	<ctime>
+
+1381504032 source:c:\users\l3ask_000\documents\proiecte\ccc2013oct\gentest.cpp
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1377284313 source:c:\users\l3ask_000\documents\proiecte\plimbare\drumuri2.cpp
+
+1377348388 source:c:\users\l3ask_000\documents\proiecte\plimbare\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<bitset>
+	<queue>
+

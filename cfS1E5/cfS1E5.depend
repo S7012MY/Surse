@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1381326357 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\main.cpp
+
+1381327166 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\c.cpp
+
+1381327532 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\h.cpp
+
+1381330781 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\l.cpp
+
+1381333228 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\g.cpp
+
+1381333218 source:c:\users\l3ask_000\documents\proiecte\cfs1e5\i.cpp
+	<iostream>
+	<iomanip>
+	<cmath>
+

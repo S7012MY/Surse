@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="B.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="924" topLine="7" />
+	</File>
+	<File name="D.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="838" topLine="4" />
+	</File>
+	<File name="H.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="499" topLine="7" />
+	</File>
+	<File name="I.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="573" topLine="0" />
+	</File>
+	<File name="J.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="810" topLine="0" />
+	</File>
+	<File name="fmcm.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1547" topLine="34" />
+	</File>
+	<File name="input.in" open="1" top="0" tabpos="1">
+		<Cursor position="247544" topLine="24269" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="360" topLine="0" />
+	</File>
+	<File name="output.txt" open="1" top="0" tabpos="2">
+		<Cursor position="6703" topLine="1592" />
+	</File>
+</CodeBlocks_layout_file>

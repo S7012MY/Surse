@@ -1,0 +1,51 @@
+#include <iostream>
+#include <bitset>
+#define DN 100005
+#define DB 63
+#define LL long long
+using namespace std;
+
+int n,sz;
+LL v[DN],rez;
+bitset<DN> ss[DB],cc[DB];
+
+int gss() {
+  for(int i=0; i<sz; ++i) cc[i]=ss[i];
+  for(int b=0,j=0,k; b<sz && j<n; ++j) {
+    for(k=b;k<sz && !cc[k][j]; ++k);
+    if(k==sz) continue;
+    swap(cc[b],cc[k]);
+    for(int k=b+1; k<sz; ++k) if(cc[k][j]) cc[k]^=cc[b];
+  }
+
+  for(int b=0,j; b<sz; ++b) {
+    for(j=0; j<=n && !cc[b][j]; ++j);
+    if(j==n) return 0;
+  }
+  return 1;
+}
+
+int main()
+{
+  ifstream f("date.in");
+    while(f>>n) {
+       for(int i=0; i<n; ++i) f>>v[i];
+       sz=rez=0;
+       for(int i=0; i<DB; ++i) ss[i]&=0;
+      for(int b=DB-1; b>=0; --b) for(int i=0; i<n; ++i) if(v[i]&(1LL<<b)) ss[DB-b-1][i]=1;
+      for(int b=DB-1; b>=0; --b) {
+        ++sz;
+        rez<<=1;
+        ss[sz-1][n]=1;
+        if(gss()) ++rez;
+        else ss[sz-1][n]=0;
+      }
+      ifstream g("date.out");
+      LL rb; g>>rb;
+      if(rb!=rez) {
+        cerr<<"gresit\n"<<n<<'\n';
+        for(int i=0; i<n; ++i)
+      //cout<<rez<<'\n';
+    }
+    return 0;
+}

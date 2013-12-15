@@ -1,0 +1,87 @@
+#include <iostream>
+#include <fstream>
+#include <bitset>
+#include <algorithm>
+#define DN 200005
+#define DM 1000005
+using namespace std;
+
+int nleft,nright,nedge;
+int head[DN],point[DM],nxt[DM];
+int p1[DN],p2[DN];
+bitset<DN> viz;
+
+void clear() {
+	for(int i=0;i<nleft; ++i) p1[i]=-1;
+	for(int i=0;i<nright; ++i) p2[i]=-1;
+}
+void init(int _nleft,int _nright) {
+	nleft=_nleft;
+	nright=_nright;
+	nedge=0;
+	for(int i=0;i<nleft;++i) head[i]=-1;
+	clear();
+}
+
+void addedge(int u,int v) {
+	point[nedge]=v;
+	nxt[nedge]=head[u];
+	head[u]=(nedge++);
+}
+
+bool lant(int v) {
+	for(int k=head[v];k>=0;k=nxt[k]) {
+		int p=point[k];
+		if(!viz[p]) {
+			viz[p]=1;
+			if(p2[p]<0 || lant(p2[p])) {
+				p1[v]=p;
+				p2[p]=v;
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+int cuplaj() {
+	for(int i=0;i<nleft;i++)
+		for(int k=head[i];p1[i]<0 && k>=0;k=nxt[k])
+			if(p2[point[k]]<0) {
+				p1[i]=point[k];
+				p2[point[k]]=i;
+			}
+	for(int i=0;i<nleft;i++) if(p1[i]<0)	{
+		for(int k=0;k<nright;k++) viz[k]=0;
+		lant(i);
+	}
+	int rez=0;
+	for(int i=0;i<nleft;++i) if(p1[i]>=0) ++rez;
+	return rez;
+}
+
+int n,m;
+int A[1005][105];
+
+bool isUpper(int x,int y) {
+	for(int i=0;i<m;i++) if(A[x][i]<=A[y][i]) return 0;
+	return true;
+}
+
+int main()
+{
+  ifstream f("album.in");
+  ofstream g("album.out");
+  f>>n>>m;
+  for(int i=0;i<n;i++) {
+    for(int j=0;j<m;j++) f>>A[i][j];
+    sort(A[i],A[i]+m);
+  }
+  init(n,n);
+  for(int i=0;i<n;i++) for(int j=0;j<n;j++) if(isUpper(i,j))
+    addedge(i,j);
+  int c=cuplaj();
+  g<<n-c;
+	return 0;
+}
+

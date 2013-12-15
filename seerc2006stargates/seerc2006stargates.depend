@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1380456703 source:c:\users\l3ask_000\documents\proiecte\seerc2006stargates\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<cstdio>
+	<cctype>
+	<cstdlib>
+	<ctime>
+	<cassert>
+

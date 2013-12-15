@@ -1,0 +1,24 @@
+//#include <iostream>
+//#include <map>
+//using namespace std;
+//
+//int n,m;
+//map<int,int,greater<int> > mp;
+//
+//int main() {
+//  cin>>n>>m;
+//  for(;m--;) {
+//    int a,b; cin>>a>>b;
+//    if(mp.find(a)==mp.end()) mp[a]=b;
+//    else mp[a]=max(mp[a],b);
+//  }
+//  if(mp.size()<n) {
+//    long long sum=0;
+//    for(map<int,int>::iterator it=mp.begin();it!=mp.end();++it) sum+=it->second;
+//    cout<<sum;
+//  }
+//  int maxdiv=0;
+//  int lim=mp.size();
+//  if(mp.size()==2) lim=n+1;
+//  for(int i=1; i<=n && i<lim; ++i) if(n%i==0) maxdiv=i;
+//}

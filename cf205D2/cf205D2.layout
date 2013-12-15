@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="B.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1904" topLine="48" />
+	</File>
+	<File name="D.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1984" topLine="19" />
+	</File>
+	<File name="E.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="1026" topLine="15" />
+	</File>
+	<File name="c.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="449" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="995" topLine="13" />
+	</File>
+</CodeBlocks_layout_file>

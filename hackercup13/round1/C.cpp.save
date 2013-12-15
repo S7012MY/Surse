@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
+#define DN 505
+using namespace std;
+
+int T,n,m,lgm,bst[DN][DN],b2[DN][DN];
+string mt[DN];
+
+int main() {
+  ifstream f("input.txt");
+  ofstream g("output.txt");
+  f>>T;
+  for(int t=1; t<=T; ++t) {
+    f>>n>>m;
+    memset(bst,0,sizeof(bst));
+    memset(b2,0,sizeof(b2));
+    int rez=0;
+    for(int i=0; i<n; ++i) f>>mt[i];
+    for(int i=n-1; i>=0; --i)
+      for(int j=m-1; j>=0; --j) if(mt[i][j]!='#'){
+        bst[i][j]=1+max(bst[i+1][j],bst[i][j+1]);
+        if(j+1<m) for(int i2=i;i2>=0 && mt[i2][j+1]!='#'; --i2) b2[i][j]=max(b2[i][j],bst[i2][j+2]+i-i2+2);
+        if(i+1<n) for(int j2=j;j2>=0 && mt[i+1][j2]!='#'; --j2) b2[i][j]=max(b2[i][j],bst[i+2][j2]+j-j2+2);
+        b2[i][j]=max(b2[i][j],bst[i][j]);
+        rez=max(rez,b2[i][j]);
+      }
+    for(int i=0; i<n; ++i) {
+      for(int j=0; j<n; ++j) cout<<b2[i][j]<<' ';
+      cout<<'\n';
+    }
+    cout<<'\n';
+    for(int i=0; i<n; ++i) {
+      for(int j=0; j<n; ++j) cout<<b2[i][j]<<' ';
+      cout<<'\n';
+    }
+    cout<<'\n\n';
+    g<<"Case #"<<t<<": "<<rez<<'\n';
+  }
+}

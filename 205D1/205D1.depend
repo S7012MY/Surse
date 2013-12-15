@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1380909708 source:c:\users\l3ask_000\documents\proiecte\205d1\main.cpp
+
+1380910372 source:c:\users\l3ask_000\documents\proiecte\205d1\e.cpp
+	<iostream>
+	<iomanip>
+	<ctime>
+	<cstdlib>
+
+1380909939 source:c:\users\l3ask_000\documents\proiecte\205d1\b.cpp
+

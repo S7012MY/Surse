@@ -1,0 +1,45 @@
+#include <iostream>
+#include <queue>
+#include <bitset>
+#define DX 100005
+using namespace std;
+
+//2*a+b;
+bitset<DX> viz;
+int lg[DX],nr4[DX];
+int solve(int x) {
+  queue<pair<int,int> > c;
+  viz&=0;
+  lg[4%x]=1;nr4[4%x]=1;
+  for(c.push(make_pair(4%x,4));!c.empty(); c.pop()) {
+    int md=c.front().first,lst=c.front().second;
+    int fr=md;
+    viz[md]=1;
+    if(md==0) return nr4[0]+lg[0];
+    int nxt=(md*10)%x;
+    if(!viz[nxt]) {
+      nr4[nxt]=nr4[fr];
+      lg[nxt]=lg[fr]+1;
+      c.push(make_pair(nxt,0));
+    }
+    if(lst==4) {
+      nxt=(md*10+4)%x;
+      if(!viz[nxt]) {
+        nr4[nxt]=nr4[fr]+1;
+        lg[nxt]=lg[fr]+1;
+        c.push(make_pair(nxt,4));
+      }
+    }
+  }
+  asser
+}
+
+int main()
+{
+    int t,x;
+    for(cin>>t;t--;) {
+      cin>>x;
+      cout<<solve(x)<<'\n';
+    }
+    return 0;
+}

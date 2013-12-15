@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1373741520 source:c:\users\l3ask_000\documents\proiecte\cf_sql_13\main.cpp
+	<list>
+	<map>
+	<set>
+	<queue>
+	<deque>
+	<stack>
+	<bitset>
+	<algorithm>
+	<functional>
+	<numeric>
+	<utility>
+	<sstream>
+	<iostream>
+	<iomanip>
+	<cstdio>
+	<cstring>
+	<cmath>
+	<cstdlib>
+	<ctime>
+
+1373744828 source:c:\users\l3ask_000\documents\proiecte\cf_sql_13\b.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<cfloat>
+	<cmath>
+

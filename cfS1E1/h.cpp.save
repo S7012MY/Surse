@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <cstdio>
+using namespace std;
+
+string s,a,rez,pat;
+int t,n;
+
+string trans(int sh, int m) {
+  string r;
+  for(int i=0; i<s.size(); i+=m) {
+    int cd=min(s.size()-1,i+m-1);
+    for(;cd>=i;--cd) r+=s[cd];
+  }
+  for(int i=0; i<r.size(); ++i) r[i]=(r[i]-'s'+26)%26;
+  return r;
+}
+
+int main() {
+  freopen("input.txt","r",stdin);
+  for(cin>>t;t;--t) {
+    s=""; cin>>n;
+    for(;s.size()<n;) {
+      cin>>a;
+      s.append(a);
+    }
+    cin>>pat;
+    int ok=0;
+    for(int s=1; s<26; ++i) for(int m=5; m<21; ++m) {
+      rez=trans(s,m);
+      if(rez.fi)
+    }
+  }
+}

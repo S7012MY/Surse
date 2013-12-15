@@ -1,3 +1,0 @@
-Deoarece a rămas fără fixativ, Ephie s-a gândit să apeleze la curentul care trece prin cablurile din spatele calculatorului. Totusi ea și-a dat seama că dacă întinde cablurile unele dintre ele se vor intersecta și nu va mai putea să le scoată așa de ușor. Din cauza asta ea vrea să afle pentru fiecare cablu cu câte cabluri se intersectează dacă acestea sunt întinse.
-
-

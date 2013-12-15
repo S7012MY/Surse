@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int n;
+double v[1000005];
+
+int main() {
+  while(cin>>n) {
+    for(int i=1; i<=n; ++i) cin>>v[i];
+    int s=0,r=0;
+    v[0]=-10;
+    for(int i=1; i<=n; ++i) {
+      if(v[s]+1.0<v[i]) s=i,++r;
+    }
+    cout<<r<<'\n';
+  }
+}

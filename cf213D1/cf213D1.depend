@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1384876394 source:c:\users\l3ask_000\documents\proiecte\cf213d1\main.cpp
+	<iostream>
+	<string>
+	<map>
+	<set>
+

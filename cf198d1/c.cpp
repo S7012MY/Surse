@@ -1,0 +1,36 @@
+//#include <iostream>
+//#define DN 2005
+//#define MOD 1000000007
+//#define LL long long
+//using namespace std;
+//
+//LL f[DN][DN];
+//int n,v[DN],fol[DN];
+//
+//int main() {
+//  f[0][0]=1;
+//  cin>>n;
+//  for(int i=1; i<=n; ++i) {
+//    cin>>v[i];
+//    if(v[i]!=-1) fol[v[i]]=1;
+//    if(v[i]==i) {
+//      cout<<0;
+//      return 0;
+//    }
+//  }
+//  int fix=0;
+//  for(int i=1; i<=n; ++i) {
+//    if(v[i]!=-1) ++fix;
+//    for(int j=0; j<=i; ++j) {
+//      if(!fol[i]){
+//        if(j && v[i]==-1) f[i][j]=f[i-1][j-1];
+//        f[i][j]+=f[i-1][j]*(i-1-j-fix)+f[i-1][j+1]*(j+1-fix);
+//        f[i][j]%=MOD;
+//
+//      }else f[i][j]=f[i-1][j];
+//      cerr<<f[i][j]<<' ';
+//    }
+//    cerr<<'\n';
+//  }
+//  cout<<f[n][0];
+//}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="autobuze.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1091" topLine="16" />
+	</File>
+	<File name="autobuze.in" open="1" top="0" tabpos="2">
+		<Cursor position="20" topLine="0" />
+	</File>
+	<File name="autobuze.out" open="1" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="beri.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="488" topLine="0" />
+	</File>
+	<File name="beri.in" open="0" top="0" tabpos="0">
+		<Cursor position="13" topLine="0" />
+	</File>
+	<File name="beri.out" open="0" top="0" tabpos="0">
+		<Cursor position="2" topLine="0" />
+	</File>
+	<File name="camionas.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="369" topLine="19" />
+	</File>
+	<File name="camionas.in" open="0" top="0" tabpos="0">
+		<Cursor position="48" topLine="0" />
+	</File>
+	<File name="frumoasa.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="618" topLine="0" />
+	</File>
+	<File name="frumoasa.in" open="0" top="0" tabpos="0">
+		<Cursor position="3" topLine="0" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1642" topLine="44" />
+	</File>
+	<File name="melodii.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="982" topLine="2" />
+	</File>
+	<File name="melodii.in" open="0" top="0" tabpos="0">
+		<Cursor position="24" topLine="0" />
+	</File>
+	<File name="palin3.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="986" topLine="2" />
+	</File>
+	<File name="palin3.in" open="0" top="0" tabpos="0">
+		<Cursor position="22" topLine="0" />
+	</File>
+	<File name="pariuri.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="642" topLine="0" />
+	</File>
+	<File name="pariuri.in" open="0" top="0" tabpos="0">
+		<Cursor position="41" topLine="0" />
+	</File>
+	<File name="peluzanord.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="384" topLine="0" />
+	</File>
+	<File name="peluzanord.in" open="1" top="0" tabpos="5">
+		<Cursor position="4" topLine="0" />
+	</File>
+	<File name="peluzanord.out" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="peluzasud.in" open="0" top="0" tabpos="0">
+		<Cursor position="3" topLine="0" />
+	</File>
+	<File name="plicuri.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1189" topLine="18" />
+	</File>
+	<File name="plicuri.in" open="0" top="0" tabpos="0">
+		<Cursor position="11" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,36 @@
+//comisia
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int t,pot[105][105];
+char s[105];
+
+int sol(int lg) {
+  if(n%3) return 0;
+  memset(pot,0,sizeof(pot));
+  for(int i=1; i<=lg; ++i) pot[i][i-1]=1;
+  for(int lgc=3; lgc<=lg; ++lgc) {
+    for(int i=1; i+lgc-1<=lg; ++i) {
+      j=i+lgc-1;
+      if(lgc%3) continue;
+      for(int k=i; k<j; ++k) if(pot[i][k] && pot[k+1][j]) {
+        pot[i][j]=1;
+        break;
+      }
+      if(!pot[i][j] && s[i]==s[j])
+    }
+  }
+}
+
+int main() {
+  ifstream f("palin3.in");
+  ofstream g("palin3.out");
+  for(f>>t;t;--t) {
+    f>>(s+1);
+    int lg=strlen(s+1);
+    if(sol(lg)) g<<"DA\n";
+    else g<<"NU\n";
+  }
+}

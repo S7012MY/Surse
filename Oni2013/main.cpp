@@ -1,0 +1,26 @@
+//#include <iostream>
+//#include <fstream>
+//#define DN 1505
+//using namespace std;
+//
+//int n,m,mt[DN][DN],valid[DN*DN],x[DN*DN],y[DN*DN];
+//
+//int main()
+//{
+//  ifstream f("bemo.in");
+//  ofstream g("bemo.out");
+//  f>>n>>m;
+//  for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {
+//    f>>mt[i][j];
+//    x[mt[i][j]]=i;
+//    y[mt[i][j]]=j;
+//  }
+//  for(int i=1; i<=n*m; ++i) if(!valid[i]) {
+//    for(int l=x[i]-1;l && !valid[mt[l][y[i]+1]];--l)
+//      for(int c=y[i]+1;c<=m && !valid[mt[l][c]]; ++c) valid[mt[l][c]]=1;
+//    for(int l=x[i]+1;l<=n && !valid[mt[l][y[i]-1]];++l)
+//      for(int c=y[i]-1;c && !valid[mt[l][c]];--c) valid[mt[l][c]]=1;
+//  }
+//  for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) if(!valid[mt[i][j]]) g<<mt[i][j]<<' ';
+//  return 0;
+//}

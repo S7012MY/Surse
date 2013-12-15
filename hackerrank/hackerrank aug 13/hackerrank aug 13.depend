@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1377370409 source:c:\users\l3ask_000\documents\proiecte\hackerrank aug 13\main.cpp
+	<cmath>
+	<cstdio>
+	<cstring>
+	<vector>
+	<iostream>
+	<algorithm>
+	<set>
+	<string>
+

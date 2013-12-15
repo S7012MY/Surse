@@ -1,0 +1,69 @@
+#include <iostream>
+#define DN 100005
+#define LL long long
+using namespace std;
+
+int n,m,lst[DN];
+LL a[DN],b[DN];
+
+long long abs(long long x) {
+  if(x>0) return x;
+  return -x;
+}
+
+LL cst(int i,int x,int y) {
+  return b[y]-b[x]+min(abs(a[i]-b[x]),abs(a[i]-b[y]));
+}
+
+int check(LL cmax) {
+  int x,y=0;
+  if(cmax<0) return 0;
+  for(int i=1;i<=n; ++i) {
+    x=y+1;
+    for(;cst(i,x,y)<=cmax && y<=m; ++y);
+    for(;cst(i,x,y)>cmax && x<=y; --y);
+    if
+    //cerr<<r<<' ';
+  }
+  return lst[n]==m;
+}
+
+//<parsing>
+#include <cstdio>
+FILE* fin=stdin;
+const unsigned maxb=30000192;
+char buf[maxb];
+unsigned ptr=maxb;
+
+inline LL getInt(){
+    LL nr=0;
+    while(buf[ptr]<'0'||'9'<buf[ptr])
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    while('0'<=buf[ptr]&&buf[ptr]<='9'){
+        nr=nr*10+buf[ptr]-'0';
+        if(++ptr>=maxb)
+            fread(buf,maxb,1,fin),ptr=0;
+    }
+    return nr;
+}
+//</parsing>
+
+int main() {
+  cin>>n>>m;
+  for(int i=1; i<=n; ++i) cin>>a[i];
+  for(int i=1; i<=m; ++i) cin>>b[i];
+  LL ls=0,ld=30000000000LL,m,rez=0;
+  for(;ls<=ld;) {
+    m=ls+(ld-ls)/2LL;
+    if(check(m)) {
+      rez=m;
+      ld=m-1;
+    }else ls=m+1;
+  }
+  for(;check(rez);--rez);
+  if(!check(rez)) ++rez;
+  //cerr<<check(2)<<' '<<check(3)<<' '<<check(4)<<'\n';
+  //cerr<<check(2);
+  cout<<rez;
+}
