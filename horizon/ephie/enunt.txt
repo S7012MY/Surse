@@ -1,0 +1,23 @@
+Ephie
+
+Ephie are acasă o colecție de $N$ cduri cu muzică bună. Deoarece ea nu e foarte ordonată le păstrează așezate unele peste altele. Fiecare cd are un profit(satisfacția pe care o produce dacă este ascultat) și un cost(cât se deteriorează dacă este scos din teanc și nu este ascultat).
+Deoarece ea ține foarte mult la cdurile sale, dar vrea să și asculte muzică bună, ea vă roagă să calculați profitul maxim de a asculta $K$ cduri din colecție.
+Date de intrare
+
+... se află $N$ numărul de cduri si $K$, numărul de cduri alese. Pe următoarele $N$ linii se află câte $2$ numere, $p[i]$ și $c[i]$.
+
+Date de ieșire
+
+... se află profitul maxim care se poate obține
+
+N<=1 000 000 k<=1 000
+p[i]<=2 000 c[i]<= 2000
+
+
+4 2
+1 1
+3 2
+3 1
+1 1
+
+Ea scoate primul cd din teanc si le ascultă pe următoarele 2, profitul fiind 3+3-1.

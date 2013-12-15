@@ -1,0 +1,46 @@
+#include <cstdio>
+#define max(a,b) a>b ? a : b
+#define DN 4*50005
+
+int n,q,v[50005],a[DN],b[DN],c[DN],d[DN],rez,sum,gls,gld;
+
+void build(int vn,int ls,int ld) {
+	if(ls==ld) {
+		a[vn]=b[vn]=c[vn]=max(0,v[ls]);
+		d[vn]=v[ls];
+		return;
+	}
+	int m=(ls+ld)>>1,fs=vn<<1;
+	build(fs,ls,m); build(fs+1,m+1,ld);
+	a[vn]=max(a[fs],d[fs]+a[fs+1]);
+    b[vn]=max(b[fs]+d[fs+1],b[fs+1]);
+    c[vn]=max(max(c[fs],c[fs+1]),b[fs]+a[fs+1]);
+    d[vn]=d[fs]+d[fs+1];
+}
+
+void query(int vn,int ls,int ld) {
+	if(gls<=ls && gld>=ld) {
+		if(0>sum) sum=0;
+		rez=max(rez,max(sum+a[vn],c[vn]));
+		sum=max(sum+d[vn],b[vn]);
+		return;
+	}
+	int m=(ls+ld)>>1,fs=vn<<1;
+	if(gls<=m) query(fs,ls,m);
+	if(gld>m) query(fs+1,m+1,ld);
+}
+
+int main()
+{
+	scanf("%d",&n);
+	for(int i=1; i<=n; ++i) scanf("%d",&v[i]);
+	build(1,1,n);
+	scanf("%d",&q);
+	for(int i=1; i<=q; ++i) {
+		scanf("%d %d",&gls,&gld);
+		rez=sum=0;
+		query(1,1,n);
+		printf("%d\n",rez);
+	}
+	return 0;
+}

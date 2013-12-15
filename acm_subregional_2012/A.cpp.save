@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int n,q,mt[1005][1005]
+
+int main() {
+  cin>>n>>q;
+  for(int i=1; i<=n; ++i) for(int j=1; j<=n; ++j) {
+    cin>>mt[i][j];
+    mt[i][j]+=mt[i-1][j]+mt[i][j-1];
+    mt[i][j]-=mt[i-1][j-1];
+  }
+  for(q;)
+}
