@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="fmi2013" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\fmi2013" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\fmi2013" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="autobuze.cpp" />
+		<Unit filename="autobuze.in" />
+		<Unit filename="autobuze.out" />
+		<Unit filename="beri.cpp" />
+		<Unit filename="beri.in" />
+		<Unit filename="beri.out" />
+		<Unit filename="camionas.cpp" />
+		<Unit filename="camionas.in" />
+		<Unit filename="camionas.out" />
+		<Unit filename="frumoasa.cpp" />
+		<Unit filename="frumoasa.in" />
+		<Unit filename="frumoasa.out" />
+		<Unit filename="main.cpp" />
+		<Unit filename="melodii.cpp" />
+		<Unit filename="melodii.in" />
+		<Unit filename="melodii.out" />
+		<Unit filename="palin3.cpp" />
+		<Unit filename="palin3.in" />
+		<Unit filename="palin3.out" />
+		<Unit filename="pariuri.cpp" />
+		<Unit filename="pariuri.in" />
+		<Unit filename="pariuri.out" />
+		<Unit filename="peluzanord.cpp" />
+		<Unit filename="peluzanord.in" />
+		<Unit filename="peluzanord.out" />
+		<Unit filename="peluzasud.in" />
+		<Unit filename="peluzasud.out" />
+		<Unit filename="plicuri.cpp" />
+		<Unit filename="plicuri.in" />
+		<Unit filename="plicuri.out" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,84 @@
+//#include <iostream>
+//#include <fstream>
+//#include <bitset>
+//#include <ctime>
+//#include <cstdlib>
+//#define LL long long
+//#define DN 10005
+//#define BEG 100000000000001LL
+//using namespace std;
+//
+//int n;
+//long long x;
+//
+//bitset<DN> isp;
+//
+//void c() {
+//  isp[1]=1;
+//  for(LL i=2; i*i<DN; ++i) if(!isp[i]) {
+//    cerr<<i<<' ';
+//    for(LL j=i*i; j<DN; j+=i) isp[j]=1;
+//  }
+//}
+//
+//LL lgput(LL b,int e,LL n) {
+//  LL r=1;
+//  for(;e;e>>=1) {
+//    if(e&1) r=(r*1LL*b)%n;
+//    b=(b*1LL*b)%n;
+//  }
+//  return r;
+//}
+//
+//int mr(LL n) {
+//  if(n%2==0) return 0;
+//  LL a[]={7,29},nminus=n-1,s=0,d;
+//  for(;nminus%(1LL<<s)==0; ++s);
+//  --s;
+//  d=n/(1LL<<s);
+//  for(int i=0; i<2; ++i) {
+//    loop:
+//    if(i>1) break;
+//    LL x=lgput(a[i],d,n);
+//    if(x==1 || x==n-1) continue;
+//    for(int j=1; j<s; ++j) {
+//      x=(x*1LL*x)%n;
+//      if(x==1) return 0;
+//      if(x==n-1) {
+//        ++i;
+//        goto loop;
+//      }
+//    }
+//    return 0;
+//  }
+//  return 1;
+//}
+//
+//int prim(LL x) {
+//  return mr(x);
+//}
+//
+//int ispp(LL x) {
+//  for(LL i=2; i*i<=x; ++i) if(x%i==0) return 0;
+//  return 1;
+//}
+//
+//int main()
+//{
+//    ifstream f("peluzasud.in");
+//    ofstream g("peluzasud.out");
+//    f>>n>>x;
+//    int cnt=0;
+//   /* for(LL i=1000000000000000LL;; --i) {
+//      cout<<i<<' '<<prim(i)<<'\n';
+//      if(!prim(i)) ++cnt;
+//      else cnt=0;
+//      if(cnt==n) {
+//        g<<i;
+//        return 0;
+//      }
+//    }*/
+//   // for(LL i=BEG; i<=BEG+40; ++i) cout<<i<<' '<<ispp(i)<<'\n';
+//   g<<BEG;
+//    return 0;
+//}

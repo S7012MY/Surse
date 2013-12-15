@@ -1,0 +1,53 @@
+#include <iostream>
+#include <bitset>
+#include <cstdlib>
+#include <vector>
+#define DN 25
+#define DS DN*DN
+using namespace std;
+
+int n,d;
+bitset<DS> ss[DS];
+vector<pair<int,int> > r;
+
+bool gss() {
+  for(int i=0,j=0,k;i<n*n && j<n*n;) {
+    for(k=i; k<n*n && !ss[k][j]; ++k);
+    if(k==n*n) {
+      ++j;
+      continue;
+    }
+    swap(ss[i],ss[k]);
+    for(k=i+1; k<n*n; ++k) if(ss[k][j]) ss[k]^=ss[i];
+    ++i; ++j;
+  }
+//  for(int i=0; i<n*n; ++i) {
+//    for(int j=0; j<=n*n; ++j) cout<<ss[i][j]<<' ';
+//    cout<<'\n';
+//  }
+  for(int i=0,j=0;i<n*n; ++i) {
+    for(;j<=n*n && !ss[i][j];++j);
+    //cout<<i<<' '<<j<<'\n';
+    if(j==n*n) return false;
+  }
+  return true;
+}
+
+int mht(int a,int b,int x,int y) {
+  return abs(a-x)+abs(b-y);
+}
+
+int main() {
+  cin>>n>>d;
+  for(int i=0; i<n; ++i) for(int j=0; j<n; ++j) {
+    //pentru fiecare celula am o ecuatie
+    int r; cin>>r;
+    ss[i*n+j][n*n]=r;
+    for(int x=0; x<n; ++x) for(int y=0; y<n; ++y) if(mht(i,j,x,y)<=d) ss[i*n+j][x*n+y]=1;
+  }
+  if(!gss()) cout<<"Impossible";
+  else {
+    cout<<"Possible\n"<<r.size()<<'\n';
+    for(int i=0; i<r.size(); ++i) cout<<r[i].first<<' '<<r[i].second<<'\n';
+  }
+}

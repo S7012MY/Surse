@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1387008668 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\main.cpp
+
+1387008981 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\pufu.cpp
+
+1387022261 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\carte.cpp
+
+1387014467 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\cifre4.cpp
+
+1387013100 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\cabana.cpp
+
+1387021072 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\imunitate.cpp
+
+1387019064 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\brazi.cpp
+
+1387024055 source:c:\users\l3ask_000\documents\proiecte\onis2013_r1\frumusete.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<cstring>
+

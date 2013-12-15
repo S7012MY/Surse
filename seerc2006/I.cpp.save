@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+#include <bitset>
+#include <queue>
+#include <cstring>
+#define DN 140
+#define x first
+#define y second
+using namespace std;
+
+typedef pair<int,int> per;
+typedef vector<per>::iterator it;
+
+bitset<DN> inq;
+vector<per> gr[DN];
+int n,m,pre[DN],cst[DN][DN],cap[DN][DN],fl[DN][DN],dmin[DN],s,d;
+
+int bf() {
+  for(int i=1; i<n; ++i) dmin[i]=(1<<30),pre[i]=-1;
+  inq&=0;
+  queue<int> c;
+  dmin[s]=0;
+  for(c.push(0);!c.empty();c.pop()) {
+    int fr=c.front();
+    for(it i=gr[fr].begin(); i!=gr[fr].end(); ++i) if(dmin[i->x]>dmin[fr]+i->y && fl[fr][i->x]<cap[fr][i->x]) {
+      dmin[i->x]=dmin[fr]+i->y;
+      pre[i->x]=fr;
+      if(!inq[i->x]) {
+        inq[i->x]=1;
+        c.push(i->x);
+      }
+    }
+  }
+  cout<<"dis\n";
+  for(int i=0; i<n; ++i) cout<<dmin[i]<<' ';
+  cout<<'\n';
+  return dmin[n-1]!=(1<<30);
+}
+
+int main() {
+  for(int t=1;;++t) {
+    cin>>n>>m;
+    if(n==0) break;
+    for(int i=0; i<n; ++i) gr[i].clear();
+    memset(cap,0,sizeof(cst));
+    memset(fl,0,sizeof(cst));
+    s=n; d=n-1;
+    for(int i=0; i<n; ++i) {
+      cap[i][i+n]=1;
+      gr[i].push_back(make_pair(i+n,0));
+      gr[i+n].push_back(make_pair(i,0));
+    }
+    for(int i=0; i<m; ++i) {
+      int a,b,c;cin>>a>>b>>c;
+      if(a!=n-1 && b!=0) gr[a+n].push_back(make_pair(b,c));
+      if(b!=n-1 && a!=0) gr[b+n].push_back(make_pair(a,-c));
+      ++cap[a+n][b];
+    }
+    n+=n;
+    cout<<"Instance #"<<t<<": ";
+    int ok=1,rez=0;
+    for(int i=1;i<3; ++i) {
+      if(!bf()) {
+        cout<<"Not possible\n";
+        ok=0;
+        br
+      }
+      for(int i=d; i!=s;++fl[pre[i]][i],--fl[i][pre[i]],i=pre[i]);
+      rez+=dmin[n-1];
+    }
+    if(ok) cout<<rez;
+  }
+}

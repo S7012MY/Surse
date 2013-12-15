@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1386440660 source:c:\users\l3ask_000\documents\proiecte\hackercup2013round1\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

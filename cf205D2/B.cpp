@@ -1,0 +1,83 @@
+//#include <vector>
+//#include <list>
+//#include <map>
+//#include <set>
+//#include <queue>
+//#include <deque>
+//#include <stack>
+//#include <bitset>
+//#include <algorithm>
+//#include <functional>
+//#include <numeric>
+//#include <utility>
+//#include <sstream>
+//#include <iostream>
+//#include <iomanip>
+//#include <cstdio>
+//#include <cstring>
+//#include <cmath>
+//#include <cstdlib>
+//#include <ctime>
+//#define x first
+//#define y second
+//#define LL long long
+//#define DN 1000005
+//using namespace std;
+//
+//set<int> a,b;
+//int n,v[DN],cupl[DN],r[DN];
+//
+//int main()
+//{
+//    cin>>n; n*=2;
+//    for (int i=1; i<=n; ++i) cin>>v[i];
+//
+//    for(int i=1;i<=n; ++i) if(!cupl[i]) {
+//      for(int j=i+1; j<=n;++j)
+//        if(v[i]==v[j] && !cupl[j]) {
+//          cupl[i]=j;
+//          cupl[j]=i;
+//          break;
+//        }
+//    }
+//    for(int i=1;i<=n; ++i) if(!cupl[i]) {
+//      for(int j=i+1; j<=n;++j)
+//        if(!cupl[j]) {
+//          cupl[i]=j;
+//          cupl[j]=i;
+//          break;
+//        }
+//    }
+//
+//    for (int i=1; i <=n; ++i) if(cupl[i]){
+//      if(a.find(v[i])!=a.end()) {
+//        if(a.size()>b.size()) {
+//          b.insert(v[cupl[i]]);
+//          r[i]=1; r[cupl[i]]=2;
+//        } else {
+//          a.insert(v[cupl[i]]);
+//          r[i]=2; r[cupl[i]]=1;
+//        }
+//      }else if(b.find(v[cupl[i]]) != b.end()) {
+//        if(a.size() > b.size()) {
+//          b.insert(v[i]);
+//          r[i]=2; r[cupl[i]]=1;
+//        } else {
+//          a.insert(v[i]);
+//          r[i]=1; r[cupl[i]]=2;
+//        }
+//      }else {
+//        a.insert(v[i]);
+//        b.insert(v[cupl[i]]);
+//        r[i]=1; r[cupl[i]]=2;
+//      }
+//      cupl[cupl[i]]=0;
+//    }
+//
+//    cout<<a.size()*b.size()<<'\n';
+//
+//    for (int i=1; i <=n; ++i) cout<<r[i]<<' ';
+//
+//    return 0;
+//}
+//

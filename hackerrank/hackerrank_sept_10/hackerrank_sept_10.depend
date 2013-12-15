@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1379074056 source:c:\users\l3ask_000\documents\proiecte\hackerrank_sept_10\main.cpp
+
+1379170553 source:c:\users\l3ask_000\documents\proiecte\hackerrank_sept_10\chocolategame.cpp
+	<cmath>
+	<cstdio>
+	<vector>
+	<iostream>
+	<algorithm>
+	<map>
+

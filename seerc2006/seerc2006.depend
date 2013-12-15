@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1380401220 source:c:\users\l3ask_000\documents\proiecte\seerc2006\main.cpp
+
+1380401589 source:c:\users\l3ask_000\documents\proiecte\seerc2006\b.cpp
+
+1380402056 source:c:\users\l3ask_000\documents\proiecte\seerc2006\c.cpp
+
+1380408037 source:c:\users\l3ask_000\documents\proiecte\seerc2006\i.cpp
+	<iostream>
+	<vector>
+	<bitset>
+	<queue>
+	<cstring>
+

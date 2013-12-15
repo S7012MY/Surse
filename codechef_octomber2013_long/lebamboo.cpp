@@ -1,0 +1,82 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <cstdlib>
+#include <cstdio>
+#define DN 55
+#define EPS 1e-9
+using namespace std;
+
+int t,n,a[DN],b[DN];
+long double x[DN],ss[DN][DN],sum;
+
+int gs() {
+  for(int i=1,j=1,k;i<=n && j<=n;) {
+    int pmx; double mx=0;
+    for(k=i; k<=n && fabs(ss[k][j])<=EPS; ++k);
+    if(k==n+1) {
+      ++j;
+      continue;
+    }
+    for(int l=1; l<=n+1; ++l) swap(ss[i][l],ss[k][l]);
+    for(int k=i+1; k<=n; ++k) if(fabs(ss[k][j])>EPS)
+      for(int l=n+1; l; --l)
+        ss[k][l]-=((ss[k][j]*ss[i][l])/ss[i][j]);
+    ++i; ++j;
+  }
+  for(int i=1; i<=n; ++i) x[i]=0;
+  for(int i=n; i; --i) for(int j=1; j<=n+1; ++j) if(fabs(ss[i][j])>EPS) {
+    if(j==n+1) return 0;
+    x[j]=ss[i][n+1];
+    for(int k=j+1; k<=n; ++k) x[j]-=ss[i][k]*x[k];
+    x[j]/=ss[i][j];
+    break;
+  }
+  return 1;
+}
+
+void debsys() {
+  for(int i=1; i<=n; ++i) {
+    for(int j=1; j<=n+1; ++j) cerr<<fixed<<setprecision(9)<<ss[i][j]<<' ';
+    cerr<<'\n';
+  }
+}
+
+int main(){
+  //freopen("debug.txt","w",stderr);
+  freopen("input.txt","r",stdin);
+  freopen("output.txt","w",stdout);
+  for(cin>>t;t--;) {
+    cin>>n;
+    for(int i=1; i<=n; ++i) cin>>a[i];
+    for(int i=1; i<=n; ++i) cin>>b[i];
+    if(n==2) {
+      //determinantul va fi 0
+      //|-1 1|
+      //|1 -1|
+      if(a[1]-b[1]!=b[2]-a[2]) cout<<"-1\n";
+      else cout<<abs(a[1]-b[1])<<'\n';
+      continue;
+    }
+    for(int i=1; i<=n; ++i) {
+      for(int j=1; j<=n; ++j)
+        if(i==j) ss[i][j]=-1;
+        else ss[i][j]=1;
+      ss[i][n+1]=b[i]-a[i];
+    }
+
+    if(!gs()) cout<<"-1\n";
+    else {
+      sum=0;
+      int ok=1;
+      for(int i=1; i<=n; ++i) {
+        sum+=int(x[i]+EPS);
+        if(fabs(x[i]-floor(x[i]))>EPS || x[i]<-EPS) ok=0;
+      }
+      if(!ok) cout<<"-1\n";
+      else cout<<sum<<'\n';
+    }
+    //debsys();
+  }
+  return 0;
+}

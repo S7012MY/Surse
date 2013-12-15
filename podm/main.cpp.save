@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#define DN 505
+#define LL long long
+using namespace std;
+
+int n,c[DN][DN],d[DN][DN];
+LL v[DN],b[DN][DN];
+
+int main()
+{
+    ifstream f("podm.in");
+    ofstream g("podm.out");
+    f>>n;
+    for(int i=0; i<=n; ++i) f>>v[i];
+    for(int i=0; i<n-1; ++i)  b[i][i+2]=v[i]*v[i+1]*v[i+2],c[i][i+2]=i+1;
+    for(int lg=3; lg<=n; ++lg) for(int i=0; i+lg<=n; ++i) {
+      int j=i+lg,mik=-1,mak=-1;
+      LL bst=(1LL<<60);
+      for(int k=c[i][j-1]; k<j; ++k) {
+        if(bst>b[i][k]+b[k][j]+v[i]*v[k]*v[j]) {
+          bst=b[i][k]+b[k][j]+v[i]*v[k]*v[j];
+          bk=k;
+        }
+        //cerr<<i<<' '<<j<<' '<<k<<' '<<bk<<' '<<bst<<'\n';
+      }
+      c[i][j]=bk;
+      b[i][j]=bst;
+    }
+    g<<b[0][n];
+    return 0;
+}

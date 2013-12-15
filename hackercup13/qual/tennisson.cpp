@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+double prob[2][205][1000];//probabilitatea sa fie diferenta i si probabilitatea de vreme frumoasa j
+int T,k;
+double ps,pr,pi,pu,pw,pd,pl;
+
+int main() {
+  cin>>T;
+  for(int t=1; t<=T; ++t) {
+    cin>>k>>ps>>pr>>pi>>pu>>pw>>pd>>pl;
+    for(int i=0; i<=200; ++i) for(int j=0; j<1001; ++j) prob[0][i][j]=0;
+    prob[0][0][int(pi*1000)]=1;
+    for(int games=1; games<=200; ++games) {
+      int act=games&1,pre=!(games&1);
+      for(int i=-k+1; i<k; ++i) for(double j=0; j<=1; j+=0.001) {
+        //castig setul
+        prob[act][i+1][int(1000*(j+]
+      }
+    }
+  }
+}

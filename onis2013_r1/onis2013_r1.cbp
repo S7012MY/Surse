@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="onis2013_r1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\onis2013_r1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\onis2013_r1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="brazi.cpp" />
+		<Unit filename="brazi.in" />
+		<Unit filename="brazi.out" />
+		<Unit filename="cabana.cpp" />
+		<Unit filename="cabana.in" />
+		<Unit filename="cabana.out" />
+		<Unit filename="carte.cpp" />
+		<Unit filename="carte.in" />
+		<Unit filename="carte.out" />
+		<Unit filename="cifre4.cpp" />
+		<Unit filename="cifre4.in" />
+		<Unit filename="cifre4.out" />
+		<Unit filename="easygraph.in" />
+		<Unit filename="easygraph.out" />
+		<Unit filename="frumusete.cpp" />
+		<Unit filename="frumusete.in" />
+		<Unit filename="frumusete.out" />
+		<Unit filename="imunitate.cpp" />
+		<Unit filename="imunitate.in" />
+		<Unit filename="imunitate.out" />
+		<Unit filename="main.cpp" />
+		<Unit filename="pufu.cpp" />
+		<Unit filename="pufu.in" />
+		<Unit filename="pufu.out" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

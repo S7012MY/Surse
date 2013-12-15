@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+
+#define DN 505
+using namespace std;
+
+int v[DN];
+long long dp[DN][DN];
+
+
+int main()
+{
+    int n;
+    ifstream f("podm.in");
+    ofstream g("podm.out");
+    f>>n;
+    for(int i=0;i<=n;++i)
+        f>>v[i];
+    for(int i=0;i<=n;++i)
+      dp[i][i+2]=v[i]*v[i+1]*v[i+2];
+
+    for(int lg=3;lg<=n;++lg)
+      for(int i=0;i+lg<=n;++i)
+          {
+              int j=i+lg;
+              dp[i][j]=1ll<<60;
+
+              for(int k=i+1;k<j;++k)
+                {
+                    dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]+v[i]*v[j]*v[k]);
+                }
+          }
+    g<<dp[0][n];
+    return 0;
+}

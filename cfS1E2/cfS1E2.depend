@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1379513900 source:c:\users\l3ask_000\documents\proiecte\cfs1e2\main.cpp
+
+1379520689 source:c:\users\l3ask_000\documents\proiecte\cfs1e2\h.cpp
+
+1379524441 source:c:\users\l3ask_000\documents\proiecte\cfs1e2\b.cpp
+	<iostream>
+	<string>
+	<vector>
+	<cstring>
+	<map>
+	<cstdio>
+

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <map>
+#include <set>
+#define DN 100005
+using namespace std;
+
+int n,m,p,a[DN],b[DN];
+map<int,int> fr;
+set<int> p;
+
+int main() {
+  cin>>n>>m>>p;
+  for(int i=1; i<=n; ++i) cin>>a[i];
+  for(int i=1; i<=m; ++i) cin>>b[i];
+  for(int i=1; i<=p; ++i) {
+    int lg=0;
+    for(int j=1; j<=m; ++j) fr[b[j]]=0;
+    for(int j=i; j<=n; j+=p) {
+      int scos=j-p*m;
+      if(scos>0) {
+        if(fr.find(a[scos])!=fr.end()) {
+          --fr[a[scos]];
+          if(fr[a[scos]]==0) --lg;
+        }
+      }
+      if(fr.find(a[j])!=fr.end()) {
+        ++fr[a[j]];
+        if(fr[a[j]]==1) ++lg;
+      }
+      if(lg==m) p.insert(j-p*(m-1));
+    }
+  }
+  cout<<p.size()<<'\n';
+  for(set<int>::iterator it=p.begin(); )
+}

@@ -1,0 +1,11 @@
+#include <iostream>
+#include <fstream>
+#include <map>
+using namespace std;
+
+int n,m;
+
+int main() {
+  ifstream f("pariuri.in");
+  ofstream g("pariuri.out");
+}

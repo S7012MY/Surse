@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1386286290 source:c:\users\l3ask_000\documents\proiecte\proiect_logica_baze\main.cpp
+	<iostream>
+	<string>
+	<cctype>
+	<cstring>
+	<cmath>
+

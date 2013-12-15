@@ -1,29 +1,28 @@
-#include <iostream>
 #include <fstream>
-#include <vector>
+#include <bitset>
 #define DN 105
-#define mp make_pair
-#define x first
-#define y second
+#define MOD 1000000007
+#define LL long long
 using namespace std;
 
-typedef pair<int, int> per;
+int n,m,nvl,rf=1,sz;
+char b[DN][DN];
+bitset<DN> infl[DN][DN],ss[DN*DN];
 
-char ma[DN][DN],r[DN][DN];
-int n,m,cz,cu;
-const int dx[]={1,0,-1,0},dy[]={0,1,0,-1};
-vector<per> semn;
-
-bool check() {
-    for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {
-        cz=cu=0;
-        for(int d=0; d<4; ++d)
-            if('1'==ma[i+dx[d]][j+dy[d]]) ++cu;
-            else if('0'==ma[i+dx[d]][j+dy[d]]) ++cz;
-        if('1'==ma[i][j] && cu&1) return 0;
-        if('0'==ma[i][j] && cz&1) return 0;
+void cnt() {
+  int i=1,j=1,k;
+  for(;i<=sz && j<=m;) {
+    for(k=i;k<=sz && !ss[k][j]; ++k);
+    if(k==sz+1) {
+      rf=(rf+rf)%MOD;
+      ++j;
+      continue;
     }
-    return 1;
+    swap(ss[i],ss[k]);
+    for(k=i+1; k<=sz; ++k) if(ss[k][j]) ss[k]^=ss[i];
+    ++i; ++j;
+  }
+  for(;j<=m; ++j,rf=(rf+rf)%MOD);
 }
 
 int main()
@@ -31,17 +30,30 @@ int main()
     ifstream f("go2.in");
     ofstream g("go2.out");
     f>>n>>m;
-    for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) {
-        if('?'==ma[i][j]) semn.push_back(mp(i,j));
+    for(int i=1; i<=n; ++i) for(int j=1; j<=m; ++j) f>>b[i][j];
+    for(int j=1; j<=m; ++j) {
+      infl[1][j][j]=1;
+      if(b[1][j]!='?') {
+        ss[++sz]=infl[1][j];
+        ss[sz][m+1]=b[1][j]-'0';
+      }
     }
-    int sz=semn.size(),rez=0;
-    for(int i=0; i<(1<<sz); ++i) {
-        for(int j=0; j<sz; ++j)
-            if(i&(1<<j)) ma[semn[j].x][semn[j].y]='1';
-            else ma[semn[j].x][semn[j].y]='0';
-        if(check()) ++rez;
+    for(int i=2; i<=n; ++i) for(int j=1; j<=m; ++j) {
+       infl[i][j]=infl[i-1][j-1]^infl[i-2][j]^infl[i-1][j+1];
+       if(b[i][j]!='?') {
+         ss[++sz]=infl[i][j];
+         ss[sz][m+1]=b[i][j]-'0';
+       }
     }
-    cout<<rez;
-    g<<rez;
+    for(int j=1; j<=m; ++j)
+      ss[++sz]=infl[n][j-1]^infl[n-1][j]^infl[n][j+1];
+    cnt();
+    for(int i=1,j=1; i<=sz; ++i) {
+      for(;j<=m+1 && !ss[i][j]; ++j);
+      if(j==m+1) {
+        g<<0;return 0;
+      }
+    }
+    g<<rf;
     return 0;
 }

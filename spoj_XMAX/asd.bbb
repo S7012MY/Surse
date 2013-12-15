@@ -1,0 +1,5 @@
+:loop
+gentest.exe
+bun.exe
+main.exe
+goto loop

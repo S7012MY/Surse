@@ -1,0 +1,28 @@
+#include <iostream>
+#define DN 600005
+using namespace std;
+
+int n,fmul[DN],minfact[DN],fol[DN];
+
+void precalc() {
+  for(int i=2; i<DN; ++i) fmul[i]=i;
+  fmul[2]=4;
+  int lst=2,cc;
+  for(int i=3; i<=300000; ++i) if(!minfact[i]) 
+    for(int j=i; j<=300000; j+=i) if(!minfact[j]) minfact[j]=i;
+  for(int i=3; i<=300000; ++i) {
+    cc=lst;
+    lst=DN;
+    for(;cc>1;) {
+      int fprim=minfact[cc];
+      for(;fol[fprim] && minfact[fprim]+fprim<DN;minfact[fprim]+=fprim);
+      lst=min(lst,minfact[fprim]);
+    }
+  }
+}
+
+int main()
+{
+    precalc();
+    return 0;
+}

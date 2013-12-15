@@ -1,0 +1,47 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
+#include <cmath>
+#define EPS 1e-3
+#define DN 305
+using namespace std;
+
+ifstream f("gauss.in");
+ofstream g("gauss.out");
+
+int n,m;
+double s[305][305],x[305];
+
+void elim() {
+  for(int i=1,j=1,k;i<=n && j<=m;) {
+    for(k=i;k<=n; ++k) if(fabs(s[k][j])>EPS) break;
+    if(k>n) {
+      ++j;
+      continue;
+    }
+    if(k!=i)for(int l=1; l<=m+1; ++l) swap(s[i][l],s[k][l]);
+    for(k=i+1; k<=n; ++k) for(int l=m+1; l>=j; --l)
+      s[k][l]-=((s[k][j]*s[i][l])/s[i][j]);
+    ++i; ++j;
+  }
+  for(int i=n; i;--i) for(int j=1; j<=m+1; ++j) if(fabs(s[i][j])>EPS) {
+    if(j==m+1) {
+      g<<"Imposibil";
+      exit(0);
+    }
+    x[j]=s[i][m+1];
+    for(int k=j+1; k<=m; ++k) x[j]-=s[i][k]*x[k];
+    x[j]/=s[i][j];
+    break;
+  }
+}
+
+int main()
+{
+  f>>n>>m;
+  for(int i=1; i<=n; ++i) for(int j=1; j<=m+1; ++j) f>>s[i][j];
+  elim();
+  for(int i=1; i<=m; ++i) g<<fixed<<setprecision(8)<<x[i]<<' ';
+  return 0;
+}

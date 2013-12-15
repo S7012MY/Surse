@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1379715784 source:c:\users\l3ask_000\documents\proiecte\go2\main.cpp
+	<iostream>
+	<fstream>
+	<bitset>
+

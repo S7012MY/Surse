@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1379439352 source:c:\users\l3ask_000\documents\proiecte\gauss\main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<cstdlib>
+	<cmath>
+

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+
+int n,nz,nn;
+double x[2005],st;
+long long sx,rez=(1LL<<60);
+
+int main()
+{
+    cin>>n; n*=2;
+    for(int i=0; i<n; ++i) {
+      cin>>x[i];
+      x[i]-=int(x[i]);
+      st+=x[i];
+      if(x[i]=0.0) ++nz;
+    }
+    int r=2*n-nz;
+    double smax=min(n/2,r),smin=0;
+   if(n<r) smin=
+    return 0;
+}

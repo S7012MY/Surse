@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1376067069 source:c:\users\l3ask_000\documents\proiecte\cf195d2\main.cpp
+
+1376067449 source:c:\users\l3ask_000\documents\proiecte\cf195d2\c.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<set>
+

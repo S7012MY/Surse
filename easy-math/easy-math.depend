@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1383414221 source:c:\users\l3ask_000\documents\proiecte\easy-math\main.cpp
+	<iostream>
+	<queue>
+	<bitset>
+	<cassert>
+

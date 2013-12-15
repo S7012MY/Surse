@@ -1,0 +1,53 @@
+//#include <iostream>
+//#include <fstream>
+//#include <vector>
+//#include <bitset>
+//#include <string>
+//#include <map>
+//using namespace std;
+//
+//map<string,int> fr;
+//int nxt[55][2],in[55];
+//bitset<55> viz;
+//string rc,rmin;
+//
+//void dfs(int s,char c) {
+//  viz[s]=1;
+//  rc+=c;
+//  rc+='(';
+//  if(nxt[s][0]!=-1) dfs(nxt[s][0],'S');
+//  if(nxt[s][1]!=-1) dfs(nxt[s][1],'D');
+//  rc+=')';
+//}
+//
+//int main() {
+//  ifstream f("brazi.in");
+//  ofstream g("brazi.out");
+//  int t,n;
+//  for(f>>t;t--;) {
+//    f>>n;
+//    rmin="";
+//    for(int i=1; i<=n; ++i) {
+//      in[i]=0;
+//      nxt[i][0]=nxt[i][1]=-1;
+//    }
+//    for(int i=1; i<n; ++i) {
+//      int a,b,c;f>>a>>b>>c;
+//      in[b]=1;
+//      nxt[a][c]=b;
+//    }
+//    int r=-1;
+//    for(int i=1; i<=n; ++i) if(!in[i]) r=i;
+//    rc="";
+//    viz&=0;
+//    dfs(r,'R');
+//    //cout<<rmin<<'\n';
+//    if(fr.find(rc)!=fr.end()) {
+//      g<<fr[rc]<<'\n';
+//      ++fr[rc];
+//    }else {
+//      g<<"0\n";
+//      fr[rc]=1;
+//    }
+//  }
+//}

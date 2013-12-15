@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="debug.txt" open="1" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="kamehameha.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1348" topLine="26" />
+	</File>
+	<File name="lebamboo.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1141" topLine="32" />
+	</File>
+	<File name="maandi.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="361" topLine="0" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="623" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
