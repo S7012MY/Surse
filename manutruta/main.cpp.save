@@ -1,0 +1,42 @@
+#include <cstring>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ifstream f("date.in");
+ofstream g("date.out");
+
+int n;
+long long nr;
+char s[30];
+
+int main()
+{
+    f >> n;
+    for (int i = 1; i <= n; i++) {
+        f >> (s);
+        f >> nr;
+
+        int baza = strlen(s);
+        long long p = baza;
+
+        int l = 0;
+        int x = 1;
+        while (nr - x > 0) {
+            x *= baza;
+            l++;
+            nr -= x;
+        }
+
+        for (int i = 1; i <= l; i++) {
+            x /= baza;
+            int l = 0;
+            while (nr - x > 0) {
+            
+            }
+        }
+        cout << '/n';
+    }
+
+    return 0;
+}
