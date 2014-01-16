@@ -32,8 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="crescator.in" />
-		<Unit filename="crescator.out" />
+		<Unit filename="bfs.in" />
+		<Unit filename="bfs.out" />
+		<Unit filename="data.in" />
+		<Unit filename="data.out" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

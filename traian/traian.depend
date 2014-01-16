@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1387120898 source:c:\users\l3ask_000\documents\proiecte\traian\main.cpp
+1388833385 source:c:\users\l3ask_000\documents\proiecte\traian\main.cpp
 	<iostream>
 	<fstream>
+	<queue>
+	<vector>
 
