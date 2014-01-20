@@ -1,15 +1,15 @@
 %
-%
-%
-%
-%
+% I used the results on the slides: https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxicmlnaXR0ZWJyZWNrbmVyfGd4OjQxZjRkMDU1MjczYjUxYzI
+% The results obtaned were:
+% Ex2: the weight of the snake of length 55: 94.465 70: 202.343
+% Ex3: forecast for 2010: 71.612 2013: 75.041
 %
 
 %% Initialization
 clear ; close all; clc
 
 %% ===================== Part 1: Reading Data =====================
-data = load('data.txt');
+data = load('ex3data.txt');
 fprintf('Plotting data...\n');
 X = data(:, 1); y = data(:, 2);
 n = length(y); % number of training examples
