@@ -1,48 +1,34 @@
-#include <cstring>
+#include <cmath>
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
-ifstream f("date.in");
-ofstream g("date.out");
+#define x first
+#define y second
 
-int n;
-long long nr;
-char s[30];
+typedef pair<double, double> point;
 
-int main()
-{
-    f >> n;
-    for (int i = 1; i <= n; i++) {
-        f >> (s);
-        f >> nr;
+ifstream f("lgput.in");
+#define f cin
 
-        int baza = strlen(s);
-        long long p = baza;
+int n; double r;
+point a[105];
 
-        int l = 0;
-        int x = 1;
-        while (nr - x > 0) {
-            nr -= x;
-            x *= baza;
-            l++;
-        }
-        x /= baza;
+int main() {
+  f >> n;
+  f >> r;
+  for (int i = 1; i <= n; i++) {
+    f >> a[i].x >> a[i].y;
+  }
 
-        for (int i = 1; i <= l; i++) {
-            int l1 = 0;
-            while (nr - x > 0) {
-                 nr -= x;
-                 l1++;
-            }
-            cout << x << ' ' << nr << endl;
-            cout << s[l1];
-            x /= baza;
+  double sol;
+  a[n + 1] = a[1];
+  for (int i = 1; i <= n; i++) {
+    sol += sqrt((a[i].x - a[i + 1].x) * (a[i].x - a[i + 1].x) + (a[i].y - a[i + 1].y) * (a[i].y - a[i + 1].y));
+  }
 
+  cout << fixed << setprecision(2) << sol + 2 * 3.14159265359 * r;
 
-        }
-        cout << '\n';
-    }
-
-    return 0;
+  return 0;
 }

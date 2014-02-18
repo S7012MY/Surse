@@ -32,7 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="date.in" />
+		<Unit filename="lgput.in" />
+		<Unit filename="lgput.out" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

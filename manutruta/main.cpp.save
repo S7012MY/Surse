@@ -1,42 +1,28 @@
-#include <cstring>
+#include <cmath>
 #include <iostream>
 #include <fstream>
 using namespace std;
 
-ifstream f("date.in");
-ofstream g("date.out");
+#define x first
+#define y second
 
-int n;
-long long nr;
-char s[30];
+typedef pair<double, double> point;
 
-int main()
-{
-    f >> n;
-    for (int i = 1; i <= n; i++) {
-        f >> (s);
-        f >> nr;
+ifstream f("lgput.in");
 
-        int baza = strlen(s);
-        long long p = baza;
+point a[105];
 
-        int l = 0;
-        int x = 1;
-        while (nr - x > 0) {
-            x *= baza;
-            l++;
-            nr -= x;
-        }
+int main() {
+  f >> n;
+  for (int i = 1; i <= n; i++) {
+    f >> a[i].x >> a[i].y;
+  }
 
-        for (int i = 1; i <= l; i++) {
-            x /= baza;
-            int l = 0;
-            while (nr - x > 0) {
-            
-            }
-        }
-        cout << '/n';
-    }
+  double sol;
+  a[n + 1] = 
+  for (int i = 1; i <= n; i++) {
+    sol += sqrt((a[i].x - a[i + 1].x) * (a[i].x - a[i + 1].x) + (a[i].y - a[i + 1].y) * (a[i].y - a[i + 1].y));
+  }
 
-    return 0;
+  return 0;
 }
